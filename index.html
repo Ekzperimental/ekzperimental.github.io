@@ -1,63 +1,152 @@
 <!DOCTYPE html>
-<html lang="bg">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ekzperimental.org – Coming Soon</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ekzperimental</title>
+
+  <!-- Шрифт Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
   <style>
     body {
-      background-color: #000;
-      color: #fff;
-      font-family: 'Helvetica Neue', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #0d0d0d;
+      color: #f0f0f0;
+      font-family: "Poppins", sans-serif;
+      height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      margin: 0;
       text-align: center;
-      <p style="text-align:center; font-family:sans-serif; margin-top:40px;">
-  <a href="https://vimeo.com/ekzperimental" target="_blank" style="color:#00aaff; text-decoration:none;">
-    👉 Visit my Vimeo page
-  </a>
-</p>
-
+      overflow: hidden;
     }
 
-    img {
-      max-width: 250px;
-      margin-bottom: 30px;
-      opacity: 0.9;
-    }
-
-    h1 {
-      font-size: 2em;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    p {
-      margin-top: 10px;
-      color: #aaa;
-      font-size: 0.9em;
-    }
-
-    /* Анимация за лек fade-in ефект */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    body > * {
+    img.logo {
+      width: 160px;
+      height: auto;
+      margin-bottom: 25px;
+      opacity: 0;
       animation: fadeIn 1.5s ease forwards;
+    }
+
+    p.subtitle {
+      font-size: 1rem;
+      letter-spacing: 2px;
+      color: #777;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+      opacity: 0;
+      animation: fadeIn 1.5s ease 0.4s forwards;
+    }
+
+    p.description {
+      font-size: 1rem;
+      color: #ccc;
+      line-height: 1.8;
+      max-width: 600px;
+      margin: 0 auto 40px;
+      white-space: pre-line;
+      opacity: 0;
+      animation: fadeIn 1.5s ease 0.7s forwards;
+    }
+
+    .links {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 35px;
+      opacity: 0;
+      animation: fadeIn 1.5s ease 1s forwards;
+    }
+
+    a.button {
+      display: inline-block;
+      padding: 12px 32px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      color: #0d0d0d;
+    }
+
+    /* Цветове на бутоните */
+    a.vimeo {
+      background-color: #fff;
+    }
+    a.youtube {
+      background-color: #fff;
+    }
+    a.instagram {
+      background-color: #fff;
+    }
+    a.button:hover {
+      opacity: 0.8;
+      transform: translateY(-3px);
+    }
+
+    /* Имейл */
+    a.social {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: opacity 0.3s ease;
+      opacity: 0;
+      animation: fadeIn 1.5s ease 1.3s forwards;
+    }
+
+    a.social:hover {
+      opacity: 0.8;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 20px;
+      font-size: 0.9rem;
+      color: #777;
+      letter-spacing: 1px;
+      opacity: 0;
+      animation: fadeIn 1.5s ease 1.5s forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Ако имаш PNG лого, качи го в същата папка и промени името тук -->
-  <img src="logo.png" alt="Ekzperimental Logo">
+  <!-- Лого -->
+  <img src="logo.png" alt="Ekzperimental Logo" class="logo" />
 
-  <h1>Coming Soon</h1>
-  <p>Stay tuned for something ekzperimental</p>
-</body>
-</html>
+  <p class="subtitle">Shaping cinematic visions</p>
+
+  <p class="description">
+Ekzperimental is a creative collective producing bold, 
+cinematic content — from documentaries and music videos 
+to short films and digital storytelling.
+  </p>
+
+  <!-- Линкове -->
+  <div class="links">
+    <a href="https://vimeo.com/ekzperimental" target="_blank" class="button vimeo">Vimeo</a>
+    <a href="https://www.youtube.com/ekzarka" target="_blank" class="button youtube">YouTube</a>
+    <a href="https://www.instagram.com/ekzarka/" target="_blank" class="button instagram">Instagram</a>
+  </div>
+
+  <!-- Контакт -->
+  <p>
+    <a href="mailto:k.ekzarov@swkz.org" class="social">k.ekzarov@swkz.org</a>
+  </p>
+
+  <footer>
+    © 2025 Ekzperimental
