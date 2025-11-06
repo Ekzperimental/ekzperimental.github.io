@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ekzperimental.org – Coming Soon</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+
+    img {
+      max-width: 250px;
+      margin-bottom: 30px;
+      opacity: 0.9;
+    }
+
+    h1 {
+      font-size: 2em;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    p {
+      margin-top: 10px;
+      color: #aaa;
+      font-size: 0.9em;
+    }
+
+    /* Анимация за лек fade-in ефект */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    body > * {
+      animation: fadeIn 1.5s ease forwards;
+    }
+  </style>
+</head>
+<body>
+  <!-- Ако имаш PNG лого, качи го в същата папка и промени името тук -->
+  <img src="logo.png" alt="Ekzperimental Logo">
+
+  <h1>Coming Soon</h1>
+  <p>Stay tuned for something ekzperimental.</p>
+</body>
+</html>
