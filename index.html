@@ -27,7 +27,7 @@
     img.logo {
       width: 160px;
       height: auto;
-      margin-bottom: 25px;
+      margin-bottom: 22px;
       opacity: 0;
       animation: fadeIn 1.5s ease forwards;
     }
@@ -36,7 +36,7 @@
       font-size: 1rem;
       letter-spacing: 2px;
       color: #777;
-      margin-bottom: 30px;
+      margin-bottom: 15px; /* ↓ беше 30px */
       text-transform: uppercase;
       opacity: 0;
       animation: fadeIn 1.5s ease 0.4s forwards;
@@ -76,7 +76,6 @@
       backdrop-filter: blur(0px);
     }
 
-    /* Hover ефект – subtle glow / depth */
     a.button:hover {
       transform: translateY(-3px) scale(1.03);
       filter: brightness(1.05) blur(0.3px);
@@ -84,7 +83,6 @@
       backdrop-filter: blur(3px);
     }
 
-    /* Имейл */
     a.social {
       color: #ffffff;
       text-decoration: none;
@@ -121,26 +119,22 @@
   </style>
 </head>
 <body>
-  <!-- Лого -->
   <img src="logo.png" alt="Ekzperimental Logo" class="logo" />
 
   <p class="subtitle">Shaping cinematic visions</p>
 
   <p class="description">
-Ekzperimental is a creative collective 
-producing bold, cinematic content — 
-from documentaries and music videos 
+Ekzperimental is a creative collective producing bold, 
+cinematic content — from documentaries and music videos 
 to short films and digital storytelling.
   </p>
 
-  <!-- Линкове -->
   <div class="links">
     <a href="https://vimeo.com/ekzperimental" target="_blank" class="button vimeo">Vimeo</a>
     <a href="https://www.youtube.com/ekzarka" target="_blank" class="button youtube">YouTube</a>
     <a href="https://www.instagram.com/ekzarka/" target="_blank" class="button instagram">Instagram</a>
   </div>
 
-  <!-- Контакт -->
   <p>
     <a href="mailto:k.ekzarov@swkz.org" class="social">k.ekzarov@swkz.org</a>
   </p>
