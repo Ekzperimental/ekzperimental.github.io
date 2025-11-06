@@ -15,13 +15,14 @@
       background-color: #0d0d0d;
       color: #f0f0f0;
       font-family: "Poppins", sans-serif;
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      overflow: hidden;
+      overflow-y: auto; /* ✅ Позволява скрол при нужда */
+      overflow-x: hidden;
     }
 
     img.logo {
@@ -36,7 +37,7 @@
       font-size: 1rem;
       letter-spacing: 2px;
       color: #777;
-      margin-bottom: 15px; /* ↓ беше 30px */
+      margin-bottom: 15px;
       text-transform: uppercase;
       opacity: 0;
       animation: fadeIn 1.5s ease 0.4s forwards;
@@ -51,6 +52,7 @@
       white-space: pre-line;
       opacity: 0;
       animation: fadeIn 1.5s ease 0.7s forwards;
+      padding: 0 15px;
     }
 
     .links {
@@ -87,23 +89,45 @@
       color: #ffffff;
       text-decoration: none;
       font-weight: 500;
-      transition: opacity 0.3s ease;
+      transition: all 0.3s ease;
       opacity: 0;
       animation: fadeIn 1.5s ease 1.3s forwards;
+      position: relative;
+      display: inline-block;
+      margin-bottom: 40px;
     }
 
-    a.social:hover {
-      opacity: 0.8;
+    /* Подчертаване с fade ефект */
+    a.social::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 0%;
+      height: 1px;
+      background-color: rgba(255, 255, 255, 0);
+      transition: width 0.4s ease, background-color 0.4s ease;
+    }
+
+    a.social:hover::after {
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.8);
     }
 
     footer {
-      position: absolute;
-      bottom: 20px;
       font-size: 0.9rem;
       color: #777;
       letter-spacing: 1px;
       opacity: 0;
       animation: fadeIn 1.5s ease 1.5s forwards;
+      margin-bottom: 15px;
+    }
+
+    @media (max-height: 600px) {
+      footer {
+        position: static; /* ✅ Не излиза извън малки екрани */
+        margin-top: 20px;
+      }
     }
 
     @keyframes fadeIn {
