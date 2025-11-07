@@ -5,42 +5,73 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ekzperimental</title>
 
-  <!-- Шрифт Poppins -->
+  <!-- Шрифт -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
 
   <style>
+    /* Основен стил */
     body {
       margin: 0;
       padding: 0;
-      background-color: #0d0d0d;
-      color: #f0f0f0;
+      background-color: #0a0a0a;
+      color: #f5f5f5;
       font-family: "Poppins", sans-serif;
-      min-height: 100vh;
+      height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      overflow-y: auto; /* ✅ Позволява скрол при нужда */
-      overflow-x: hidden;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Grain overlay */
+    .grain {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background-image: url("https://www.transparenttextures.com/patterns/noise.png");
+      opacity: 0.08;
+      mix-blend-mode: overlay;
+      z-index: 1;
+      animation: grainMove 6s steps(10) infinite;
+    }
+
+    @keyframes grainMove {
+      0%, 100% { transform: translate(0, 0); }
+      10% { transform: translate(-2%, -1%); }
+      20% { transform: translate(1%, 2%); }
+      30% { transform: translate(1%, -2%); }
+      40% { transform: translate(-1%, 1%); }
+      50% { transform: translate(-2%, 2%); }
+      60% { transform: translate(2%, 1%); }
+      70% { transform: translate(-1%, -2%); }
+      80% { transform: translate(2%, -1%); }
+      90% { transform: translate(-2%, 1%); }
     }
 
     img.logo {
       width: 160px;
       height: auto;
-      margin-bottom: 22px;
+      margin-bottom: 24px;
       opacity: 0;
-      animation: fadeIn 1.5s ease forwards;
+      animation: fadeIn 2s ease forwards;
+      z-index: 2;
     }
 
     p.subtitle {
       font-size: 1rem;
       letter-spacing: 2px;
-      color: #777;
-      margin-bottom: 15px;
+      color: #888;
       text-transform: uppercase;
+      margin-bottom: 20px;
       opacity: 0;
-      animation: fadeIn 1.5s ease 0.4s forwards;
+      animation: fadeIn 2s ease 0.5s forwards;
+      z-index: 2;
     }
 
     p.description {
@@ -51,8 +82,9 @@
       margin: 0 auto 40px;
       white-space: pre-line;
       opacity: 0;
-      animation: fadeIn 1.5s ease 0.7s forwards;
+      animation: fadeIn 2s ease 1s forwards;
       padding: 0 15px;
+      z-index: 2;
     }
 
     .links {
@@ -60,9 +92,9 @@
       gap: 15px;
       flex-wrap: wrap;
       justify-content: center;
-      margin-bottom: 35px;
       opacity: 0;
-      animation: fadeIn 1.5s ease 1s forwards;
+      animation: fadeIn 2s ease 1.5s forwards;
+      z-index: 2;
     }
 
     a.button {
@@ -74,8 +106,8 @@
       transition: all 0.3s ease;
       color: #0d0d0d;
       background-color: #fff;
-      position: relative;
       backdrop-filter: blur(0px);
+      position: relative;
     }
 
     a.button:hover {
@@ -86,44 +118,39 @@
     }
 
     a.social {
-  	color: #ffffff;
-  	text-decoration: none;
-  	font-weight: 500;
-  	transition: all 0.3s ease;
-  	opacity: 0;
-  	animation: fadeIn 1.5s ease 1.3s forwards;
-  	position: relative;
-  	display: inline-block;
-  	margin-bottom: 40px;
-	}
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      opacity: 0;
+      animation: fadeIn 2s ease 1.8s forwards;
+      display: inline-block;
+      margin-top: 40px;
+      z-index: 2;
+    }
 
-    /* ✅ Hover ефект като бутоните — без подчертаване */
-	a.social:hover {
-  	transform: translateY(-3px) scale(1.03);
-  	filter: brightness(1.05) blur(0.3px);
-  	text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
-	}
+    a.social:hover {
+      transform: translateY(-3px) scale(1.03);
+      filter: brightness(1.05) blur(0.3px);
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+    }
 
     footer {
-      font-size: 0.9rem;
-      color: #777;
+      position: absolute;
+      bottom: 20px;
+      font-size: 0.85rem;
+      color: #555;
       letter-spacing: 1px;
       opacity: 0;
-      animation: fadeIn 1.5s ease 1.5s forwards;
-      margin-bottom: 15px;
+      animation: fadeIn 2s ease 2s forwards;
+      z-index: 2;
     }
 
-    @media (max-height: 600px) {
-      footer {
-        position: static; /* ✅ Не излиза извън малки екрани */
-        margin-top: 20px;
-      }
-    }
-
+    /* Fade-in animation */
     @keyframes fadeIn {
       from {
         opacity: 0;
-        transform: translateY(10px);
+        transform: translateY(15px);
       }
       to {
         opacity: 1;
@@ -133,29 +160,26 @@
   </style>
 </head>
 <body>
-  <img src="logo.png" alt="Ekzperimental Logo" class="logo" />
+  <div class="grain"></div>
 
+  <img src="logo.png" alt="Ekzperimental Logo" class="logo" />
   <p class="subtitle">Shaping cinematic visions</p>
 
   <p class="description">
-Ekzperimental is a creative collective 
-producing bold, cinematic content — 
-from documentaries and music videos 
+Ekzperimental is a creative collective
+producing bold, cinematic content —
+from documentaries and music videos
 to short films and digital storytelling.
   </p>
 
   <div class="links">
-    <a href="https://vimeo.com/ekzperimental" target="_blank" class="button vimeo">Vimeo</a>
-    <a href="https://www.youtube.com/ekzarka" target="_blank" class="button youtube">YouTube</a>
-    <a href="https://www.instagram.com/ekzarka/" target="_blank" class="button instagram">Instagram</a>
+    <a href="https://vimeo.com/ekzperimental" target="_blank" class="button">Vimeo</a>
+    <a href="https://www.youtube.com/ekzarka" target="_blank" class="button">YouTube</a>
+    <a href="https://www.instagram.com/ekzarka/" target="_blank" class="button">Instagram</a>
   </div>
 
-  <p>
-    <a href="mailto:k.ekzarov@swkz.org" class="social">Contact us</a>
-  </p>
+  <a href="mailto:k.ekzarov@swkz.org" class="social">Contact us</a>
 
-  <footer>
-    © 2025 Ekzperimental
-  </footer>
+  <footer>© 2025 Ekzperimental</footer>
 </body>
 </html>
