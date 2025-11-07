@@ -86,33 +86,23 @@
     }
 
     a.social {
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 500;
-      transition: all 0.3s ease;
-      opacity: 0;
-      animation: fadeIn 1.5s ease 1.3s forwards;
-      position: relative;
-      display: inline-block;
-      margin-bottom: 40px;
-    }
+  	color: #ffffff;
+  	text-decoration: none;
+  	font-weight: 500;
+  	transition: all 0.3s ease;
+  	opacity: 0;
+  	animation: fadeIn 1.5s ease 1.3s forwards;
+  	position: relative;
+  	display: inline-block;
+  	margin-bottom: 40px;
+	}
 
-    /* Подчертаване с fade ефект */
-    a.social::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -3px;
-      width: 0%;
-      height: 1px;
-      background-color: rgba(255, 255, 255, 0);
-      transition: width 0.4s ease, background-color 0.4s ease;
-    }
-
-    a.social:hover::after {
-      width: 100%;
-      background-color: rgba(255, 255, 255, 0.8);
-    }
+    /* ✅ Hover ефект като бутоните — без подчертаване */
+	a.social:hover {
+  	transform: translateY(-3px) scale(1.03);
+  	filter: brightness(1.05) blur(0.3px);
+  	text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+	}
 
     footer {
       font-size: 0.9rem;
