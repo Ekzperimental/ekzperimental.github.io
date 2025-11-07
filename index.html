@@ -9,20 +9,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
 
   <style>
-    :root {
-      --text-color: #f5f5f5;
-      --muted: #aaa;
-      --accent-bg: #fff;
-      --font-main: "Poppins", sans-serif;
-    }
-
     body {
       margin: 0;
       padding: 0;
-      min-height: 100vh;
+      height: 100vh;
       background: #000;
-      color: var(--text-color);
-      font-family: var(--font-main);
+      color: #f5f5f5;
+      font-family: "Poppins", sans-serif;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -45,14 +38,20 @@
 
     .overlay {
       position: fixed;
-      inset: 0;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       background: rgba(0, 0, 0, 0.55);
       z-index: -1;
     }
 
     .grain {
       position: fixed;
-      inset: 0;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       pointer-events: none;
       background-image: url("https://www.transparenttextures.com/patterns/noise.png");
       opacity: 0.1;
@@ -68,43 +67,42 @@
 
     .content {
       z-index: 1;
-      padding: 4vw;
+      padding: 20px;
       box-sizing: border-box;
-      max-width: 90%;
-      width: clamp(280px, 70vw, 600px);
+      max-width: 600px;
     }
 
     img.logo {
-      width: clamp(80px, 12vw, 150px);
+      width: 150px;
       height: auto;
-      margin-bottom: 2vh;
+      margin-bottom: 20px;
       opacity: 0;
       animation: fadeIn 2s ease forwards;
     }
 
     p.subtitle {
-      font-size: clamp(0.8rem, 1.2vw, 1rem);
-      letter-spacing: 0.2em;
-      color: var(--muted);
+      font-size: 1rem;
+      letter-spacing: 2px;
+      color: #aaa;
       text-transform: uppercase;
-      margin-bottom: 1.5vh;
+      margin-bottom: 20px;
       opacity: 0;
       animation: fadeIn 2s ease 0.5s forwards;
     }
 
     p.description {
-      font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+      font-size: 1rem;
       color: #ccc;
       line-height: 1.8;
-      margin-bottom: 4vh;
-      white-space: pre-line;
+      margin-bottom: 40px;
+      white-space: pre-line; /* ✅ запазва редовете точно както в HTML */
       opacity: 0;
       animation: fadeIn 2s ease 1s forwards;
     }
 
     .links {
       display: flex;
-      gap: 1rem;
+      gap: 15px;
       flex-wrap: wrap;
       justify-content: center;
       opacity: 0;
@@ -112,14 +110,14 @@
     }
 
     a.button {
-      padding: 0.8em 2em;
-      border-radius: 999px;
+      display: inline-block;
+      padding: 12px 30px;
+      border-radius: 30px;
       text-decoration: none;
       font-weight: 600;
       transition: all 0.3s ease;
-      color: #000;
-      background-color: var(--accent-bg);
-      font-size: clamp(0.85rem, 1vw, 1rem);
+      color: #0d0d0d;
+      background-color: #fff;
     }
 
     a.button:hover {
@@ -128,6 +126,7 @@
       box-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
     }
 
+    /* 🖤 Contact us — винаги ясно видим над футъра */
     a.social {
       color: #ffffff;
       text-decoration: none;
@@ -136,10 +135,9 @@
       opacity: 0;
       animation: fadeIn 2s ease 1.8s forwards;
       display: inline-block;
-      margin-top: 5vh;
-      margin-bottom: 8vh;
+      margin-top: 40px;
+      margin-bottom: 90px; /* ✅ повече въздух над футъра */
       z-index: 2;
-      font-size: clamp(0.9rem, 1vw, 1.1rem);
     }
 
     a.social:hover {
@@ -148,12 +146,13 @@
       text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
     }
 
+    /* 🪶 Footer — леко повдигнат и адаптивен */
     footer {
       position: fixed;
-      bottom: 3vh;
+      bottom: 20px; /* ✅ по-нагоре за iPhone gesture зоната */
       width: 100%;
       text-align: center;
-      font-size: clamp(0.7rem, 1vw, 0.9rem);
+      font-size: 0.85rem;
       color: #777;
       letter-spacing: 1px;
       opacity: 0;
@@ -161,28 +160,25 @@
       z-index: 2;
     }
 
-    /* Responsive spacing for small screens */
+    /* 📱 Mobile optimization */
     @media (max-width: 600px) {
       body {
-        padding-bottom: 100px;
-      }
-
-      .content {
-        max-width: 95%;
-        padding: 6vw;
+        padding-bottom: 100px; /* ✅ пази долните елементи видими */
       }
 
       p.description {
-        font-size: 1rem;
-        line-height: 1.6;
+        font-size: 0.95rem;
+        padding: 0 10px;
       }
 
       a.social {
-        margin-bottom: 10vh;
+        margin-bottom: 240px; /* ✅ повече въздух при мобилни */
+        font-size: 1rem;
       }
 
       footer {
-        bottom: 2vh;
+        bottom: 15px;
+        font-size: 0.8rem;
       }
     }
 
