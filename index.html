@@ -9,24 +9,46 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
 
   <style>
-    /* Основен стил */
     body {
       margin: 0;
       padding: 0;
-      background-color: #0a0a0a;
+      height: 100vh;
+      overflow: hidden;
+      background: #000;
       color: #f5f5f5;
       font-family: "Poppins", sans-serif;
-      height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      overflow: hidden;
       position: relative;
     }
 
-    /* Grain overlay */
+    /* 🎬 Видео фон */
+    video.background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+      filter: brightness(0.25) contrast(1.1) saturate(0.8);
+    }
+
+    /* 🕳️ Тъмен филмов overlay */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.55);
+      z-index: -1;
+    }
+
+    /* 📽️ Grain overlay */
     .grain {
       position: fixed;
       top: 0;
@@ -35,9 +57,9 @@
       height: 100%;
       pointer-events: none;
       background-image: url("https://www.transparenttextures.com/patterns/noise.png");
-      opacity: 0.08;
+      opacity: 0.1;
       mix-blend-mode: overlay;
-      z-index: 1;
+      z-index: 0;
       animation: grainMove 6s steps(10) infinite;
     }
 
@@ -54,24 +76,23 @@
       90% { transform: translate(-2%, 1%); }
     }
 
+    /* 🖤 Съдържание */
     img.logo {
       width: 160px;
       height: auto;
       margin-bottom: 24px;
       opacity: 0;
       animation: fadeIn 2s ease forwards;
-      z-index: 2;
     }
 
     p.subtitle {
       font-size: 1rem;
       letter-spacing: 2px;
-      color: #888;
+      color: #aaa;
       text-transform: uppercase;
       margin-bottom: 20px;
       opacity: 0;
       animation: fadeIn 2s ease 0.5s forwards;
-      z-index: 2;
     }
 
     p.description {
@@ -84,7 +105,6 @@
       opacity: 0;
       animation: fadeIn 2s ease 1s forwards;
       padding: 0 15px;
-      z-index: 2;
     }
 
     .links {
@@ -94,7 +114,6 @@
       justify-content: center;
       opacity: 0;
       animation: fadeIn 2s ease 1.5s forwards;
-      z-index: 2;
     }
 
     a.button {
@@ -126,7 +145,6 @@
       animation: fadeIn 2s ease 1.8s forwards;
       display: inline-block;
       margin-top: 40px;
-      z-index: 2;
     }
 
     a.social:hover {
@@ -139,27 +157,26 @@
       position: absolute;
       bottom: 20px;
       font-size: 0.85rem;
-      color: #555;
+      color: #777;
       letter-spacing: 1px;
       opacity: 0;
       animation: fadeIn 2s ease 2s forwards;
-      z-index: 2;
     }
 
-    /* Fade-in animation */
+    /* Анимация */
     @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(15px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
+  <!-- 🎥 Видео фон -->
+  <video class="background-video" autoplay muted loop playsinline>
+    <source src="background.mp4" type="video/mp4" />
+  </video>
+
+  <div class="overlay"></div>
   <div class="grain"></div>
 
   <img src="logo.png" alt="Ekzperimental Logo" class="logo" />
