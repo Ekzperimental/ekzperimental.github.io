@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ekzperimental</title>
 
+  <!-- Poppins Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
 
   <style>
@@ -94,6 +95,7 @@
       color: #ccc;
       line-height: 1.8;
       margin-bottom: 40px;
+      white-space: pre-line; /* ✅ запазва редовете точно както в HTML */
       opacity: 0;
       animation: fadeIn 2s ease 1s forwards;
     }
@@ -124,7 +126,7 @@
       box-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
     }
 
-    /* 🖤 Contact us — винаги видим */
+    /* 🖤 Contact us — винаги ясно видим над футъра */
     a.social {
       color: #ffffff;
       text-decoration: none;
@@ -134,6 +136,7 @@
       animation: fadeIn 2s ease 1.8s forwards;
       display: inline-block;
       margin-top: 40px;
+      margin-bottom: 90px; /* ✅ повече въздух над футъра */
       z-index: 2;
     }
 
@@ -143,9 +146,10 @@
       text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
     }
 
+    /* 🪶 Footer — леко повдигнат и адаптивен */
     footer {
       position: fixed;
-      bottom: 10px;
+      bottom: 20px; /* ✅ по-нагоре за iPhone gesture зоната */
       width: 100%;
       text-align: center;
       font-size: 0.85rem;
@@ -159,7 +163,7 @@
     /* 📱 Mobile optimization */
     @media (max-width: 600px) {
       body {
-        padding-bottom: 80px; /* за да не скрива Contact us и footer */
+        padding-bottom: 100px; /* ✅ пази долните елементи видими */
       }
 
       p.description {
@@ -168,13 +172,13 @@
       }
 
       a.social {
-        margin-top: 25px;
+        margin-bottom: 120px; /* ✅ повече въздух при мобилни */
         font-size: 1rem;
       }
 
       footer {
+        bottom: 15px;
         font-size: 0.8rem;
-        bottom: 8px;
       }
     }
 
@@ -184,6 +188,7 @@
     }
   </style>
 </head>
+
 <body>
   <video class="background-video" autoplay muted loop playsinline>
     <source src="background.mp4" type="video/mp4" />
