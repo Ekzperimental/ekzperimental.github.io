@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ekzperimental</title>
 
-  <!-- Poppins Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
 
   <style>
@@ -80,6 +79,7 @@
       animation: fadeIn 2s ease forwards;
     }
 
+    /* 🎬 Subline with flicker */
     p.subtitle {
       font-size: 1rem;
       letter-spacing: 2px;
@@ -88,6 +88,32 @@
       margin-bottom: 20px;
       opacity: 0;
       animation: fadeIn 2s ease 0.5s forwards;
+    }
+
+    .cinematic {
+      display: inline-block;
+      position: relative;
+      color: #fff;
+      cursor: pointer;
+      transition: color 0.3s ease;
+      will-change: opacity, filter, text-shadow;
+    }
+
+    .cinematic.flicker {
+      animation: flicker 0.25s steps(2) infinite, shimmer 1.2s infinite linear;
+    }
+
+    @keyframes flicker {
+      0%, 100% { opacity: 1; filter: brightness(1); }
+      25% { opacity: 0.6; filter: brightness(1.2); }
+      50% { opacity: 0.9; filter: brightness(0.8); }
+      75% { opacity: 0.7; filter: brightness(1.1); }
+    }
+
+    @keyframes shimmer {
+      0% { text-shadow: 0 0 2px rgba(255,255,255,0.1); }
+      50% { text-shadow: 0 0 10px rgba(255,255,255,0.6); }
+      100% { text-shadow: 0 0 2px rgba(255,255,255,0.1); }
     }
 
     p.description {
@@ -109,43 +135,26 @@
       animation: fadeIn 2s ease 1.5s forwards;
     }
 
+    /* ✴️ Buttons with restored blur */
     a.button {
       display: inline-block;
       padding: 12px 30px;
       border-radius: 30px;
       text-decoration: none;
       font-weight: 600;
-      transition: all 0.4s ease;
       color: #0d0d0d;
       background-color: #fff;
-      position: relative;
-      overflow: hidden;
-      z-index: 1;
-    }
-
-    a.button::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: 30px;
-      backdrop-filter: blur(0px);
-      transition: backdrop-filter 0.4s ease, opacity 0.4s ease;
-      z-index: -1;
-      opacity: 0;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+      will-change: transform, filter;
     }
 
     a.button:hover {
       transform: translateY(-3px) scale(1.03);
-      color: #000;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.25);
+      filter: brightness(1.1) blur(0.4px);
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
     }
 
-    a.button:hover::after {
-      backdrop-filter: blur(4px);
-      opacity: 0.8;
-    }
-
-    /* 🖤 Contact us — същият hover като бутоните */
+    /* 🖤 Contact us — също с blur hover */
     a.social {
       display: inline-block;
       margin-top: 40px;
@@ -155,32 +164,16 @@
       text-decoration: none;
       opacity: 0;
       animation: fadeIn 2s ease 1.8s forwards;
-      position: relative;
-      transition: all 0.4s ease;
+      transition: transform 0.3s ease, filter 0.3s ease, text-shadow 0.3s ease;
       z-index: 1;
-      overflow: hidden;
-      letter-spacing: 0.5px;
-    }
-
-    a.social::after {
-      content: "";
-      position: absolute;
-      inset: -6px;
-      border-radius: 40px;
-      backdrop-filter: blur(0px);
-      transition: backdrop-filter 0.4s ease, opacity 0.4s ease;
-      z-index: -1;
-      opacity: 0;
+      position: relative;
+      will-change: transform, filter;
     }
 
     a.social:hover {
       transform: translateY(-3px) scale(1.03);
-      text-shadow: 0 0 12px rgba(255, 255, 255, 0.7);
-    }
-
-    a.social:hover::after {
-      backdrop-filter: blur(4px);
-      opacity: 0.8;
+      filter: brightness(1.08) blur(0.4px);
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
     }
 
     footer {
@@ -196,26 +189,10 @@
       z-index: 2;
     }
 
-    /* 📱 Mobile */
     @media (max-width: 600px) {
-      body {
-        padding-bottom: 100px;
-      }
-
-      p.description {
-        font-size: 0.95rem;
-        padding: 0 10px;
-      }
-
-      a.social {
-        margin-bottom: 100px;
-        font-size: 1rem;
-      }
-
-      footer {
-        bottom: 15px;
-        font-size: 0.8rem;
-      }
+      body { padding-bottom: 100px; }
+      p.description { font-size: 0.95rem; padding: 0 10px; }
+      footer { bottom: 15px; font-size: 0.8rem; }
     }
 
     @keyframes fadeIn {
@@ -235,7 +212,7 @@
 
   <div class="content">
     <img src="logo.png" alt="Ekzperimental Logo" class="logo" />
-    <p class="subtitle">Shaping cinematic visions</p>
+    <p class="subtitle">Shaping <span class="cinematic">CINEMATIC</span> visions</p>
 
     <p class="description">
 Ekzperimental is a creative collective
@@ -254,5 +231,25 @@ to short films and digital storytelling.
   </div>
 
   <footer>© 2025 Ekzperimental</footer>
+
+  <script>
+    const word = document.querySelector(".cinematic");
+    const originalText = "CINEMATIC";
+    const altText = "YOUR";
+
+    word.addEventListener("mouseenter", () => {
+      word.classList.add("flicker");
+      let flickerTimeout = setTimeout(() => {
+        word.textContent = altText;
+      }, 200);
+      word.dataset.timeout = flickerTimeout;
+    });
+
+    word.addEventListener("mouseleave", () => {
+      clearTimeout(word.dataset.timeout);
+      word.classList.remove("flicker");
+      word.textContent = originalText;
+    });
+  </script>
 </body>
 </html>
