@@ -72,13 +72,37 @@
       max-width: 600px;
     }
 
-    img.logo {
-      width: 150px;
-      height: auto;
-      margin-bottom: 20px;
-      opacity: 0;
-      animation: fadeIn 2s ease forwards;
-    }
+    /* Логото става динамично и се адаптира към височината на екрана */
+img.logo {
+  width: clamp(100px, 20vw, 160px); /* 📱 между 100px и 160px в зависимост от ширината */
+  height: auto;
+  margin-bottom: 20px;
+  max-height: 25vh; /* 🧩 никога не заема повече от 1/4 от екрана */
+  opacity: 0;
+  animation: fadeIn 2s ease forwards;
+}
+
+/* Контейнерът вече не е строго центриран по вертикала */
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* 🧭 започва отгоре, вместо да е 100% центриран */
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 10vh; /* 🧩 малко въздух отгоре */
+  padding-bottom: 5vh;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* На по-големи екрани запазваме класическия cinematic център */
+@media (min-height: 850px) {
+  body {
+    justify-content: center;
+    padding-top: 0;
+  }
+}
+
 
     p.subtitle {
       font-size: 1rem;
