@@ -208,27 +208,36 @@
       text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
     }
 
-    footer {
-      position: fixed;
-      bottom: 20px;
-      width: 100%;
-      text-align: center;
-      font-size: 0.85rem;
-      color: #777;
-      letter-spacing: 1px;
-      opacity: 0;
-      animation: fadeIn 2s ease 2s forwards;
-      z-index: 2;
-    }
+    /* 🪶 Footer — динамичен, адаптивен към височината на екрана */
+footer {
+  width: 100%;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #777;
+  letter-spacing: 1px;
+  opacity: 0;
+  animation: fadeIn 2s ease 2s forwards;
+  margin-top: 40px;
+  padding-bottom: 20px;
+}
 
-    @media (max-width: 768px) {
-      .content { padding: 30px 15px; max-width: 90%; }
-      img.logo { width: 120px; }
-      p.description { font-size: 0.95rem; }
-      .links { gap: 10px; }
-      a.button { padding: 10px 24px; font-size: 0.9rem; }
-      footer { bottom: 10px; font-size: 0.75rem; }
-    }
+/* За по-големи екрани футърът стои фиксиран */
+@media (min-height: 700px) {
+  footer {
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+  }
+}
+
+/* За мобилни и екрани с по-малка височина — отпускаме футъра под съдържанието */
+@media (max-height: 699px) {
+  footer {
+    position: static;
+    margin-top: 60px;
+  }
+}
+
 
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(15px); }
