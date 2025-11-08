@@ -116,15 +116,17 @@
       100% { text-shadow: 0 0 2px rgba(255,255,255,0.1); }
     }
 
-    p.description {
-      font-size: 1rem;
-      color: #ccc;
-      line-height: 1.8;
-      margin-bottom: 40px;
-      white-space: pre-line;
-      opacity: 0;
-      animation: fadeIn 2s ease 1s forwards;
-    }
+   p.description {
+  font-size: clamp(0.95rem, 2vw, 1.1rem); /* адаптивен размер спрямо екрана */
+  color: #ccc;
+  line-height: 1.8;
+  margin-bottom: 40px;
+  white-space: pre-line; /* ✅ запазва оригиналните редове */
+  opacity: 0;
+  animation: fadeIn 2s ease 1s forwards;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.05);
+}
+
 
     .links {
       display: flex;
@@ -252,7 +254,10 @@ Ekzperimental is a creative collective
 producing bold, cinematic content —
 from documentaries and music videos
 to short films and digital storytelling.
-    </p>
+
+Where movement speaks.
+Where vision dances.
+</p>
 
     <div class="links">
       <a href="https://vimeo.com/ekzperimental" target="_blank" class="button">Vimeo</a>
