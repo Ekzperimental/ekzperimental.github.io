@@ -65,6 +65,34 @@
       50% { transform: translate(-1%, 1%); }
     }
 
+.grain {
+  opacity: 0.08;
+  animation: flicker 0.12s infinite steps(2);
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 0.09; }
+  50% { opacity: 0.13; }
+}
+
+h1:hover, .subtitle:hover {
+  transform: translateY(-1px);
+  letter-spacing: 0.02em;
+  transition: all 0.2s ease;
+}
+
+.logo { animation-delay: 0.2s; }
+.subtitle { animation-delay: 0.6s; }
+.description { animation-delay: 1s; }
+.links { animation-delay: 1.4s; }
+.social { animation-delay: 1.8s; }
+
+video.background-video {
+  transform: translateY(var(--scroll-offset, 0));
+  transition: transform 0.2s ease-out;
+}
+
+
     .content {
       z-index: 1;
       padding: 20px;
