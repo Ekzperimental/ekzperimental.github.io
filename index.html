@@ -232,6 +232,25 @@
       margin: 50px 0 80px;
     }
 
+    .work-category {
+      margin-bottom: 60px;
+    }
+
+    .work-category:last-child {
+      margin-bottom: 0;
+    }
+
+    .category-label {
+      font-size: 1rem;
+      letter-spacing: 2px;
+      color: #aaa;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: fadeIn 2s ease 1.2s forwards;
+    }
+
     .work-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -365,7 +384,30 @@ Based in Bulgaria. Working Worldwide.
   </div>
 
   <section class="work">
-    <div class="work-grid" id="workGrid"></div>
+    <div class="work-category">
+      <p class="category-label">Street Art</p>
+      <div class="work-grid" id="grid-street-art"></div>
+    </div>
+
+    <div class="work-category">
+      <p class="category-label">Documentary / С Главата Надолу</p>
+      <div class="work-grid" id="grid-documentary"></div>
+    </div>
+
+    <div class="work-category">
+      <p class="category-label">Dance &amp; Theatre</p>
+      <div class="work-grid" id="grid-dance-theatre"></div>
+    </div>
+
+    <div class="work-category">
+      <p class="category-label">Music &amp; Festivals</p>
+      <div class="work-grid" id="grid-music-festivals"></div>
+    </div>
+
+    <div class="work-category">
+      <p class="category-label">Experimental</p>
+      <div class="work-grid" id="grid-experimental"></div>
+    </div>
   </section>
 
   <div class="content content-actions">
@@ -401,25 +443,19 @@ Based in Bulgaria. Working Worldwide.
       word.textContent = originalText;
     });
 
-    // Selected Work — build the 3x3 grid from Vimeo IDs
-    const videoIds = [
-      1195697921,
-      1202080876,
-      1192226885,
-      1191806871,
-      1197611630,
-      1132543450,
-      1178117259,
-      1127819993,
-      853021554
+    // Selected Work — grouped into categories
+    const categories = [
+      { gridId: "grid-street-art", videoIds: [1195697921, 1192226885, 1127819993] },
+      { gridId: "grid-documentary", videoIds: [853021554, 1152485222, 1132543450] },
+      { gridId: "grid-dance-theatre", videoIds: [1202080876, 1178117259, 342951818] },
+      { gridId: "grid-music-festivals", videoIds: [1191806871, 1197611630, 1191806873] },
+      { gridId: "grid-experimental", videoIds: [317971978, 849446296, 233682218] }
     ];
 
-    const grid = document.getElementById("workGrid");
-
-    videoIds.forEach((id, i) => {
+    function buildVideoTile(id, index, label) {
       const wrapper = document.createElement("div");
       wrapper.className = "video-wrapper";
-      wrapper.style.animationDelay = `${1.4 + i * 0.08}s`;
+      wrapper.style.animationDelay = `${1.4 + index * 0.08}s`;
 
       const thumb = document.createElement("div");
       thumb.className = "thumb";
@@ -432,7 +468,6 @@ Based in Bulgaria. Working Worldwide.
 
       wrapper.appendChild(thumb);
       wrapper.appendChild(playBtn);
-      grid.appendChild(wrapper);
 
       // Fetch just the thumbnail via Vimeo's oEmbed endpoint —
       // no video, no player chrome loads until the user clicks.
@@ -448,10 +483,19 @@ Based in Bulgaria. Working Worldwide.
         });
 
       const play = () => {
-        wrapper.innerHTML = `<iframe src="https://player.vimeo.com/video/${id}?autoplay=1&title=0&byline=0&portrait=0&dnt=1" title="Ekzperimental — video ${i + 1}" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
+        wrapper.innerHTML = `<iframe src="https://player.vimeo.com/video/${id}?autoplay=1&title=0&byline=0&portrait=0&dnt=1" title="${label}" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
       };
 
       wrapper.addEventListener("click", play);
+
+      return wrapper;
+    }
+
+    categories.forEach((category) => {
+      const grid = document.getElementById(category.gridId);
+      category.videoIds.forEach((id, i) => {
+        grid.appendChild(buildVideoTile(id, i, `Ekzperimental — video ${id}`));
+      });
     });
   </script>
 </body>
