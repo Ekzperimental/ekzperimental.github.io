@@ -265,6 +265,13 @@
       .work-grid { grid-template-columns: 1fr; }
     }
 
+    .video-tile {
+      display: flex;
+      flex-direction: column;
+      opacity: 0;
+      animation: fadeIn 1.2s ease forwards;
+    }
+
     .video-wrapper {
       position: relative;
       width: 100%;
@@ -273,9 +280,7 @@
       border-radius: 10px;
       background: #0d0d0d;
       box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06);
-      opacity: 0;
       cursor: pointer;
-      animation: fadeIn 1.2s ease forwards;
       transition: transform 0.35s ease, box-shadow 0.35s ease;
     }
 
@@ -290,6 +295,14 @@
       width: 100%;
       height: 100%;
       border: 0;
+    }
+
+    .video-title {
+      margin: 10px 0 0;
+      font-size: 0.85rem;
+      color: #ccc;
+      line-height: 1.4;
+      text-align: center;
     }
 
     .thumb {
@@ -452,10 +465,13 @@ Based in Bulgaria. Working Worldwide.
       { gridId: "grid-experimental", videoIds: [317971978, 849446296, 233682218] }
     ];
 
-    function buildVideoTile(id, index, label) {
+    function buildVideoTile(id, index) {
+      const tile = document.createElement("div");
+      tile.className = "video-tile";
+      tile.style.animationDelay = `${1.4 + index * 0.08}s`;
+
       const wrapper = document.createElement("div");
       wrapper.className = "video-wrapper";
-      wrapper.style.animationDelay = `${1.4 + index * 0.08}s`;
 
       const thumb = document.createElement("div");
       thumb.className = "thumb";
@@ -469,7 +485,15 @@ Based in Bulgaria. Working Worldwide.
       wrapper.appendChild(thumb);
       wrapper.appendChild(playBtn);
 
-      // Fetch just the thumbnail via Vimeo's oEmbed endpoint —
+      const titleEl = document.createElement("p");
+      titleEl.className = "video-title";
+
+      tile.appendChild(wrapper);
+      tile.appendChild(titleEl);
+
+      let videoTitle = "Ekzperimental video";
+
+      // Fetch the thumbnail + title via Vimeo's oEmbed endpoint —
       // no video, no player chrome loads until the user clicks.
       fetch(`https://vimeo.com/api/oembed.json?url=https://vimeo.com/${id}&width=640`)
         .then((res) => res.json())
@@ -477,24 +501,31 @@ Based in Bulgaria. Working Worldwide.
           if (data.thumbnail_url) {
             thumb.style.backgroundImage = `url(${data.thumbnail_url})`;
           }
+          if (data.title) {
+            videoTitle = data.title;
+            titleEl.textContent = data.title;
+          } else {
+            titleEl.style.display = "none";
+          }
         })
         .catch(() => {
-          /* leaves the plain dark tile as fallback */
+          /* leaves the plain dark tile + no title as fallback */
+          titleEl.style.display = "none";
         });
 
       const play = () => {
-        wrapper.innerHTML = `<iframe src="https://player.vimeo.com/video/${id}?autoplay=1&title=0&byline=0&portrait=0&dnt=1" title="${label}" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
+        wrapper.innerHTML = `<iframe src="https://player.vimeo.com/video/${id}?autoplay=1&title=0&byline=0&portrait=0&dnt=1" title="${videoTitle}" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
       };
 
       wrapper.addEventListener("click", play);
 
-      return wrapper;
+      return tile;
     }
 
     categories.forEach((category) => {
       const grid = document.getElementById(category.gridId);
       category.videoIds.forEach((id, i) => {
-        grid.appendChild(buildVideoTile(id, i, `Ekzperimental — video ${id}`));
+        grid.appendChild(buildVideoTile(id, i));
       });
     });
   </script>
