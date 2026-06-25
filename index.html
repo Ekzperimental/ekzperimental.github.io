@@ -352,6 +352,15 @@
       margin-left: 2px;
     }
 
+    /* Touch devices have no real :hover — keep the play button visible
+       so it's actually usable, instead of relying on a hover that won't fire */
+    @media (hover: none) {
+      .play-btn {
+        opacity: 0.9;
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+
     footer {
       width: 100%;
       text-align: center;
