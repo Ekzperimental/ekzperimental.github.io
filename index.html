@@ -289,6 +289,55 @@ footer {
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(15px); }
       to { opacity: 1; transform: translateY(0); }
+
+		.portfolio {
+  width: min(1500px, 94%);
+  margin: 120px auto;
+  z-index: 1;
+}
+
+.portfolio h2 {
+  text-align: center;
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 50px;
+  letter-spacing: 2px;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.video-item {
+  transition: transform .3s ease;
+}
+
+.video-item:hover {
+  transform: translateY(-5px);
+}
+
+.video-item iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
+  border-radius: 14px;
+  background: #111;
+  box-shadow: 0 15px 35px rgba(0,0,0,.45);
+}
+
+@media (max-width: 1100px) {
+  .video-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+}
     }
   </style>
 </head>
@@ -327,6 +376,52 @@ Based in Bulgaria. Working worldwide.
 
     <a href="mailto:k.ekzarov@swkz.org" class="social">Let's work together</a>
   </div>
+
+	<section class="portfolio">
+
+  <h2>Films & Stories</h2>
+
+  <div class="video-grid">
+
+    <div class="video-item">
+      <iframe src="https://player.vimeo.com/video/1195697921" allowfullscreen></iframe>
+    </div>
+
+    <div class="video-item">
+      <iframe src="https://player.vimeo.com/video/1202080876" allowfullscreen></iframe>
+    </div>
+
+    <div class="video-item">
+      <iframe src="https://player.vimeo.com/video/1192226885" allowfullscreen></iframe>
+    </div>
+
+    <div class="video-item">
+      <iframe src="https://player.vimeo.com/video/1197611630" allowfullscreen></iframe>
+    </div>
+
+    <div class="video-item">
+      <iframe src="https://player.vimeo.com/video/1191806871" allowfullscreen></iframe>
+    </div>
+
+    <div class="video-item">
+      <iframe src="https://player.vimeo.com/video/1132543450" allowfullscreen></iframe>
+    </div>
+
+    <div class="video-item">
+      <iframe src="https://player.vimeo.com/video/1127819993" allowfullscreen></iframe>
+    </div>
+
+    <div class="video-item">
+      <iframe src="https://player.vimeo.com/video/1178117259" allowfullscreen></iframe>
+    </div>
+
+    <div class="video-item">
+      <iframe src="https://player.vimeo.com/video/853021554" allowfullscreen></iframe>
+    </div>
+
+  </div>
+
+</section>
 
   <footer>© 2026 Ekzperimental</footer>
 
