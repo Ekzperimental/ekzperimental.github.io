@@ -11,18 +11,20 @@
     body {
       margin: 0;
       padding: 0;
-      height: 100vh;
+      min-height: 100vh;
       background: #000;
       color: #f5f5f5;
       font-family: "Poppins", sans-serif;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
       text-align: center;
       position: relative;
       overflow-x: hidden;
-      overflow-y: auto;
+      padding-top: 10vh;
+      padding-bottom: 5vh;
+      box-sizing: border-box;
     }
 
     video.background-video {
@@ -34,6 +36,8 @@
       object-fit: cover;
       z-index: -2;
       filter: brightness(0.25) contrast(1.1) saturate(0.8);
+      transform: translateY(var(--scroll-offset, 0));
+      transition: transform 0.2s ease-out;
     }
 
     .overlay {
@@ -54,39 +58,16 @@
       height: 100%;
       pointer-events: none;
       background-image: url("https://www.transparenttextures.com/patterns/noise.png");
-      opacity: 0.08;
+      opacity: 0.09;
       mix-blend-mode: overlay;
       z-index: 0;
-      animation: grainMove 6s steps(10) infinite;
+      animation: grainMove 6s steps(10) infinite, flicker 0.12s infinite steps(2);
     }
 
     @keyframes grainMove {
       0%, 100% { transform: translate(0, 0); }
       50% { transform: translate(-1%, 1%); }
     }
-
-.grain {
-  opacity: 0.08;
-  animation: flicker 0.12s infinite steps(2);
-}
-
-@keyframes flicker {
-  0%, 100% { opacity: 0.09; }
-  50% { opacity: 0.13; }
-}
-
-
-.logo { animation-delay: 0.2s; }
-.subtitle { animation-delay: 0.6s; }
-.description { animation-delay: 1s; }
-.links { animation-delay: 1.4s; }
-.social { animation-delay: 1.8s; }
-
-video.background-video {
-  transform: translateY(var(--scroll-offset, 0));
-  transition: transform 0.2s ease-out;
-}
-
 
     .content {
       z-index: 1;
@@ -95,37 +76,20 @@ video.background-video {
       max-width: 600px;
     }
 
-    /* Логото става динамично и се адаптира към височината на екрана */
-img.logo {
-  width: clamp(100px, 20vw, 160px); /* 📱 между 100px и 160px в зависимост от ширината */
-  height: auto;
-  margin-bottom: 20px;
-  max-height: 25vh; /* 🧩 никога не заема повече от 1/4 от екрана */
-  opacity: 0;
-  animation: fadeIn 2s ease forwards;
-}
+    .logo { animation-delay: 0.2s; }
+    .subtitle { animation-delay: 0.6s; }
+    .description { animation-delay: 1s; }
+    .links { animation-delay: 1.4s; }
+    .social { animation-delay: 1.8s; }
 
-/* Контейнерът вече не е строго центриран по вертикала */
-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start; /* 🧭 започва отгоре, вместо да е 100% центриран */
-  align-items: center;
-  min-height: 100vh;
-  padding-top: 10vh; /* 🧩 малко въздух отгоре */
-  padding-bottom: 5vh;
-  box-sizing: border-box;
-  overflow-x: hidden;
-}
-
-/* На по-големи екрани запазваме класическия cinematic център */
-@media (min-height: 850px) {
-  body {
-    justify-content: center;
-    padding-top: 0;
-  }
-}
-
+    img.logo {
+      width: clamp(100px, 20vw, 160px);
+      height: auto;
+      margin-bottom: 20px;
+      max-height: 25vh;
+      opacity: 0;
+      animation: fadeIn 2s ease forwards;
+    }
 
     p.subtitle {
       font-size: 1rem;
@@ -163,17 +127,16 @@ body {
       100% { text-shadow: 0 0 2px rgba(255,255,255,0.1); }
     }
 
-   p.description {
-  font-size: clamp(0.95rem, 2vw, 1.1rem); /* адаптивен размер спрямо екрана */
-  color: #ccc;
-  line-height: 1.8;
-  margin-bottom: 40px;
-  white-space: pre-line; /* ✅ запазва оригиналните редове */
-  opacity: 0;
-  animation: fadeIn 2s ease 1s forwards;
-  text-shadow: 0 0 6px rgba(255, 255, 255, 0.05);
-}
-
+    p.description {
+      font-size: clamp(0.95rem, 2vw, 1.1rem);
+      color: #ccc;
+      line-height: 1.8;
+      margin-bottom: 40px;
+      white-space: pre-line;
+      opacity: 0;
+      animation: fadeIn 2s ease 1s forwards;
+      text-shadow: 0 0 6px rgba(255, 255, 255, 0.05);
+    }
 
     .links {
       display: flex;
@@ -184,7 +147,6 @@ body {
       animation: fadeIn 2s ease 1.5s forwards;
     }
 
-    /* ✴️ Buttons + noise hover */
     a.button {
       display: inline-block;
       padding: 12px 30px;
@@ -219,11 +181,10 @@ body {
       box-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
     }
 
-    /* 🖤 Contact us – само текст + noise при hover */
     a.social {
       display: inline-block;
       margin-top: 40px;
-      margin-bottom: 90px;
+      margin-bottom: 30px;
       font-weight: 500;
       color: #fff;
       text-decoration: none;
@@ -255,36 +216,82 @@ body {
       text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
     }
 
-    /* 🪶 Footer — динамичен, адаптивен към височината на екрана */
-footer {
-  width: 100%;
-  text-align: center;
-  font-size: 0.85rem;
-  color: #777;
-  letter-spacing: 1px;
-  opacity: 0;
-  animation: fadeIn 2s ease 2s forwards;
-  margin-top: 40px;
-  padding-bottom: 20px;
-}
+    /* ===== Selected Work — 3x3 video grid ===== */
+    .work {
+      z-index: 1;
+      position: relative;
+      width: 100%;
+      max-width: 1100px;
+      padding: 0 20px;
+      box-sizing: border-box;
+      margin-top: 20px;
+    }
 
-/* За по-големи екрани футърът стои фиксиран */
-@media (min-height: 700px) {
-  footer {
-    position: fixed;
-    bottom: 20px;
-    left: 0;
-  }
-}
+    p.work-label {
+      font-size: 1rem;
+      letter-spacing: 2px;
+      color: #aaa;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+      opacity: 0;
+      animation: fadeIn 2s ease 2.1s forwards;
+    }
 
-/* За мобилни и екрани с по-малка височина — отпускаме футъра под съдържанието */
-@media (max-height: 699px) {
-  footer {
-    position: static;
-    margin-top: 60px;
-  }
-}
+    p.work-label span {
+      color: #fff;
+    }
 
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    @media (max-width: 860px) {
+      .work-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 520px) {
+      .work-grid { grid-template-columns: 1fr; }
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border-radius: 10px;
+      background: #0d0d0d;
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06);
+      opacity: 0;
+      animation: fadeIn 1.2s ease forwards;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .video-wrapper:hover {
+      transform: translateY(-4px) scale(1.015);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.55), 0 0 18px rgba(255, 255, 255, 0.15);
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    footer {
+      width: 100%;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #777;
+      letter-spacing: 1px;
+      opacity: 0;
+      animation: fadeIn 2s ease 2.4s forwards;
+      margin-top: 50px;
+      padding-bottom: 10px;
+    }
 
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(15px); }
@@ -313,23 +320,27 @@ to short films and digital storytelling.
 
 Where movement speaks.
 Where stories dance.
-
-Based in Bulgaria. Working Worldwide.
 </p>
 
     <div class="links">
       <a href="https://vimeo.com/ekzperimental" target="_blank" class="button">Vimeo</a>
       <a href="https://www.youtube.com/ekzarka" target="_blank" class="button">YouTube</a>
       <a href="https://www.instagram.com/ekzarka/" target="_blank" class="button">Instagram</a>
-	<a href="https://www.tiktok.com/@s.glavata.nadolu" target="_blank" class="button">TikTok</a>
+      <a href="https://www.tiktok.com/@s.glavata.nadolu" target="_blank" class="button">TikTok</a>
     </div>
 
-    <a href="mailto:k.ekzarov@swkz.org" class="social">Let's work together.</a>
+    <a href="mailto:k.ekzarov@swkz.org" class="social">Contact us</a>
   </div>
+
+  <section class="work">
+    <p class="work-label">Selected <span>Work</span></p>
+    <div class="work-grid" id="workGrid"></div>
+  </section>
 
   <footer>© 2026 Ekzperimental</footer>
 
   <script>
+    // Cinematic word flicker on hover
     const word = document.querySelector(".cinematic");
     const originalText = "CINEMATIC";
     const altText = "YOUR";
@@ -346,6 +357,37 @@ Based in Bulgaria. Working Worldwide.
       clearTimeout(word.dataset.timeout);
       word.classList.remove("flicker");
       word.textContent = originalText;
+    });
+
+    // Selected Work — build the 3x3 grid from Vimeo IDs
+    const videoIds = [
+      1195697921,
+      1202080876,
+      1192226885,
+      1191806871,
+      1197611630,
+      1132543450,
+      1178117259,
+      1127819993,
+      853021554
+    ];
+
+    const grid = document.getElementById("workGrid");
+
+    videoIds.forEach((id, i) => {
+      const wrapper = document.createElement("div");
+      wrapper.className = "video-wrapper";
+      wrapper.style.animationDelay = `${2.2 + i * 0.1}s`;
+
+      const iframe = document.createElement("iframe");
+      iframe.src = `https://player.vimeo.com/video/${id}?title=0&byline=0&portrait=0&dnt=1`;
+      iframe.title = `Ekzperimental — video ${i + 1}`;
+      iframe.loading = "lazy";
+      iframe.allow = "autoplay; fullscreen; picture-in-picture";
+      iframe.allowFullscreen = true;
+
+      wrapper.appendChild(iframe);
+      grid.appendChild(wrapper);
     });
   </script>
 </body>
