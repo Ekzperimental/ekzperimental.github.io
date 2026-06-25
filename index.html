@@ -76,11 +76,15 @@
       max-width: 600px;
     }
 
+    .content-actions {
+      padding-top: 0;
+    }
+
     .logo { animation-delay: 0.2s; }
-    .subtitle { animation-delay: 0.6s; }
-    .description { animation-delay: 1s; }
-    .links { animation-delay: 1.4s; }
-    .social { animation-delay: 1.8s; }
+    .subtitle { animation-delay: 0.5s; }
+    .description { animation-delay: 0.9s; }
+    .links { animation-delay: 2.2s; }
+    .social { animation-delay: 2.5s; }
 
     img.logo {
       width: clamp(100px, 20vw, 160px);
@@ -131,7 +135,7 @@
       font-size: clamp(0.95rem, 2vw, 1.1rem);
       color: #ccc;
       line-height: 1.8;
-      margin-bottom: 40px;
+      margin-bottom: 0;
       white-space: pre-line;
       opacity: 0;
       animation: fadeIn 2s ease 1s forwards;
@@ -224,7 +228,7 @@
       max-width: 1100px;
       padding: 0 20px;
       box-sizing: border-box;
-      margin-top: 20px;
+      margin: 50px 0 30px;
     }
 
     p.work-label {
@@ -234,7 +238,7 @@
       text-transform: uppercase;
       margin-bottom: 30px;
       opacity: 0;
-      animation: fadeIn 2s ease 2.1s forwards;
+      animation: fadeIn 2s ease 1.3s forwards;
     }
 
     p.work-label span {
@@ -336,7 +340,7 @@
       color: #777;
       letter-spacing: 1px;
       opacity: 0;
-      animation: fadeIn 2s ease 2.4s forwards;
+      animation: fadeIn 2s ease 2.8s forwards;
       margin-top: 50px;
       padding-bottom: 10px;
     }
@@ -371,7 +375,14 @@ Where stories dance.
 
 Based in Bulgaria. Working Worldwide.
 </p>
+  </div>
 
+  <section class="work">
+    <p class="work-label">Selected <span>Work</span></p>
+    <div class="work-grid" id="workGrid"></div>
+  </section>
+
+  <div class="content content-actions">
     <div class="links">
       <a href="https://vimeo.com/ekzperimental" target="_blank" class="button">Vimeo</a>
       <a href="https://www.youtube.com/ekzarka" target="_blank" class="button">YouTube</a>
@@ -381,11 +392,6 @@ Based in Bulgaria. Working Worldwide.
 
     <a href="mailto:k.ekzarov@swkz.org" class="social">Let's work together</a>
   </div>
-
-  <section class="work">
-    <p class="work-label">Selected <span>Work</span></p>
-    <div class="work-grid" id="workGrid"></div>
-  </section>
 
   <footer>© 2026 Ekzperimental</footer>
 
@@ -427,7 +433,7 @@ Based in Bulgaria. Working Worldwide.
     videoIds.forEach((id, i) => {
       const wrapper = document.createElement("div");
       wrapper.className = "video-wrapper";
-      wrapper.style.animationDelay = `${2.2 + i * 0.1}s`;
+      wrapper.style.animationDelay = `${1.4 + i * 0.08}s`;
 
       const thumb = document.createElement("div");
       thumb.className = "thumb";
