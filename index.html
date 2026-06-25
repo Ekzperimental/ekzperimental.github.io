@@ -3,7 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ekzperimental</title>
+  <title>Ekzperimental — Cinematic Video Production Studio | Bulgaria</title>
+  <meta name="description" content="Ekzperimental is a creative video production collective based in Bulgaria, crafting cinematic documentaries, music videos, dance & theatre films, street art content and experimental short films." />
+  <link rel="canonical" href="https://ekzperimental.org/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Ekzperimental — Cinematic Video Production Studio" />
+  <meta property="og:description" content="Creative video production collective based in Bulgaria — cinematic documentaries, music videos, dance & theatre films, street art content and experimental short films." />
+  <meta property="og:url" content="https://ekzperimental.org/" />
+  <meta property="og:image" content="https://ekzperimental.org/logo.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ekzperimental — Cinematic Video Production Studio" />
+  <meta name="twitter:description" content="Creative video production collective based in Bulgaria — cinematic documentaries, music videos, dance & theatre films, street art content and experimental short films." />
+  <meta name="twitter:image" content="https://ekzperimental.org/logo.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Ekzperimental",
+    "url": "https://ekzperimental.org",
+    "logo": "https://ekzperimental.org/logo.png",
+    "description": "Creative video production collective based in Bulgaria, producing cinematic documentaries, music videos, dance & theatre films, street art content and experimental short films.",
+    "sameAs": [
+      "https://vimeo.com/ekzperimental",
+      "https://www.youtube.com/ekzarka",
+      "https://www.instagram.com/ekzarka/",
+      "https://www.tiktok.com/@s.glavata.nadolu"
+    ]
+  }
+  </script>
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
 
@@ -95,12 +125,13 @@
       animation: fadeIn 2s ease forwards;
     }
 
-    p.subtitle {
+    .subtitle {
       font-size: 1rem;
       letter-spacing: 2px;
       color: #aaa;
       text-transform: uppercase;
-      margin-bottom: 15px;
+      margin: 0 0 15px;
+      font-weight: 400;
       opacity: 0;
       animation: fadeIn 2s ease 0.5s forwards;
     }
@@ -242,11 +273,12 @@
 
     .category-label {
       font-size: 1rem;
+      font-weight: 400;
       letter-spacing: 2px;
       color: #aaa;
       text-transform: uppercase;
       text-align: center;
-      margin-bottom: 24px;
+      margin: 0 0 24px;
       opacity: 0;
       animation: fadeIn 2s ease 1.2s forwards;
     }
@@ -390,7 +422,7 @@
 
   <div class="content">
     <img src="logo.png" alt="Ekzperimental Logo" class="logo" />
-    <p class="subtitle">Shaping <span class="cinematic">CINEMATIC</span> visions</p>
+    <h1 class="subtitle">Shaping <span class="cinematic">CINEMATIC</span> visions</h1>
 
     <p class="description">
 Ekzperimental is a creative collective
@@ -407,27 +439,27 @@ Based in Bulgaria. Working Worldwide.
 
   <section class="work">
     <div class="work-category">
-      <p class="category-label">Street Art</p>
+      <h2 class="category-label">Street Art</h2>
       <div class="work-grid" id="grid-street-art"></div>
     </div>
 
     <div class="work-category">
-      <p class="category-label">Music &amp; Festivals</p>
+      <h2 class="category-label">Music &amp; Festivals</h2>
       <div class="work-grid" id="grid-music-festivals"></div>
     </div>
 
     <div class="work-category">
-      <p class="category-label">Documentary / С Главата Надолу</p>
+      <h2 class="category-label">Documentary / <span lang="bg">С Главата Надолу</span></h2>
       <div class="work-grid" id="grid-documentary"></div>
     </div>
 
     <div class="work-category">
-      <p class="category-label">Dance &amp; Theatre</p>
+      <h2 class="category-label">Dance &amp; Theatre</h2>
       <div class="work-grid" id="grid-dance-theatre"></div>
     </div>
 
     <div class="work-category">
-      <p class="category-label">Experimental</p>
+      <h2 class="category-label">Experimental</h2>
       <div class="work-grid" id="grid-experimental"></div>
     </div>
   </section>
@@ -440,7 +472,7 @@ Based in Bulgaria. Working Worldwide.
       <a href="https://www.tiktok.com/@s.glavata.nadolu" target="_blank" class="button">TikTok</a>
     </div>
 
-    <a href="mailto:k.ekzarov@swkz.org" class="social">Let's work together</a>
+    <a href="#" class="social" id="contactLink" data-mail="ay5la3phcm92QHN3a3oub3Jn">Let's work together</a>
   </div>
 
   <footer>© 2026 Ekzperimental</footer>
@@ -464,6 +496,11 @@ Based in Bulgaria. Working Worldwide.
       word.classList.remove("flicker");
       word.textContent = originalText;
     });
+
+    // Decode the contact email at runtime so it isn't sitting as
+    // plain text in the page source for spam bots to scrape.
+    const contactLink = document.getElementById("contactLink");
+    contactLink.href = `mailto:${atob(contactLink.dataset.mail)}`;
 
     // Selected Work — grouped into categories
     const categories = [
