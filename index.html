@@ -477,6 +477,78 @@
       margin: 80px 0 100px;
     }
 
+    .services {
+      z-index: 1;
+      position: relative;
+      width: 100%;
+      max-width: 1500px;
+      padding: 0 30px;
+      box-sizing: border-box;
+      margin: 80px 0 100px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    @media (max-width: 1100px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 600px) {
+      .services-grid { grid-template-columns: 1fr; }
+    }
+
+    .service-tile {
+      display: flex;
+      flex-direction: column;
+      opacity: 0;
+      animation: fadeIn 1.2s ease forwards;
+    }
+
+    .service-image-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border-radius: 10px;
+      background: #0d0d0d;
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .service-image-wrapper:hover {
+      transform: translateY(-4px) scale(1.015);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.55), 0 0 18px rgba(255, 255, 255, 0.15);
+    }
+
+    .service-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: brightness(0.78);
+      transition: filter 0.4s ease, transform 0.5s ease;
+    }
+
+    .service-image-wrapper:hover .service-image {
+      filter: brightness(0.55);
+      transform: scale(1.04);
+    }
+
+    .service-name {
+      margin: 10px 0 0;
+      text-align: left;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #ddd;
+      letter-spacing: 0.3px;
+    }
+
     .work-category {
       margin-bottom: 60px;
     }
@@ -683,6 +755,7 @@
 
 <body>
   <nav class="site-nav">
+    <a href="#services">Services</a>
     <a href="#work">Work</a>
     <a href="#about">About</a>
     <a href="#friends">Friends</a>
@@ -719,6 +792,50 @@
 
     <div class="divider"></div>
   </div>
+
+  <section class="services" id="services">
+    <h2 class="category-label">Services</h2>
+    <div class="services-grid">
+      <div class="service-tile">
+        <div class="service-image-wrapper">
+          <img src="service-documentary.jpg" alt="Documentary Films" class="service-image" />
+        </div>
+        <p class="service-name">Documentary Films</p>
+      </div>
+      <div class="service-tile">
+        <div class="service-image-wrapper">
+          <img src="service-commercial.jpg" alt="Commercial Production" class="service-image" />
+        </div>
+        <p class="service-name">Commercial Production</p>
+      </div>
+      <div class="service-tile">
+        <div class="service-image-wrapper">
+          <img src="service-music-videos.jpg" alt="Music Videos" class="service-image" />
+        </div>
+        <p class="service-name">Music Videos</p>
+      </div>
+      <div class="service-tile">
+        <div class="service-image-wrapper">
+          <img src="service-festivals.jpg" alt="Festival & Event Coverage" class="service-image" />
+        </div>
+        <p class="service-name">Festival &amp; Event Coverage</p>
+      </div>
+      <div class="service-tile">
+        <div class="service-image-wrapper">
+          <img src="service-dance-theatre.jpg" alt="Dance & Theatre Films" class="service-image" />
+        </div>
+        <p class="service-name">Dance &amp; Theatre Films</p>
+      </div>
+      <div class="service-tile">
+        <div class="service-image-wrapper">
+          <img src="service-video-editing.jpg" alt="Video Editing" class="service-image" />
+        </div>
+        <p class="service-name">Video Editing</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
 
   <section class="work" id="work">
     <div class="work-category">
