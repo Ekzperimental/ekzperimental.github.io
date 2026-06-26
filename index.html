@@ -203,6 +203,36 @@
       100% { text-shadow: 0 0 2px rgba(255,255,255,0.1); }
     }
 
+    .tagline {
+      font-size: clamp(0.95rem, 2vw, 1.05rem);
+      color: #ccc;
+      line-height: 1.7;
+      margin: 0 0 24px;
+      opacity: 0;
+      animation: fadeIn 2s ease 0.8s forwards;
+      text-shadow: 0 0 6px rgba(255, 255, 255, 0.05);
+    }
+
+    .founder-photo {
+      width: min(65%, 190px);
+      display: block;
+      margin: 0 auto 24px;
+      border-radius: 14px;
+      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.55);
+      filter: grayscale(0.12) contrast(1.05);
+      opacity: 0;
+      animation: fadeIn 2s ease 1s forwards;
+    }
+
+    .about-text {
+      font-size: clamp(0.92rem, 1.9vw, 1.02rem);
+      color: #ccc;
+      line-height: 1.8;
+      margin: 0 0 28px;
+      opacity: 0;
+      animation: fadeIn 2s ease 1.2s forwards;
+    }
+
     p.description {
       font-size: clamp(0.95rem, 2vw, 1.1rem);
       color: #ccc;
@@ -210,7 +240,7 @@
       margin-bottom: 30px;
       white-space: pre-line;
       opacity: 0;
-      animation: fadeIn 2s ease 0.9s forwards;
+      animation: fadeIn 2s ease 1.4s forwards;
       text-shadow: 0 0 6px rgba(255, 255, 255, 0.05);
     }
 
@@ -221,7 +251,7 @@
       line-height: 1.6;
       margin: 0 0 30px;
       opacity: 0;
-      animation: fadeIn 2s ease 1.2s forwards;
+      animation: fadeIn 2s ease 1.7s forwards;
     }
 
     .stats {
@@ -231,7 +261,7 @@
       gap: 28px;
       margin-bottom: 10px;
       opacity: 0;
-      animation: fadeIn 2s ease 1.5s forwards;
+      animation: fadeIn 2s ease 2s forwards;
     }
 
     .stat {
@@ -267,7 +297,7 @@
       flex-wrap: wrap;
       justify-content: center;
       opacity: 0;
-      animation: fadeIn 2s ease 2.8s forwards;
+      animation: fadeIn 2s ease 3.5s forwards;
     }
 
     a.button {
@@ -305,20 +335,25 @@
       box-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
     }
 
-    a.social {
+    .cta-button {
       display: inline-block;
-      margin-top: 40px;
-      margin-bottom: 30px;
-      font-weight: 500;
-      color: #fff;
+      padding: 15px 40px;
+      margin-bottom: 26px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.3px;
+      color: #0d0d0d;
+      background-color: #fff;
       text-decoration: none;
       opacity: 0;
-      animation: fadeIn 2s ease 3.1s forwards;
+      animation: fadeIn 2s ease 3.2s forwards;
       position: relative;
       overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
     }
 
-    a.social::after {
+    .cta-button::after {
       content: "";
       position: absolute;
       top: 0; left: 0;
@@ -329,14 +364,14 @@
       mix-blend-mode: overlay;
     }
 
-    a.social:hover::after {
-      opacity: 0.25;
+    .cta-button:hover::after {
+      opacity: 0.2;
     }
 
-    a.social:hover {
-      transform: translateY(-3px) scale(1.03);
-      filter: brightness(1.1);
-      text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    .cta-button:hover {
+      transform: translateY(-3px) scale(1.04);
+      filter: brightness(1.08);
+      box-shadow: 0 0 18px rgba(255, 255, 255, 0.35);
     }
 
     /* ===== Selected Work — categorized video grid ===== */
@@ -347,7 +382,7 @@
       max-width: 1500px;
       padding: 0 30px;
       box-sizing: border-box;
-      margin: 50px 0 80px;
+      margin: 80px 0 100px;
     }
 
     .work-category {
@@ -367,7 +402,7 @@
       text-align: center;
       margin: 0 0 24px;
       opacity: 0;
-      animation: fadeIn 2s ease 1.8s forwards;
+      animation: fadeIn 2s ease 2.3s forwards;
     }
 
     .work-grid {
@@ -484,20 +519,20 @@
       z-index: 1;
       position: relative;
       width: 100%;
-      max-width: 640px;
-      margin: 0 auto 70px;
+      max-width: 600px;
+      margin: 0 auto 100px;
       padding: 0 24px;
       box-sizing: border-box;
       opacity: 0;
-      animation: fadeIn 2s ease 2.4s forwards;
+      animation: fadeIn 2s ease 2.9s forwards;
     }
 
     .testimonial-quote {
-      font-size: clamp(1rem, 2.2vw, 1.2rem);
+      font-size: clamp(0.9rem, 1.8vw, 1.02rem);
       font-style: italic;
       color: #eee;
-      line-height: 1.8;
-      margin: 0 0 18px;
+      line-height: 1.75;
+      margin: 0 0 16px;
       text-shadow: 0 0 6px rgba(255, 255, 255, 0.05);
     }
 
@@ -528,8 +563,8 @@
       color: #777;
       letter-spacing: 1px;
       opacity: 0;
-      animation: fadeIn 2s ease 3.4s forwards;
-      margin-top: 50px;
+      animation: fadeIn 2s ease 3.8s forwards;
+      margin-top: 60px;
       padding-bottom: 10px;
     }
 
@@ -558,9 +593,13 @@
     <img src="logo.png" alt="Ekzperimental Logo" class="logo" />
     <h1 class="subtitle">Shaping <span class="cinematic">CINEMATIC</span> visions</h1>
 
-    <p class="description">
-From concept to final edit — directing, filming and post-production.
+    <p class="tagline">From concept to final edit — directing, filming and post-production.</p>
 
+    <img src="kostadin-ekzarov.jpg" alt="Kostadin Ekzarov, founder of Ekzperimental, filming on location" class="founder-photo" />
+
+    <p class="about-text">Ekzperimental is an independent production studio founded by Kostadin Ekzarov, focused on documentary storytelling, commercial films and music videos. We combine cinematic visuals with authentic narratives to create work that resonates with audiences.</p>
+
+    <p class="description">
 Where movement speaks.
 Where stories dance.
 
@@ -615,14 +654,14 @@ Based in Bulgaria. Working Worldwide.
   </section>
 
   <div class="content content-actions" id="contact">
+    <a href="#" class="cta-button" id="contactLink" data-mail="ay5la3phcm92QHN3a3oub3Jn">Let's create something together</a>
+
     <div class="links">
       <a href="https://vimeo.com/ekzperimental" target="_blank" class="button">Vimeo</a>
       <a href="https://www.youtube.com/ekzarka" target="_blank" class="button">YouTube</a>
       <a href="https://www.instagram.com/ekzarka/" target="_blank" class="button">Instagram</a>
       <a href="https://www.tiktok.com/@s.glavata.nadolu" target="_blank" class="button">TikTok</a>
     </div>
-
-    <a href="#" class="social" id="contactLink" data-mail="ay5la3phcm92QHN3a3oub3Jn">Let's work together</a>
   </div>
 
   <footer>© 2026 Ekzperimental</footer>
@@ -664,7 +703,7 @@ Based in Bulgaria. Working Worldwide.
     function buildVideoTile(id, index) {
       const tile = document.createElement("div");
       tile.className = "video-tile";
-      tile.style.animationDelay = `${2.0 + index * 0.08}s`;
+      tile.style.animationDelay = `${2.5 + index * 0.08}s`;
 
       const wrapper = document.createElement("div");
       wrapper.className = "video-wrapper";
