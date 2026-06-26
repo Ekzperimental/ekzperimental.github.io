@@ -458,12 +458,26 @@
       border: 0;
     }
 
-    .video-title {
-      margin: 10px 0 0;
-      font-size: 0.85rem;
-      color: #ccc;
-      line-height: 1.4;
-      text-align: center;
+    .video-meta {
+      margin-top: 10px;
+      text-align: left;
+    }
+
+    .video-meta p {
+      margin: 0 0 3px;
+      font-size: 0.75rem;
+      line-height: 1.5;
+    }
+
+    .meta-label {
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-right: 6px;
+    }
+
+    .meta-value {
+      color: #ddd;
     }
 
     .thumb {
@@ -697,16 +711,60 @@ Based in Bulgaria. Working Worldwide.
     const contactLink = document.getElementById("contactLink");
     contactLink.href = `mailto:${atob(contactLink.dataset.mail)}`;
 
-    // Selected Work — grouped into categories
+    // Selected Work — grouped into categories.
+    // Fill in project / role / year for each video below.
+    // "category" defaults to the section name but can be overridden per video if needed.
     const categories = [
-      { gridId: "grid-street-art", videoIds: [1195697921, 1192226885, 1127819993] },
-      { gridId: "grid-documentary", videoIds: [853021554, 1152485222, 1132543450] },
-      { gridId: "grid-dance-theatre", videoIds: [1202080876, 1178117259, 342951818] },
-      { gridId: "grid-music-festivals", videoIds: [1191806871, 1197611630, 1191806873] },
-      { gridId: "grid-experimental", videoIds: [317971978, 849446296, 233682218] }
+      {
+        gridId: "grid-street-art",
+        category: "Street Art",
+        videos: [
+          { id: 1195697921, project: "Орфей и вечността - Mural painting by Jermain", role: "Director • Video Editor • Colorist", year: "2026" },
+          { id: 1192226885, project: "RODOPA GLOW XPOME", role: "Video Editor", year: "Year" },
+          { id: 1127819993, project: "Упование - Mural painting by Jermain", role: "Role Name", year: "Year" }
+        ]
+      },
+      {
+        gridId: "grid-documentary",
+        category: "Documentary",
+        videos: [
+          { id: 853021554, project: "Project Name", role: "Role Name", year: "Year" },
+          { id: 1152485222, project: "Project Name", role: "Role Name", year: "Year" },
+          { id: 1132543450, project: "Project Name", role: "Role Name", year: "Year" }
+        ]
+      },
+      {
+        gridId: "grid-dance-theatre",
+        category: "Dance & Theatre",
+        videos: [
+          { id: 1202080876, project: "Project Name", role: "Role Name", year: "Year" },
+          { id: 1178117259, project: "Project Name", role: "Role Name", year: "Year" },
+          { id: 342951818, project: "Project Name", role: "Role Name", year: "Year" }
+        ]
+      },
+      {
+        gridId: "grid-music-festivals",
+        category: "Music & Festivals",
+        videos: [
+          { id: 1191806871, project: "Project Name", role: "Role Name", year: "Year" },
+          { id: 1197611630, project: "Project Name", role: "Role Name", year: "Year" },
+          { id: 1191806873, project: "Project Name", role: "Role Name", year: "Year" }
+        ]
+      },
+      {
+        gridId: "grid-experimental",
+        category: "Experimental",
+        videos: [
+          { id: 317971978, project: "Project Name", role: "Role Name", year: "Year" },
+          { id: 849446296, project: "Project Name", role: "Role Name", year: "Year" },
+          { id: 233682218, project: "Project Name", role: "Role Name", year: "Year" }
+        ]
+      }
     ];
 
-    function buildVideoTile(id, index) {
+    function buildVideoTile(video, category, index) {
+      const { id, project, role, year } = video;
+
       const tile = document.createElement("div");
       tile.className = "video-tile";
       tile.style.animationDelay = `${2.5 + index * 0.08}s`;
@@ -726,36 +784,34 @@ Based in Bulgaria. Working Worldwide.
       wrapper.appendChild(thumb);
       wrapper.appendChild(playBtn);
 
-      const titleEl = document.createElement("p");
-      titleEl.className = "video-title";
+      const meta = document.createElement("div");
+      meta.className = "video-meta";
+      meta.innerHTML = `
+        <p><span class="meta-label">Project</span><span class="meta-value">${project}</span></p>
+        <p><span class="meta-label">Category</span><span class="meta-value">${category}</span></p>
+        <p><span class="meta-label">Role</span><span class="meta-value">${role}</span></p>
+        <p><span class="meta-label">Year</span><span class="meta-value">${year}</span></p>
+      `;
 
       tile.appendChild(wrapper);
-      tile.appendChild(titleEl);
+      tile.appendChild(meta);
 
-      let videoTitle = "Ekzperimental video";
-
-      // Fetch the thumbnail + title via Vimeo's oEmbed endpoint —
+      // Fetch just the thumbnail via Vimeo's oEmbed endpoint —
       // no video, no player chrome loads until the user clicks.
+      // The title from Vimeo itself is intentionally not shown.
       fetch(`https://vimeo.com/api/oembed.json?url=https://vimeo.com/${id}&width=640`)
         .then((res) => res.json())
         .then((data) => {
           if (data.thumbnail_url) {
             thumb.style.backgroundImage = `url(${data.thumbnail_url})`;
           }
-          if (data.title) {
-            videoTitle = data.title;
-            titleEl.textContent = data.title;
-          } else {
-            titleEl.style.display = "none";
-          }
         })
         .catch(() => {
-          /* leaves the plain dark tile + no title as fallback */
-          titleEl.style.display = "none";
+          /* leaves the plain dark tile as fallback */
         });
 
       const play = () => {
-        wrapper.innerHTML = `<iframe src="https://player.vimeo.com/video/${id}?autoplay=1&title=0&byline=0&portrait=0&dnt=1" title="${videoTitle}" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
+        wrapper.innerHTML = `<iframe src="https://player.vimeo.com/video/${id}?autoplay=1&title=0&byline=0&portrait=0&dnt=1" title="${project}" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
       };
 
       wrapper.addEventListener("click", play);
@@ -765,8 +821,8 @@ Based in Bulgaria. Working Worldwide.
 
     categories.forEach((category) => {
       const grid = document.getElementById(category.gridId);
-      category.videoIds.forEach((id, i) => {
-        grid.appendChild(buildVideoTile(id, i));
+      category.videos.forEach((video, i) => {
+        grid.appendChild(buildVideoTile(video, category.category, i));
       });
     });
   </script>
