@@ -38,6 +38,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
 
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       padding: 0;
@@ -97,6 +101,49 @@
     @keyframes grainMove {
       0%, 100% { transform: translate(0, 0); }
       50% { transform: translate(-1%, 1%); }
+    }
+
+    /* ===== Top-right nav ===== */
+    .site-nav {
+      position: fixed;
+      top: 28px;
+      right: 36px;
+      z-index: 10;
+      display: flex;
+      gap: 26px;
+      opacity: 0;
+      animation: fadeIn 1.5s ease 0.1s forwards;
+    }
+
+    .site-nav a {
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.55);
+      text-decoration: none;
+      text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    .site-nav a:hover {
+      color: #fff;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+    }
+
+    @media (max-width: 480px) {
+      .site-nav {
+        top: 18px;
+        right: 18px;
+        gap: 16px;
+      }
+      .site-nav a {
+        font-size: 0.65rem;
+        letter-spacing: 1.5px;
+      }
+    }
+
+    #work, #about, #contact {
+      scroll-margin-top: 90px;
     }
 
     .content {
@@ -292,7 +339,7 @@
       text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
     }
 
-    /* ===== Selected Work — 3x3 video grid ===== */
+    /* ===== Selected Work — categorized video grid ===== */
     .work {
       z-index: 1;
       position: relative;
@@ -494,6 +541,12 @@
 </head>
 
 <body>
+  <nav class="site-nav">
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
   <video class="background-video" autoplay muted loop playsinline>
     <source src="background.mp4" type="video/mp4" />
   </video>
@@ -501,7 +554,7 @@
   <div class="overlay"></div>
   <div class="grain"></div>
 
-  <div class="content">
+  <div class="content" id="about">
     <img src="logo.png" alt="Ekzperimental Logo" class="logo" />
     <h1 class="subtitle">Shaping <span class="cinematic">CINEMATIC</span> visions</h1>
 
@@ -529,7 +582,7 @@ Based in Bulgaria. Working Worldwide.
     </div>
   </div>
 
-  <section class="work">
+  <section class="work" id="work">
     <div class="work-category">
       <h2 class="category-label">Street Art</h2>
       <div class="work-grid" id="grid-street-art"></div>
@@ -561,7 +614,7 @@ Based in Bulgaria. Working Worldwide.
     <p class="testimonial-author">Delyana Angelova — <span>Visionary Foundation</span></p>
   </section>
 
-  <div class="content content-actions">
+  <div class="content content-actions" id="contact">
     <div class="links">
       <a href="https://vimeo.com/ekzperimental" target="_blank" class="button">Vimeo</a>
       <a href="https://www.youtube.com/ekzarka" target="_blank" class="button">YouTube</a>
