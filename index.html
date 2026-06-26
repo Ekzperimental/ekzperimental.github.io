@@ -110,12 +110,6 @@
       padding-top: 0;
     }
 
-    .logo { animation-delay: 0.2s; }
-    .subtitle { animation-delay: 0.5s; }
-    .description { animation-delay: 0.9s; }
-    .links { animation-delay: 2.2s; }
-    .social { animation-delay: 2.5s; }
-
     img.logo {
       width: clamp(100px, 20vw, 160px);
       height: auto;
@@ -166,11 +160,58 @@
       font-size: clamp(0.95rem, 2vw, 1.1rem);
       color: #ccc;
       line-height: 1.8;
-      margin-bottom: 0;
+      margin-bottom: 30px;
       white-space: pre-line;
       opacity: 0;
-      animation: fadeIn 2s ease 1s forwards;
+      animation: fadeIn 2s ease 0.9s forwards;
       text-shadow: 0 0 6px rgba(255, 255, 255, 0.05);
+    }
+
+    .bridge {
+      font-size: clamp(1rem, 2.2vw, 1.15rem);
+      font-weight: 600;
+      color: #fff;
+      line-height: 1.6;
+      margin: 0 0 30px;
+      opacity: 0;
+      animation: fadeIn 2s ease 1.2s forwards;
+    }
+
+    .stats {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+      margin-bottom: 10px;
+      opacity: 0;
+      animation: fadeIn 2s ease 1.5s forwards;
+    }
+
+    .stat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .stat-number {
+      font-size: clamp(1.6rem, 4vw, 2.1rem);
+      font-weight: 600;
+      color: #fff;
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.7rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #aaa;
+      margin-top: 6px;
+    }
+
+    .stat-divider {
+      width: 1px;
+      height: 36px;
+      background: rgba(255, 255, 255, 0.18);
     }
 
     .links {
@@ -179,7 +220,7 @@
       flex-wrap: wrap;
       justify-content: center;
       opacity: 0;
-      animation: fadeIn 2s ease 1.5s forwards;
+      animation: fadeIn 2s ease 2.8s forwards;
     }
 
     a.button {
@@ -225,8 +266,7 @@
       color: #fff;
       text-decoration: none;
       opacity: 0;
-      animation: fadeIn 2s ease 1.8s forwards;
-      transition: transform 0.3s ease, filter 0.3s ease, text-shadow 0.3s ease;
+      animation: fadeIn 2s ease 3.1s forwards;
       position: relative;
       overflow: hidden;
     }
@@ -280,7 +320,7 @@
       text-align: center;
       margin: 0 0 24px;
       opacity: 0;
-      animation: fadeIn 2s ease 1.2s forwards;
+      animation: fadeIn 2s ease 1.8s forwards;
     }
 
     .work-grid {
@@ -393,6 +433,47 @@
       }
     }
 
+    .testimonial {
+      z-index: 1;
+      position: relative;
+      width: 100%;
+      max-width: 640px;
+      margin: 0 auto 70px;
+      padding: 0 24px;
+      box-sizing: border-box;
+      opacity: 0;
+      animation: fadeIn 2s ease 2.4s forwards;
+    }
+
+    .testimonial-quote {
+      font-size: clamp(1rem, 2.2vw, 1.2rem);
+      font-style: italic;
+      color: #eee;
+      line-height: 1.8;
+      margin: 0 0 18px;
+      text-shadow: 0 0 6px rgba(255, 255, 255, 0.05);
+    }
+
+    .testimonial-quote::before {
+      content: "“";
+    }
+
+    .testimonial-quote::after {
+      content: "”";
+    }
+
+    .testimonial-author {
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #aaa;
+      margin: 0;
+    }
+
+    .testimonial-author span {
+      color: #fff;
+    }
+
     footer {
       width: 100%;
       text-align: center;
@@ -400,7 +481,7 @@
       color: #777;
       letter-spacing: 1px;
       opacity: 0;
-      animation: fadeIn 2s ease 2.8s forwards;
+      animation: fadeIn 2s ease 3.4s forwards;
       margin-top: 50px;
       padding-bottom: 10px;
     }
@@ -425,16 +506,30 @@
     <h1 class="subtitle">Shaping <span class="cinematic">CINEMATIC</span> visions</h1>
 
     <p class="description">
-We create cinematic visual stories for brands, artists and companies.
+Ekzperimental is a creative collective
+producing bold, cinematic content —
+from documentaries and music videos
+to short films and digital storytelling.
 
-From concept to final edit — directing, filming and post-production.
+Where movement speaks.
+Where stories dance.
 
-Based in Bulgaria. Working worldwide.
-      
-
-Documentary filmmaking • Commercial production • Music videos • Editing • Color grading • Creative direction
-
+Based in Bulgaria. Working Worldwide.
 </p>
+
+    <p class="bridge">We create cinematic visual stories for brands, artists, festivals and companies.</p>
+
+    <div class="stats">
+      <div class="stat">
+        <span class="stat-number">10+</span>
+        <span class="stat-label">Years of Experience</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-number">100+</span>
+        <span class="stat-label">Projects Realised</span>
+      </div>
+    </div>
   </div>
 
   <section class="work">
@@ -462,6 +557,11 @@ Documentary filmmaking • Commercial production • Music videos • Editing �
       <h2 class="category-label">Experimental</h2>
       <div class="work-grid" id="grid-experimental"></div>
     </div>
+  </section>
+
+  <section class="testimonial">
+    <p class="testimonial-quote">The personal touch always matters and I believe Kossyo proved to add his signature approach to every photo or a video he shoots! Loved our collaborative work in 2025 and most definitely would to have you in my team this year again!</p>
+    <p class="testimonial-author">Delyana Angelova — <span>Visionary Foundation</span></p>
   </section>
 
   <div class="content content-actions">
@@ -507,14 +607,14 @@ Documentary filmmaking • Commercial production • Music videos • Editing �
       { gridId: "grid-street-art", videoIds: [1195697921, 1192226885, 1127819993] },
       { gridId: "grid-documentary", videoIds: [853021554, 1152485222, 1132543450] },
       { gridId: "grid-dance-theatre", videoIds: [1202080876, 1178117259, 342951818] },
-      { gridId: "grid-music-festivals", videoIds: [1191806871, 1197611630, 1191806870] },
+      { gridId: "grid-music-festivals", videoIds: [1191806871, 1197611630, 1191806873] },
       { gridId: "grid-experimental", videoIds: [317971978, 849446296, 233682218] }
     ];
 
     function buildVideoTile(id, index) {
       const tile = document.createElement("div");
       tile.className = "video-tile";
-      tile.style.animationDelay = `${1.4 + index * 0.08}s`;
+      tile.style.animationDelay = `${2.0 + index * 0.08}s`;
 
       const wrapper = document.createElement("div");
       wrapper.className = "video-wrapper";
