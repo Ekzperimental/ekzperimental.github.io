@@ -610,9 +610,8 @@
   <div class="overlay"></div>
   <div class="grain"></div>
 
-  <div class="content" id="about">
+  <div class="content">
     <img src="logo.png" alt="Ekzperimental Logo" class="logo" />
-    <h1 class="subtitle">Shaping <span class="cinematic">CINEMATIC</span> visions</h1>
 
     <p class="tagline">Documentary. Commercial. Music Videos. Cultural Projects.</p>
 
@@ -696,25 +695,6 @@
   <footer>© 2026 Ekzperimental</footer>
 
   <script>
-    // Cinematic word flicker on hover
-    const word = document.querySelector(".cinematic");
-    const originalText = "CINEMATIC";
-    const altText = "YOUR";
-
-    word.addEventListener("mouseenter", () => {
-      word.classList.add("flicker");
-      let flickerTimeout = setTimeout(() => {
-        word.textContent = altText;
-      }, 200);
-      word.dataset.timeout = flickerTimeout;
-    });
-
-    word.addEventListener("mouseleave", () => {
-      clearTimeout(word.dataset.timeout);
-      word.classList.remove("flicker");
-      word.textContent = originalText;
-    });
-
     // Decode the contact email at runtime so it isn't sitting as
     // plain text in the page source for spam bots to scrape.
     const contactLink = document.getElementById("contactLink");
