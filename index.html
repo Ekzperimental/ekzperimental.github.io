@@ -352,6 +352,46 @@
       height: 82% !important;
     }
 
+    .about-photos {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      margin: 10px 0 0;
+      opacity: 0;
+      animation: fadeIn 2s ease 1.5s forwards;
+    }
+
+    .about-photo {
+      width: 288px;
+      height: 288px;
+      border-radius: 18px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.06);
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .about-photo:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.18), 0 10px 24px rgba(0, 0, 0, 0.45);
+    }
+
+    .about-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    @media (max-width: 640px) {
+      .about-photo {
+        width: 42vw;
+        height: 42vw;
+      }
+    }
+
     a.button {
       display: inline-block;
       padding: 9px 22px;
@@ -711,7 +751,7 @@
 
   <div class="divider"></div>
 
-  <section class="content about-section" id="about">
+  <section class="content about-section" id="about" style="max-width: 980px;">
 
   <h2 class="category-label">About</h2>
   
@@ -719,6 +759,18 @@
    <br><br>
    Founded by filmmaker Kostadin Ekzarov, we create documentaries, commercial films, music videos and cultural projects with a focus on authentic storytelling and cinematic craft.
  </p>
+
+  <div class="about-photos">
+    <div class="about-photo">
+      <img src="kostadin-ekzarov-01.png" alt="Kostadin Ekzarov on set" />
+    </div>
+    <div class="about-photo">
+      <img src="kostadin-ekzarov-02.png" alt="Kostadin Ekzarov filming" />
+    </div>
+    <div class="about-photo">
+      <img src="kostadin-ekzarov-03.png" alt="Kostadin Ekzarov on location" />
+    </div>
+  </div>
 
 </section>
     
