@@ -256,6 +256,18 @@
       font-size: clamp(0.62rem, 3.2vw, 1.02rem);
     }
 
+    .about-founded-line {
+      display: inline-block;
+      max-width: 560px;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      .about-founded-line {
+        max-width: 100%;
+      }
+    }
+
     p.description {
       font-size: clamp(0.95rem, 2vw, 1.1rem);
       color: #ccc;
@@ -268,7 +280,7 @@
     }
 
     .bridge {
-      font-size: clamp(1rem, 2.2vw, 1.15rem);
+      font-size: clamp(1.07rem, 2.35vw, 1.23rem);
       font-weight: 600;
       color: #fff;
       line-height: 1.6;
@@ -774,7 +786,7 @@
       letter-spacing: 1px;
       opacity: 0;
       animation: fadeIn 2s ease 3.8s forwards;
-      margin-top: 60px;
+      margin-top: 42px;
       padding-bottom: 10px;
     }
 
@@ -905,7 +917,7 @@
   
  <p class="about-text"><span class="about-line">Ekzperimental is an independent production studio based in Bulgaria.</span>
    <br><br>
-   Founded by filmmaker Kostadin Ekzarov, we create documentaries, commercial films, music videos and cultural projects with a focus on authentic storytelling and cinematic craft.
+   <span class="about-founded-line">Founded by filmmaker Kostadin Ekzarov, we create documentaries, commercial films, music videos and cultural projects with a focus on authentic storytelling and cinematic craft.</span>
    <br><br>
    Based in Bulgaria. Working Worldwide.
  </p>
