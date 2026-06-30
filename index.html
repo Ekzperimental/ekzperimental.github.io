@@ -514,6 +514,36 @@
       margin: 80px 0 100px;
     }
 
+    .showreel-wrapper {
+      z-index: 1;
+      position: relative;
+      width: 100%;
+      max-width: 1100px;
+      padding: 0 30px;
+      box-sizing: border-box;
+      margin: 10px 0 40px;
+      opacity: 0;
+      animation: fadeIn 2s ease 1.1s forwards;
+    }
+
+    .showreel-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #0d0d0d;
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08), 0 20px 50px rgba(0, 0, 0, 0.5);
+    }
+
+    .showreel-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
     .services {
       z-index: 1;
       position: relative;
@@ -818,7 +848,15 @@
     <img src="logo.png" alt="Ekzperimental Logo" class="logo" />
 
     <p class="tagline">Documentary. Commercial. Music Videos. Cultural Projects.</p>
+  </div>
 
+  <div class="showreel-wrapper">
+    <div class="showreel-frame">
+      <iframe src="https://player.vimeo.com/video/1205541908?title=0&byline=0&portrait=0&dnt=1" title="Ekzperimental Showreel" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <div class="content">
     <a href="#" class="cta-button" id="contactLink" data-mail="ay5la3phcm92QHN3a3oub3Jn">Let's Work Together</a>
 
     <p class="bridge">We craft films that connect people, brands and culture.</p>
