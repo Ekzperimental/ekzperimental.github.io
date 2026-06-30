@@ -518,7 +518,7 @@
       z-index: 1;
       position: relative;
       width: 100%;
-      max-width: 1100px;
+      max-width: 1240px;
       padding: 0 30px;
       box-sizing: border-box;
       margin: 10px 0 40px;
@@ -534,6 +534,13 @@
       overflow: hidden;
       background: #0d0d0d;
       box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08), 0 20px 50px rgba(0, 0, 0, 0.5);
+      cursor: pointer;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .showreel-frame:hover {
+      transform: translateY(-4px) scale(1.012);
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.14), 0 28px 60px rgba(0, 0, 0, 0.6), 0 0 24px rgba(255, 255, 255, 0.12);
     }
 
     .showreel-frame iframe {
@@ -542,6 +549,60 @@
       width: 100%;
       height: 100%;
       border: 0;
+    }
+
+    .showreel-thumb {
+      position: absolute;
+      inset: 0;
+      background-color: #111;
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.75);
+      transition: filter 0.4s ease, transform 0.5s ease;
+    }
+
+    .showreel-frame:hover .showreel-thumb {
+      filter: brightness(0.5);
+      transform: scale(1.03);
+    }
+
+    .showreel-play-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 84px;
+      height: 84px;
+      padding: 0;
+      border: none;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.92);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: translate(-50%, -50%) scale(0.9);
+      opacity: 0;
+      cursor: pointer;
+      transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .showreel-frame:hover .showreel-play-btn {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+      box-shadow: 0 0 24px rgba(255, 255, 255, 0.35);
+    }
+
+    .showreel-play-btn svg {
+      width: 28px;
+      height: 28px;
+      fill: #0d0d0d;
+      margin-left: 4px;
+    }
+
+    @media (hover: none) {
+      .showreel-play-btn {
+        opacity: 0.9;
+        transform: translate(-50%, -50%) scale(1);
+      }
     }
 
     .services {
@@ -851,8 +912,11 @@
   </div>
 
   <div class="showreel-wrapper">
-    <div class="showreel-frame">
-      <iframe src="https://player.vimeo.com/video/1205541908?title=0&byline=0&portrait=0&dnt=1" title="Ekzperimental Showreel" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+    <div class="showreel-frame" id="showreelFrame">
+      <div class="showreel-thumb" id="showreelThumb"></div>
+      <button class="showreel-play-btn" id="showreelPlayBtn" type="button" aria-label="Play showreel">
+        <svg viewBox="0 0 24 24"><path d="M5 3l16 9-16 9V3z"/></svg>
+      </button>
     </div>
   </div>
 
@@ -1130,6 +1194,32 @@
         grid.appendChild(buildVideoTile(video, category.category, i));
       });
     });
+
+    // Hero showreel — same pattern as the Work tiles: fetch only the
+    // thumbnail via oEmbed first, swap in the real player (with
+    // autoplay) only once the person clicks.
+    (function () {
+      const SHOWREEL_ID = "1205541908";
+      const frame = document.getElementById("showreelFrame");
+      const thumb = document.getElementById("showreelThumb");
+
+      fetch(`https://vimeo.com/api/oembed.json?url=https://vimeo.com/${SHOWREEL_ID}&width=1280`)
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.thumbnail_url) {
+            thumb.style.backgroundImage = `url(${data.thumbnail_url})`;
+          }
+        })
+        .catch(() => {
+          /* leaves the plain dark frame as fallback */
+        });
+
+      const play = () => {
+        frame.innerHTML = `<iframe src="https://player.vimeo.com/video/${SHOWREEL_ID}?autoplay=1&title=0&byline=0&portrait=0&dnt=1" title="Ekzperimental Showreel" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
+      };
+
+      frame.addEventListener("click", play);
+    })();
   </script>
 </body>
 </html>
