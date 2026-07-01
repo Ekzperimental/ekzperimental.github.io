@@ -134,6 +134,7 @@
 
     .tagline {
       font-size: clamp(0.95rem, 2vw, 1.05rem);
+      font-weight: 400;
       color: #ccc; line-height: 1.7; margin: 0 0 24px;
       opacity: 0; animation: fadeIn 2s ease 0.8s forwards;
       text-shadow: 0 0 6px rgba(255,255,255,0.05);
@@ -544,10 +545,10 @@
   <div class="overlay"></div>
   <div class="grain"></div>
 
-  <div class="content" id="home">
+  <section class="content" id="home">
     <img src="logo.png" alt="Ekzperimental Logo" class="logo" />
-    <p class="tagline">Documentary. Commercial. Music Videos. Cultural Projects.</p>
-  </div>
+    <h1 class="tagline">Documentary. Commercial. Music Videos. Cultural Projects.</h1>
+  </section>
 
   <div class="showreel-wrapper">
     <div class="showreel-frame" id="showreelFrame">
@@ -674,10 +675,10 @@
     <p class="testimonial-author">Delyana Angelova — <span>Visionary Foundation</span></p>
   </section>
 
-  <div class="content content-actions" id="contact">
+  <section class="content content-actions" id="friends">
     <div class="divider"></div>
 
-    <h2 class="category-label" id="friends">Friends</h2>
+    <h2 class="category-label">Friends</h2>
 
     <div class="friends-grid">
       <div class="friend-logo" role="img" aria-label="Visionary">
@@ -690,8 +691,12 @@
         <img src="dancingplay-logo.png" alt="Dancing Play logo" class="friend-logo-img-large" />
       </div>
     </div>
+  </section>
 
+  <section class="content content-actions" id="contact">
     <div class="divider"></div>
+
+    <h2 class="category-label">Contact</h2>
 
     <p class="vimeo-note">Explore the complete collection of films on Vimeo</p>
 
@@ -701,7 +706,7 @@
       <a href="https://www.instagram.com/ekzarka/" target="_blank" class="button">Instagram</a>
       <a href="https://www.tiktok.com/@s.glavata.nadolu" target="_blank" class="button">TikTok</a>
     </div>
-  </div>
+  </section>
 
   <footer>© 2026 Ekzperimental</footer>
 
