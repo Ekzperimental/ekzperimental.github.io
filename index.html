@@ -489,6 +489,25 @@
       opacity: 0; animation: fadeIn 1s ease 1s forwards;
     }
 
+    .contact-details {
+      display: grid; gap: 8px; margin: -4px auto 22px;
+      max-width: 560px; text-align: center;
+      opacity: 0; animation: fadeIn 1s ease 1.05s forwards;
+    }
+
+    .contact-details p {
+      margin: 0; color: #aaa; font-size: 0.85rem; line-height: 1.6;
+    }
+
+    .contact-details a {
+      color: #EFBF00; text-decoration: none; font-weight: 600;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    .contact-details a:hover {
+      color: #fff; text-shadow: 0 0 10px rgba(239,191,0,0.35);
+    }
+
     .links {
       display: flex; gap: 15px; flex-wrap: wrap; justify-content: center;
       opacity: 0; animation: fadeIn 1s ease 1.2s forwards;
@@ -1011,6 +1030,12 @@
 
     <h2 class="category-label">Contact</h2>
 
+    <div class="contact-details">
+      <p>Email: <a href="#" id="emailLink" data-mail="ay5la3phcm92QHN3a3oub3Jn"></a></p>
+      <p>Based in Bulgaria</p>
+      <p>Available for international projects</p>
+    </div>
+
     <p class="vimeo-note">Explore the complete collection of films on Vimeo</p>
 
     <div class="links">
@@ -1025,7 +1050,11 @@
 
   <script>
     const contactLink = document.getElementById("contactLink");
-    contactLink.href = `mailto:${atob(contactLink.dataset.mail)}`;
+    const emailLink = document.getElementById("emailLink");
+    const email = atob(contactLink.dataset.mail);
+    contactLink.href = `mailto:${email}`;
+    emailLink.href = `mailto:${email}`;
+    emailLink.textContent = email;
 
     const categories = [
       {
