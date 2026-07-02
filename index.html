@@ -27,16 +27,116 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Ekzperimental",
-    "url": "https://ekzperimental.org",
-    "logo": "https://ekzperimental.org/logo.png",
-    "description": "Ekzperimental is an independent documentary and commercial video production studio based in Bulgaria, creating films for brands, artists, cultural organizations and public institutions.",
-    "sameAs": [
-      "https://vimeo.com/ekzperimental",
-      "https://www.youtube.com/ekzarka",
-      "https://www.instagram.com/ekzarka/",
-      "https://www.tiktok.com/@s.glavata.nadolu"
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://ekzperimental.org/#organization",
+        "name": "Ekzperimental",
+        "url": "https://ekzperimental.org",
+        "logo": "https://ekzperimental.org/logo.png",
+        "description": "Ekzperimental is an independent documentary and commercial video production studio based in Bulgaria, creating films for brands, artists, cultural organizations and public institutions.",
+        "sameAs": [
+          "https://vimeo.com/ekzperimental",
+          "https://www.youtube.com/ekzarka",
+          "https://www.instagram.com/ekzarka/",
+          "https://www.tiktok.com/@s.glavata.nadolu"
+        ]
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://ekzperimental.org/#professional-service",
+        "name": "Ekzperimental Video Production Studio",
+        "url": "https://ekzperimental.org",
+        "image": "https://ekzperimental.org/og-image.jpg",
+        "logo": "https://ekzperimental.org/logo.png",
+        "description": "Independent video production studio based in Bulgaria, creating documentaries, commercial films, music videos, festival coverage, dance and theatre films, and video editing for brands, artists and cultural organizations.",
+        "areaServed": [
+          {
+            "@type": "Country",
+            "name": "Bulgaria"
+          },
+          {
+            "@type": "Place",
+            "name": "Worldwide"
+          }
+        ],
+        "founder": {
+          "@type": "Person",
+          "name": "Kostadin Ekzarov"
+        },
+        "sameAs": [
+          "https://vimeo.com/ekzperimental",
+          "https://www.youtube.com/ekzarka",
+          "https://www.instagram.com/ekzarka/",
+          "https://www.tiktok.com/@s.glavata.nadolu"
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Video production services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Documentary Films",
+                "description": "Authentic stories for NGOs, artists and cultural institutions."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Commercial Production",
+                "description": "Purpose-driven films for brands and organizations."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Music Videos",
+                "description": "Visual storytelling for musicians and creative projects."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Festival & Event Coverage",
+                "description": "Capturing the energy of unforgettable live experiences."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Dance & Theatre Films",
+                "description": "Preserving movement through expressive visual storytelling."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Video Editing",
+                "description": "Crafting compelling stories through thoughtful editing."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "VideoObject",
+        "@id": "https://ekzperimental.org/#showreel",
+        "name": "Ekzperimental Showreel",
+        "description": "Selected work by Ekzperimental Video Production Studio, featuring documentaries, music videos, cultural projects, festival coverage and experimental films.",
+        "thumbnailUrl": "https://ekzperimental.org/og-image.jpg",
+        "embedUrl": "https://player.vimeo.com/video/1205541908",
+        "contentUrl": "https://vimeo.com/1205541908",
+        "publisher": {
+          "@id": "https://ekzperimental.org/#organization"
+        }
+      }
     ]
   }
   </script>
