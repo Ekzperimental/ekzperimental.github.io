@@ -664,6 +664,7 @@
       box-shadow: 0 0 0 1px rgba(255,255,255,0.18), 0 10px 24px rgba(0,0,0,0.45);
     }
 
+    .about-photo picture { display: block; width: 100%; height: 100%; }
     .about-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
     @media (max-width: 640px) { .about-photos { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
@@ -1056,42 +1057,60 @@
     <div class="services-grid">
       <div class="service-tile">
         <div class="service-image-wrapper">
-          <img src="service-documentary.jpg" alt="Documentary Films" class="service-image" />
+          <picture>
+            <source srcset="service-documentary.webp" type="image/webp" />
+            <img src="service-documentary.jpg" alt="Documentary Films" class="service-image" loading="lazy" decoding="async" />
+          </picture>
         </div>
         <p class="service-name">Documentary Films</p>
         <p class="service-description">Authentic stories for NGOs, artists and cultural institutions.</p>
       </div>
       <div class="service-tile">
         <div class="service-image-wrapper">
-          <img src="service-commercial.jpg" alt="Commercial Production" class="service-image" />
+          <picture>
+            <source srcset="service-commercial.webp" type="image/webp" />
+            <img src="service-commercial.jpg" alt="Commercial Production" class="service-image" loading="lazy" decoding="async" />
+          </picture>
         </div>
         <p class="service-name">Commercial Production</p>
         <p class="service-description">Purpose-driven films for brands and organizations.</p>
       </div>
       <div class="service-tile">
         <div class="service-image-wrapper">
-          <img src="service-music-videos.jpg" alt="Music Videos" class="service-image" />
+          <picture>
+            <source srcset="service-music-videos.webp" type="image/webp" />
+            <img src="service-music-videos.jpg" alt="Music Videos" class="service-image" loading="lazy" decoding="async" />
+          </picture>
         </div>
         <p class="service-name">Music Videos</p>
         <p class="service-description">Visual storytelling for musicians and creative projects.</p>
       </div>
       <div class="service-tile">
         <div class="service-image-wrapper">
-          <img src="service-festivals.jpg" alt="Festival &amp; Event Coverage" class="service-image" />
+          <picture>
+            <source srcset="service-festivals.webp" type="image/webp" />
+            <img src="service-festivals.jpg" alt="Festival &amp; Event Coverage" class="service-image" loading="lazy" decoding="async" />
+          </picture>
         </div>
         <p class="service-name">Festival &amp; Event Coverage</p>
         <p class="service-description">Capturing the energy of unforgettable live experiences.</p>
       </div>
       <div class="service-tile">
         <div class="service-image-wrapper">
-          <img src="service-dance-theatre.jpg" alt="Dance &amp; Theatre Films" class="service-image" />
+          <picture>
+            <source srcset="service-dance-theatre.webp" type="image/webp" />
+            <img src="service-dance-theatre.jpg" alt="Dance &amp; Theatre Films" class="service-image" loading="lazy" decoding="async" />
+          </picture>
         </div>
         <p class="service-name">Dance &amp; Theatre Films</p>
         <p class="service-description">Preserving movement through expressive visual storytelling.</p>
       </div>
       <div class="service-tile">
         <div class="service-image-wrapper">
-          <img src="service-video-editing.jpg" alt="Video Editing" class="service-image" />
+          <picture>
+            <source srcset="service-video-editing.webp" type="image/webp" />
+            <img src="service-video-editing.jpg" alt="Video Editing" class="service-image" loading="lazy" decoding="async" />
+          </picture>
         </div>
         <p class="service-name">Video Editing</p>
         <p class="service-description">Crafting compelling stories through thoughtful editing.</p>
@@ -1112,16 +1131,28 @@
     </p>
     <div class="about-photos">
       <div class="about-photo">
-        <img src="kostadin-ekzarov-01.png" alt="Kostadin Ekzarov on set" />
+        <picture>
+          <source srcset="kostadin-ekzarov-01.webp" type="image/webp" />
+          <img src="kostadin-ekzarov-01.png" alt="Kostadin Ekzarov on set" loading="lazy" decoding="async" />
+        </picture>
       </div>
       <div class="about-photo">
-        <img src="kostadin-ekzarov-03.png" alt="Kostadin Ekzarov on location" />
+        <picture>
+          <source srcset="kostadin-ekzarov-03.webp" type="image/webp" />
+          <img src="kostadin-ekzarov-03.png" alt="Kostadin Ekzarov on location" loading="lazy" decoding="async" />
+        </picture>
       </div>
       <div class="about-photo">
-        <img src="kostadin-ekzarov-04.png" alt="Kostadin Ekzarov preparing drone equipment outdoors" />
+        <picture>
+          <source srcset="kostadin-ekzarov-04.webp" type="image/webp" />
+          <img src="kostadin-ekzarov-04.png" alt="Kostadin Ekzarov preparing drone equipment outdoors" loading="lazy" decoding="async" />
+        </picture>
       </div>
       <div class="about-photo">
-        <img src="kostadin-ekzarov-02.png" alt="Kostadin Ekzarov filming" />
+        <picture>
+          <source srcset="kostadin-ekzarov-02.webp" type="image/webp" />
+          <img src="kostadin-ekzarov-02.png" alt="Kostadin Ekzarov filming" loading="lazy" decoding="async" />
+        </picture>
       </div>
     </div>
   </section>
