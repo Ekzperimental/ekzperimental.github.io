@@ -445,19 +445,42 @@
 
     @media (max-width: 600px) { .about-founded-line { max-width: 100%; } }
 
+    .concept-flow {
+      max-width: 720px;
+    }
+
+    .concept-flow .cta-button {
+      display: inline-flex; align-items: center; justify-content: center;
+      margin-bottom: 28px;
+    }
+
+    .flow-kicker {
+      display: block; margin: 0 0 12px;
+      font-size: 0.72rem; letter-spacing: 2.4px;
+      text-transform: uppercase; color: #EFBF00;
+      opacity: 0; animation: fadeIn 1s ease 0.5s forwards;
+    }
+
     .bridge {
-      font-size: clamp(1.07rem, 2.35vw, 1.23rem);
-      font-weight: 600; color: #fff; line-height: 1.6; margin: 0 0 30px;
+      max-width: 620px; margin: 0 auto 26px;
+      font-size: clamp(1.08rem, 2vw, 1.28rem);
+      font-weight: 600; color: #fff; line-height: 1.55;
       opacity: 0; animation: fadeIn 1s ease 0.65s forwards;
     }
 
     .stats {
       display: flex; align-items: center; justify-content: center;
-      gap: 28px; margin-bottom: 10px;
+      gap: 0; width: min(100%, 560px); margin: 0 auto;
+      padding: 16px 0;
+      border-top: 1px solid rgba(255,255,255,0.16);
+      border-bottom: 1px solid rgba(255,255,255,0.16);
       opacity: 0; animation: fadeIn 1s ease 0.8s forwards;
     }
 
-    .stat { display: flex; flex-direction: column; align-items: center; }
+    .stat {
+      min-width: 112px;
+      display: flex; flex-direction: column; align-items: center;
+    }
 
     .stat-number {
       font-size: clamp(1.6rem, 4vw, 2.1rem);
@@ -470,17 +493,20 @@
     }
 
     .stat-divider {
-      width: 1px; height: 36px; background: rgba(255,255,255,0.18);
+      width: 1px; height: 38px; margin: 0 22px;
+      background: rgba(255,255,255,0.18);
     }
 
     .process {
-      margin: 30px auto 0;
+      max-width: 640px; margin: 24px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.12);
       opacity: 0; animation: fadeIn 1s ease 0.9s forwards;
     }
 
     .process-title {
-      margin: 0 0 14px;
-      font-size: 0.75rem; letter-spacing: 2px;
+      margin: 0 0 16px;
+      font-size: 0.72rem; letter-spacing: 2.2px;
       text-transform: uppercase; color: #aaa;
       font-weight: 400;
     }
@@ -491,18 +517,53 @@
     }
 
     .process-step {
-      color: #ddd; font-size: 0.82rem; line-height: 1.4;
+      position: relative; padding-top: 15px;
+      color: #ddd; font-size: 0.78rem; line-height: 1.4;
       font-weight: 600; white-space: nowrap;
+      opacity: 0; animation: processStepIn 0.75s ease forwards;
+    }
+
+    .process-step::before {
+      content: ""; position: absolute; top: 0; left: 50%;
+      width: 6px; height: 6px; border-radius: 50%;
+      background: #EFBF00; transform: translateX(-50%);
+      box-shadow: 0 0 10px rgba(239,191,0,0.35);
     }
 
     .process-arrow {
       color: #EFBF00; font-size: 0.9rem;
-      line-height: 1; opacity: 0.9;
+      line-height: 1; opacity: 0; transform: translateY(7px);
+      animation: processArrowIn 0.75s ease forwards;
+    }
+
+    .process-steps > :nth-child(1) { animation-delay: 1s; }
+    .process-steps > :nth-child(2) { animation-delay: 1.12s; }
+    .process-steps > :nth-child(3) { animation-delay: 1.24s; }
+    .process-steps > :nth-child(4) { animation-delay: 1.36s; }
+    .process-steps > :nth-child(5) { animation-delay: 1.48s; }
+    .process-steps > :nth-child(6) { animation-delay: 1.6s; }
+    .process-steps > :nth-child(7) { animation-delay: 1.72s; }
+    .process-steps > :nth-child(8) { animation-delay: 1.84s; }
+    .process-steps > :nth-child(9) { animation-delay: 1.96s; }
+
+    @keyframes processStepIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes processArrowIn {
+      from { opacity: 0; transform: translateY(11px); }
+      to { opacity: 0.75; transform: translateY(7px); }
     }
 
     @media (max-width: 600px) {
-      .process { margin-top: 26px; }
-      .process-steps { gap: 8px 10px; }
+      .concept-flow { padding-left: 18px; padding-right: 18px; }
+      .stats { width: 100%; padding: 16px 0; }
+      .stat { min-width: 84px; }
+      .stat-label { font-size: 0.58rem; letter-spacing: 0.7px; }
+      .stat-divider { height: 34px; margin: 0 10px; }
+      .process { margin-top: 24px; padding-top: 20px; }
+      .process-steps { gap: 10px 9px; }
       .process-step { font-size: 0.74rem; }
       .process-arrow { font-size: 0.78rem; }
     }
@@ -913,17 +974,23 @@
     </div>
   </div>
 
-  <div class="content">
+  <div class="content concept-flow">
     <a href="#" class="cta-button" id="contactLink" data-mail="ay5la3phcm92QHN3a3oub3Jn">Let's Work Together</a>
+    <span class="flow-kicker">From idea to final cut</span>
     <p class="bridge">We craft films that connect people, brands and culture.</p>
     <div class="stats">
       <div class="stat">
-        <span class="stat-number">10+</span>
+        <span class="stat-number" data-count="5" data-suffix="+">0+</span>
+        <span class="stat-label">Creative Fields</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-number" data-count="10" data-suffix="+">0+</span>
         <span class="stat-label">Years of Experience</span>
       </div>
       <div class="stat-divider"></div>
       <div class="stat">
-        <span class="stat-number">100+</span>
+        <span class="stat-number" data-count="100" data-suffix="+">0+</span>
         <span class="stat-label">Projects Completed</span>
       </div>
     </div>
@@ -1103,6 +1170,54 @@
     contactLink.href = `mailto:${email}`;
     emailLink.href = `mailto:${email}`;
     emailLink.textContent = email;
+
+    const statNumbers = document.querySelectorAll(".stat-number[data-count]");
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    function animateStatNumber(el) {
+      const target = Number(el.dataset.count);
+      const suffix = el.dataset.suffix || "";
+      const duration = 1100;
+      const start = performance.now();
+
+      function update(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = `${Math.round(target * eased)}${suffix}`;
+
+        if (progress < 1) requestAnimationFrame(update);
+      }
+
+      requestAnimationFrame(update);
+    }
+
+    function startStatCounters() {
+      statNumbers.forEach((el) => {
+        if (el.dataset.animated) return;
+        el.dataset.animated = "true";
+
+        if (prefersReducedMotion) {
+          el.textContent = `${el.dataset.count}${el.dataset.suffix || ""}`;
+        } else {
+          animateStatNumber(el);
+        }
+      });
+    }
+
+    if ("IntersectionObserver" in window) {
+      const statsObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          startStatCounters();
+          observer.disconnect();
+        });
+      }, { threshold: 0.35 });
+
+      const statsElement = document.querySelector(".stats");
+      if (statsElement) statsObserver.observe(statsElement);
+    } else {
+      startStatCounters();
+    }
 
     const categories = [
       {
