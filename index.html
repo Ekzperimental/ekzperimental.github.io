@@ -603,6 +603,21 @@
       color: #fff; text-shadow: 0 0 10px rgba(239,191,0,0.35);
     }
 
+    .contact-cta {
+      margin: 6px auto 28px;
+      opacity: 0; animation: fadeIn 1s ease 1.12s forwards;
+    }
+
+    .contact-cta p {
+      margin: 0 0 14px;
+      color: #fff; font-size: clamp(1rem, 2vw, 1.12rem);
+      font-weight: 600; line-height: 1.55;
+    }
+
+    .contact-cta .button {
+      padding: 12px 30px;
+    }
+
     .links {
       display: flex; gap: 15px; flex-wrap: wrap; justify-content: center;
       opacity: 0; animation: fadeIn 1s ease 1.2s forwards;
@@ -1151,6 +1166,11 @@
       <p>Available for international projects</p>
     </div>
 
+    <div class="contact-cta">
+      <p>Have a project in mind? Let’s talk.</p>
+      <a href="#" class="button" id="startProjectLink" data-mail="ay5la3phcm92QHN3a3oub3Jn">Start a Project</a>
+    </div>
+
     <p class="vimeo-note">Explore the complete collection of films on Vimeo</p>
 
     <div class="links">
@@ -1166,10 +1186,12 @@
   <script>
     const contactLink = document.getElementById("contactLink");
     const emailLink = document.getElementById("emailLink");
+    const startProjectLink = document.getElementById("startProjectLink");
     const email = atob(contactLink.dataset.mail);
     contactLink.href = `mailto:${email}`;
     emailLink.href = `mailto:${email}`;
     emailLink.textContent = email;
+    startProjectLink.href = `mailto:${email}?subject=Project%20Inquiry`;
 
     const statNumbers = document.querySelectorAll(".stat-number[data-count]");
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
