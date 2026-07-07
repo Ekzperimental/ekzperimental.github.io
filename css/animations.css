@@ -1,0 +1,73 @@
+@keyframes lightDrift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.72;
+  }
+
+  50% {
+    transform: translate3d(0.75rem, -1rem, 0) scale(1.04);
+    opacity: 0.82;
+  }
+}
+
+@keyframes scrollPulse {
+  0%,
+  100% {
+    transform: scaleY(0.35);
+    transform-origin: top;
+  }
+
+  50% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(0.85rem);
+  transition:
+    opacity 900ms var(--ease-out),
+    transform 900ms var(--ease-out);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal:nth-child(2) {
+  transition-delay: 90ms;
+}
+
+.reveal:nth-child(3) {
+  transition-delay: 180ms;
+}
+
+.reveal:nth-child(4) {
+  transition-delay: 270ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__video,
+  .hero__light,
+  .scroll-indicator__line {
+    animation: none;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .services-list {
+    --services-progress: 1;
+  }
+
+  .service-card {
+    opacity: 1;
+    transform: none;
+  }
+}
