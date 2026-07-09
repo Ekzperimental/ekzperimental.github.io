@@ -1062,6 +1062,34 @@ main {
   text-decoration-color: rgb(216 184 106 / 0.56);
 }
 
+.contact__portfolio-link {
+  color: rgb(247 243 234 / 0.68);
+  font-size: 0.64rem;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+  opacity: 0.68;
+  text-decoration: none;
+  transition:
+    color 280ms var(--ease-out),
+    opacity 280ms var(--ease-out);
+}
+
+.contact__portfolio-link span {
+  display: inline-block;
+  transition: transform 280ms var(--ease-out);
+}
+
+.contact__portfolio-link:hover,
+.contact__portfolio-link:focus-visible {
+  color: var(--color-text);
+  opacity: 1;
+}
+
+.contact__portfolio-link:hover span,
+.contact__portfolio-link:focus-visible span {
+  transform: translateX(0.3rem);
+}
+
 .site-footer {
   position: relative;
   z-index: 1;
