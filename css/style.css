@@ -979,6 +979,10 @@ main {
   --partner-logo-padding: clamp(2.65rem, 4.3vw, 3.6rem);
 }
 
+.partners-grid__logo--soul-dynamite {
+  --partner-logo-padding: clamp(2.25rem, 3.7vw, 3.1rem);
+}
+
 .partners-grid__logo--wax {
   --partner-logo-padding: clamp(2.45rem, 4vw, 3.35rem);
 }
@@ -1208,7 +1212,7 @@ main {
   }
 
   .partners-grid {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .process-strip ol {
