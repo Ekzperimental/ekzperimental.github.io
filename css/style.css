@@ -932,6 +932,14 @@ main {
   align-items: center;
 }
 
+.partners-grid a {
+  display: block;
+}
+
+.partners-grid a:focus-visible {
+  outline: none;
+}
+
 .partners-grid img {
   --partner-logo-padding: var(--space-4);
   width: 100%;
