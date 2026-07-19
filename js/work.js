@@ -3,12 +3,11 @@ const previewByCategory = {
   Documentary: "assets/images/work-documentary.jpg",
   "Dance & Theatre": "assets/images/work-dance-theatre.jpg",
   "Music & Festivals": "assets/images/work-festivals.jpg",
-  Experimental: "assets/images/work-video-editing.jpg",
 };
 
 const projects = [
   { id: "1195697921", category: "Street Art", title: "Орфей и вечността - Mural painting by Jermain", displayTitle: "Орфей и вечността", role: "Director / Videographer / Video Editor", year: "2026" },
-  { id: "1209839499", category: "Street Art", title: "True Rokin Soul 20th Anniversary", role: "Videographer / Video Editor", year: "2026" },
+  { id: "1209839499", category: "Street Art", title: "True Rokin Soul 20th Anniversary", role: "Videographer / Video Editor", year: "2026", thumbnail: "https://i.vimeocdn.com/video/2179550200-065054d166eb4e43911003fe3544a678d15bd753df4f0fed37d4e91ad93de209-d_2400?region=us" },
   { id: "1192226885", category: "Street Art", title: "RODOPA GLOW XPOME", role: "Video Editor", year: "2026" },
   { id: "1127819993", category: "Street Art", title: "Упование - Mural painting by Jermain", displayTitle: "Упование", role: "Director / Videographer / Video Editor", year: "2026" },
   { id: "1191806871", category: "Music & Festivals", title: "Фестивал - СМОЛЯН НА МЛАДИТЕ - Ден 1", displayTitle: "Смолян на младите", role: "Director / Videographer / Video Editor", year: "2026" },
@@ -16,13 +15,13 @@ const projects = [
   { id: "342951818", category: "Dance & Theatre", title: "FLAVA HOUSE - Това Не Е Спектакъл", displayTitle: "Flava House", role: "Director / Video Editor", year: "2019" },
   { id: "1191806873", category: "Music & Festivals", title: "Фестивал - СМОЛЯН НА МЛАДИТЕ - Recap", displayTitle: "Festival Recap", role: "Director / Videographer / Video Editor", year: "2026" },
   { id: "1178117259", category: "Dance & Theatre", title: "ПРОСТО ДЖЕМ 3", displayTitle: "Просто Джем", role: "Director / Videographer / Video Editor", year: "2026" },
-  { id: "317971978", category: "Experimental", title: "Вплитане", role: "Director / Video Editor", year: "2019" },
+  { id: "317971978", category: "Dance & Theatre", title: "Вплитане", role: "Director / Video Editor", year: "2019" },
   { id: "853021554", category: "Documentary", title: "РУСИ - С Главата Надолу С02 Е20", displayTitle: "Руси", role: "Director / Videographer / Video Editor", year: "2023" },
   { id: "1152485222", category: "Documentary", title: "DJ NOT EASY - Запис на плочи", displayTitle: "DJ Not Eazy", role: "Director / Videographer / Video Editor", year: "2025" },
   { id: "1132543450", category: "Documentary", title: "STARTERAs - BREAKIN' B.A.P.", displayTitle: "STARTERAs", role: "Director / Videographer / Video Editor", year: "2025" },
   { id: "1197611630", category: "Music & Festivals", title: "Q-TEK - СЕРИОЗНИ ИГРАЧИ", displayTitle: "Q-TEK", role: "Director / Videographer / Video Editor", year: "2026" },
-  { id: "849446296", category: "Experimental", title: "Fun", displayTitle: "FUN", role: "Director / Videographer / Video Editor", year: "2023" },
-  { id: "233682218", category: "Experimental", title: "FLAVA HOUSE - Продължавай", displayTitle: "Продължавай", role: "Director / Video Editor", year: "2017" },
+  { id: "849446296", category: "Dance & Theatre", title: "Fun", displayTitle: "FUN", role: "Director / Videographer / Video Editor", year: "2023" },
+  { id: "233682218", category: "Dance & Theatre", title: "FLAVA HOUSE - Продължавай", displayTitle: "Продължавай", role: "Director / Video Editor", year: "2017" },
 ];
 
 const desktopMasonryOrder = [0, 3, 4, 6, 9, 10, 12, 15, 1, 2, 5, 7, 8, 11, 13, 14];
@@ -41,7 +40,7 @@ function createProjectCard(project) {
   article.dataset.reveal = "";
 
   const fallbackImage = previewByCategory[project.category];
-  const thumbnail = `https://vumbnail.com/${project.id}.jpg`;
+  const thumbnail = project.thumbnail || `https://vumbnail.com/${project.id}.jpg`;
   const displayTitle = project.displayTitle || project.title;
   article.innerHTML = `
     <button class="work-card__button" type="button" data-video-open data-video-id="${project.id}" data-video-title="${project.title}">
