@@ -65,11 +65,11 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/components.css?v=20260707-32">
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/style.css?v=20260715-04">
+    <link rel="stylesheet" href="css/animations.css?v=20260716-03">
+    <link rel="stylesheet" href="css/style.css?v=20260716-09">
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script type="module" src="js/main.js?v=20260715-01"></script>
+    <script type="module" src="js/main.js?v=20260716-03"></script>
   </head>
 
   <body>
@@ -261,6 +261,59 @@
         </div>
       </section>
 
+      <section class="testimonials section" id="testimonials" aria-labelledby="testimonials-title">
+        <div class="container section-heading reveal" data-reveal>
+          <p class="eyebrow">What it’s like working together</p>
+          <h2 id="testimonials-title">Words from the people we've worked with.</h2>
+        </div>
+        <div class="container testimonials-grid reveal" data-reveal>
+          <figure class="testimonial">
+            <span class="testimonial__index" aria-hidden="true">01</span>
+            <img class="testimonial__portrait" src="assets/images/testimonial-delyana-angelova.webp" alt="Portrait of Delyana Angelova" width="800" height="800" loading="lazy" decoding="async">
+            <blockquote>
+              <p>Working with Kostadin Ekzarov and Ezkperimental is far from an experiment - it is a privilege. From the very beginning, Kostadin brings creativity, professionalism, and an exceptional eye for visual storytelling to every project.</p>
+              <p>His attention to detail and commitment to excellence are evident in every frame. He has a remarkable ability to transform ideas into compelling visual narratives that not only capture attention but also take the viewer on an emotional journey.</p>
+              <p>What truly sets Ezkperimental apart is the dedication to achieving the highest quality while making the entire creative process smooth, collaborative, and enjoyable. He consistently exceeds expectations, delivering stunning results that elevate the final production and leave a lasting impression.</p>
+              <p>I can wholeheartedly recommend Kostadin Ekzarov and Ezkperimental to anyone looking for outstanding video production and cinematic storytelling. Having him as part of your team is not just an advantage - it is a genuine privilege.</p>
+            </blockquote>
+            <figcaption>
+              <strong>Delyana Angelova</strong>
+              <span>Visionary Foundation / Co-founder / Opportunity creator</span>
+            </figcaption>
+          </figure>
+          <figure class="testimonial">
+            <span class="testimonial__index" aria-hidden="true">02</span>
+            <img class="testimonial__portrait" src="assets/images/testimonial-tzvetina-matova.webp" alt="Portrait of Tzvetina Matova" width="800" height="800" loading="lazy" decoding="async">
+            <blockquote>
+              <p>Kostadin demonstrated a high level of professionalism throughout every stage of our collaboration, from pre-production and filming to the post-production process. He works in an organized and reliable manner, consistently meets deadlines, and maintains clear and timely communication throughout the entire project.</p>
+              <p>One of his greatest strengths is his ability to recognize the dramatic essence of an event and translate it into a compelling visual narrative. The films and trailers he creates go beyond simple documentation-they communicate a cohesive artistic vision that reflects the identity and objectives of each project.</p>
+              <p>Kostadin is proactive, contributes thoughtful creative ideas and solutions, and at the same time works seamlessly within project requirements while responding constructively to feedback. He demonstrates exceptional attention to detail, precision in editing, and a strong sense of pacing, rhythm, and emotional impact.</p>
+              <p>During our collaboration on filming stage performances, as well as creating trailers for Dancing Play and the 2Touch dance programme, Kostadin consistently delivered work of a high professional standard. His commitment to quality and dedication to achieving the best possible result were evident throughout the entire process.</p>
+              <p>I consider Kostadin to be a reliable, responsible, and highly creative professional. I would confidently recommend Kostadin Ekzarov as a videographer and video artist for projects that require a combination of technical expertise, artistic sensitivity, and a professional approach.</p>
+            </blockquote>
+            <figcaption>
+              <strong>Tzvetina Matova</strong>
+              <span>"Creators Association" / Choreographer, Dancer, Playback Theatre Performer and Organizer</span>
+            </figcaption>
+          </figure>
+          <figure class="testimonial">
+            <span class="testimonial__index" aria-hidden="true">03</span>
+            <img class="testimonial__portrait" src="assets/images/testimonial-sonja-yosifov.webp" alt="Portrait of Sonja Yosifov" width="800" height="800" loading="lazy" decoding="async">
+            <blockquote>
+              <p>Working with Kostadin Ekzarov (Ekzarka) has been an absolute pleasure. We have collaborated on several projects, and every time he has exceeded my expectations.</p>
+              <p>Kostadin is far more than a professional videographer and editor - he is a visual storyteller. To me, his videos are genuine works of art. He has an exceptional eye for detail, movement, expressions, and emotion, and he captures the true atmosphere and energy of every event. By skillfully combining different cameras, lenses, and equipment, he creates cinematic visuals that feel both authentic and captivating.</p>
+              <p>What impresses me even more is his editing. He has a remarkable ability to make completely different shots flow together seamlessly, creating a natural rhythm that keeps the viewer engaged from beginning to end. Every transition feels intentional, and every frame serves the story.</p>
+              <p>Beyond his creative talent, Kostadin is incredibly professional. He is precise, reliable, and consistently delivers on time - often even ahead of schedule. Communication is always smooth, and you can count on him to approach every project with dedication and attention to detail.</p>
+              <p>I wholeheartedly recommend Kostadin to anyone looking for outstanding video production. Working with him is inspiring, effortless, and truly rewarding.</p>
+            </blockquote>
+            <figcaption>
+              <strong>Sonja Yosifov</strong>
+              <span>Rhodopean Drama Theatre "Nikolay Haitov" / Marketing Manager</span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
       <section class="partners section" id="partners" aria-labelledby="partners-title">
         <div class="container section-heading reveal" data-reveal>
           <p class="eyebrow">Partners</p>
@@ -329,6 +382,19 @@
         <button class="video-modal__close" type="button" aria-label="Close video" data-video-close></button>
         <h2 class="sr-only" id="video-modal-title" data-video-modal-title>Video preview</h2>
         <div class="video-modal__frame" data-video-frame></div>
+      </div>
+    </dialog>
+
+    <dialog class="video-modal testimonial-modal" data-testimonial-modal aria-labelledby="testimonial-modal-title">
+      <div class="testimonial-modal__panel">
+        <button class="video-modal__close" type="button" aria-label="Close testimonial" data-testimonial-close></button>
+        <article class="testimonial-modal__content">
+          <img class="testimonial-modal__portrait" src="assets/images/testimonial-sonja-yosifov.webp" alt="Portrait of Sonja Yosifov" width="800" height="800" loading="lazy" decoding="async" data-testimonial-modal-portrait>
+          <p class="eyebrow">What it’s like working together</p>
+          <h2 id="testimonial-modal-title" data-testimonial-modal-name>Testimonial</h2>
+          <p class="testimonial-modal__meta" data-testimonial-modal-meta></p>
+          <blockquote data-testimonial-modal-quote></blockquote>
+        </article>
       </div>
     </dialog>
   </body>
