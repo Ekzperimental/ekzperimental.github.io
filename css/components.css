@@ -160,6 +160,39 @@
   color: var(--color-text);
 }
 
+.language-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42rem;
+  min-height: 3rem;
+  padding: var(--space-3) var(--space-4);
+  color: rgb(247 243 234 / 0.38);
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.language-switcher button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-muted);
+  cursor: pointer;
+  font: inherit;
+  transition:
+    color 180ms var(--ease-out),
+    opacity 180ms var(--ease-out);
+}
+
+.language-switcher button:hover,
+.language-switcher button:focus-visible,
+.language-switcher button.is-active {
+  color: var(--color-text);
+}
+
+.language-switcher button:not(.is-active) {
+  opacity: 0.62;
+}
+
 .button {
   display: inline-flex;
   min-height: 3.25rem;
@@ -315,6 +348,11 @@
     padding: 0.7rem 0.85rem;
     border-radius: var(--radius-pill);
     font-size: 0.82rem;
+  }
+
+  .language-switcher {
+    min-height: 2.5rem;
+    padding: 0.7rem 0.4rem 0.7rem 0.85rem;
   }
 
   .video-modal__panel {

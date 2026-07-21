@@ -21,23 +21,26 @@ export function initTestimonials() {
     if (modal.open) modal.close();
   };
 
-  testimonials.forEach((testimonial) => {
+  testimonials.forEach((testimonial, index) => {
     const quote = testimonial.querySelector("blockquote");
     if (!quote || countWords(quote.textContent) <= WORD_LIMIT) return;
 
+    testimonial.dataset.testimonialIndex = String(index);
     const portrait = testimonial.querySelector(".testimonial__portrait");
-    const name = testimonial.querySelector("figcaption strong")?.textContent.trim() || "Testimonial";
-    const meta = testimonial.querySelector("figcaption span")?.textContent.trim() || "";
     const button = document.createElement("button");
     button.className = "testimonial__toggle";
     button.type = "button";
     button.setAttribute("aria-haspopup", "dialog");
+    button.dataset.i18n = "testimonials.readMore";
     button.textContent = "Read more →";
 
     testimonial.classList.add("is-collapsible");
     quote.after(button);
 
     button.addEventListener("click", () => {
+      const name = testimonial.querySelector("figcaption strong")?.textContent.trim() || "Testimonial";
+      const meta = testimonial.querySelector("figcaption span")?.textContent.trim() || "";
+      modal.dataset.testimonialIndex = testimonial.dataset.testimonialIndex;
       modalName.textContent = name;
       modalMeta.textContent = meta;
       modalQuote.innerHTML = quote.innerHTML;

@@ -64,16 +64,16 @@
     <link rel="preload" href="assets/images/logo.png" as="image">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="css/components.css?v=20260707-32">
+    <link rel="stylesheet" href="css/components.css?v=20260720-01">
     <link rel="stylesheet" href="css/animations.css?v=20260716-03">
-    <link rel="stylesheet" href="css/style.css?v=20260716-09">
+    <link rel="stylesheet" href="css/style.css?v=20260720-03">
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script type="module" src="js/main.js?v=20260719-01"></script>
+    <script type="module" src="js/main.js?v=20260720-02"></script>
   </head>
 
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+    <a class="skip-link" href="#main" data-i18n="skip.link">Skip to content</a>
 
     <div class="site-backdrop" aria-hidden="true">
       <video class="hero__video" autoplay muted loop playsinline poster="assets/images/og-image.jpg">
@@ -86,22 +86,27 @@
     </div>
 
     <header class="site-header" data-navbar>
-      <nav class="navbar container" aria-label="Primary navigation">
-        <a class="brand" href="#home" aria-label="EKZPERIMENTAL home">
+      <nav class="navbar container" aria-label="Primary navigation" data-i18n-aria-label="nav.aria">
+        <a class="brand" href="#home" aria-label="EKZPERIMENTAL home" data-i18n-aria-label="nav.home">
           <span class="brand__mark" aria-hidden="true"></span>
           <span class="brand__text">EKZPERIMENTAL</span>
         </a>
 
-        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-menu" data-nav-toggle>
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-menu" data-nav-toggle data-i18n-aria-label="nav.open">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
         </button>
 
         <div class="nav-menu" id="primary-menu" data-nav-menu>
-          <a href="#work">Work</a>
-          <a href="#services">Services</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
+          <a href="#work" data-i18n="nav.work">Work</a>
+          <a href="#services" data-i18n="nav.services">Services</a>
+          <a href="#about" data-i18n="nav.about">About</a>
+          <a href="#contact" data-i18n="nav.contact">Contact</a>
+          <div class="language-switcher" role="group" aria-label="Language" data-language-switcher data-i18n-aria-label="language.group">
+            <button type="button" data-language-button="bg" aria-label="Switch to Bulgarian" aria-pressed="false" data-i18n-aria-label="language.bg">БГ</button>
+            <span aria-hidden="true">|</span>
+            <button type="button" data-language-button="en" aria-label="Switch to English" aria-pressed="true" data-i18n-aria-label="language.en">EN</button>
+          </div>
         </div>
       </nav>
     </header>
@@ -110,34 +115,34 @@
       <section class="hero" id="home" aria-labelledby="hero-title" data-hero>
         <div class="hero__content container">
           <img class="hero__logo reveal" src="assets/images/logo.png" alt="EKZPERIMENTAL" width="2000" height="2000" decoding="async" fetchpriority="high" data-reveal>
-          <p class="eyebrow reveal" data-reveal>Independent video production.</p>
-          <h1 class="hero__title reveal" id="hero-title" data-reveal>Stories that matter.</h1>
-          <p class="hero__subtitle reveal" data-reveal>
+          <p class="eyebrow reveal" data-reveal data-i18n="hero.eyebrow">Independent video production.</p>
+          <h1 class="hero__title reveal" id="hero-title" data-reveal data-i18n="hero.title">Stories that matter.</h1>
+          <p class="hero__subtitle reveal" data-reveal data-i18n="hero.subtitle">
             Independent video production for documentaries, music videos, cultural projects, festivals, dance, theatre and commercial work — crafted in Bulgaria, working worldwide.
           </p>
           <div class="hero__actions reveal" data-reveal>
-            <a class="button button--primary" href="#work">View Work</a>
-            <a class="button button--ghost" href="#contact">Start a Project</a>
+            <a class="button button--primary" href="#work" data-i18n="hero.ctaWork">View Work</a>
+            <a class="button button--ghost" href="#contact" data-i18n="hero.ctaContact">Start a Project</a>
           </div>
         </div>
 
-        <a class="scroll-indicator" href="#approach" aria-label="Scroll to approach">
+        <a class="scroll-indicator" href="#approach" aria-label="Scroll to approach" data-i18n-aria-label="hero.scrollAria">
           <span class="scroll-indicator__line" aria-hidden="true"></span>
-          <span class="scroll-indicator__text">Scroll</span>
+          <span class="scroll-indicator__text" data-i18n="hero.scroll">Scroll</span>
         </a>
       </section>
 
       <section class="showreel section" aria-labelledby="showreel-title">
         <div class="container showreel__inner reveal" data-reveal>
           <div class="showreel__stage">
-            <button class="showreel-card" type="button" data-video-open data-video-id="1205541908" data-video-title="EKZPERIMENTAL Showreel" aria-label="Play EKZPERIMENTAL showreel">
-            <img src="https://vumbnail.com/1205541908.jpg" alt="EKZPERIMENTAL showreel preview" width="1280" height="720" loading="lazy" decoding="async" data-fallback-src="assets/images/og-image.jpg">
+            <button class="showreel-card" type="button" data-video-open data-video-id="1205541908" data-video-title="EKZPERIMENTAL Showreel" aria-label="Play EKZPERIMENTAL showreel" data-i18n-aria-label="showreel.aria">
+            <img src="https://vumbnail.com/1205541908.jpg" alt="EKZPERIMENTAL showreel preview" width="1280" height="720" loading="lazy" decoding="async" data-fallback-src="assets/images/og-image.jpg" data-i18n-alt="showreel.alt">
               <span class="play-badge" aria-hidden="true"></span>
             </button>
             <div class="showreel__copy">
-              <p class="eyebrow">Showreel</p>
-              <h2 id="showreel-title">Recent work in one cut.</h2>
-              <p>A short glimpse into documentaries, stages, music, festivals and people.</p>
+              <p class="eyebrow" data-i18n="showreel.eyebrow">Showreel</p>
+              <h2 id="showreel-title" data-i18n="showreel.title">Recent work in one cut.</h2>
+              <p data-i18n="showreel.text">A short glimpse into documentaries, stages, music, festivals and people.</p>
             </div>
           </div>
         </div>
@@ -146,32 +151,32 @@
       <section class="studio-notes section" id="approach" aria-labelledby="studio-notes-title">
         <div class="container studio-notes__inner reveal" data-reveal>
           <div class="studio-notes__copy">
-            <p class="eyebrow">Approach</p>
-            <h2 id="studio-notes-title">From idea to final cut.</h2>
-            <p>A lean process for video work that stays close to the subject.</p>
+            <p class="eyebrow" data-i18n="approach.eyebrow">Approach</p>
+            <h2 id="studio-notes-title" data-i18n="approach.title">From idea to final cut.</h2>
+            <p data-i18n="approach.text">A lean process for video work that stays close to the subject.</p>
           </div>
-          <dl class="studio-stats" aria-label="Studio numbers">
+          <dl class="studio-stats" aria-label="Studio numbers" data-i18n-aria-label="approach.statsAria">
             <div>
               <dt>10+</dt>
-              <dd>Years</dd>
+              <dd data-i18n="approach.years">Years</dd>
             </div>
             <div>
               <dt>100+</dt>
-              <dd>Projects</dd>
+              <dd data-i18n="approach.projects">Projects</dd>
             </div>
             <div>
               <dt>6</dt>
-              <dd>Services</dd>
+              <dd data-i18n="approach.services">Services</dd>
             </div>
           </dl>
-          <div class="process-strip" aria-label="Production process">
-            <p class="eyebrow">How we work</p>
+          <div class="process-strip" aria-label="Production process" data-i18n-aria-label="approach.processAria">
+            <p class="eyebrow" data-i18n="approach.processEyebrow">How we work</p>
             <ol data-process-timeline>
-              <li data-process-step><span>01</span><strong>Concept</strong></li>
-              <li data-process-step><span>02</span><strong>Pre-production</strong></li>
-              <li data-process-step><span>03</span><strong>Filming</strong></li>
-              <li data-process-step><span>04</span><strong>Editing</strong></li>
-              <li data-process-step><span>05</span><strong>Delivery</strong></li>
+              <li data-process-step><span>01</span><strong data-i18n="approach.concept">Concept</strong></li>
+              <li data-process-step><span>02</span><strong data-i18n="approach.preproduction">Pre-production</strong></li>
+              <li data-process-step><span>03</span><strong data-i18n="approach.filming">Filming</strong></li>
+              <li data-process-step><span>04</span><strong data-i18n="approach.editing">Editing</strong></li>
+              <li data-process-step><span>05</span><strong data-i18n="approach.delivery">Delivery</strong></li>
             </ol>
           </div>
         </div>
@@ -179,62 +184,62 @@
 
       <section class="work section" id="work" aria-labelledby="work-title">
         <div class="container work__header reveal" data-reveal>
-          <p class="eyebrow">Selected Work</p>
-          <h2 id="work-title">Documentary, music, stage and cultural video work.</h2>
-          <p>
+          <p class="eyebrow" data-i18n="work.eyebrow">Selected Work</p>
+          <h2 id="work-title" data-i18n="work.title">Documentary, music, stage and cultural video work.</h2>
+          <p data-i18n="work.text">
             Selected films from documentaries, dance and theatre, music videos, festivals and cultural projects.
           </p>
         </div>
-        <div class="container work-grid" data-work-grid aria-label="Selected EKZPERIMENTAL projects"></div>
+        <div class="container work-grid" data-work-grid aria-label="Selected EKZPERIMENTAL projects" data-i18n-aria-label="work.gridAria"></div>
       </section>
 
       <section class="services section" id="services" aria-labelledby="services-title" data-services-reveal>
         <div class="container section-heading reveal" data-reveal>
-          <p class="eyebrow">Services</p>
-          <h2 id="services-title">Production support from first idea to final cut.</h2>
-          <p>Video work for artists, organizations, musicians, performers and independent teams.</p>
+          <p class="eyebrow" data-i18n="services.eyebrow">Services</p>
+          <h2 id="services-title" data-i18n="services.title">Production support from first idea to final cut.</h2>
+          <p data-i18n="services.text">Video work for artists, organizations, musicians, performers and independent teams.</p>
         </div>
         <div class="container services-list" data-services-list>
           <article class="service-card reveal" data-reveal data-service-step>
             <span>01</span>
             <div>
-              <h3>Documentary Films</h3>
-              <p>Human stories for artists, NGOs and cultural organizations.</p>
+              <h3 data-i18n="services.documentary.title">Documentary Films</h3>
+              <p data-i18n="services.documentary.text">Human stories for artists, NGOs and cultural organizations.</p>
             </div>
           </article>
           <article class="service-card reveal" data-reveal data-service-step>
             <span>02</span>
             <div>
-              <h3>Commercial Production</h3>
-              <p>Focused video pieces for brands, campaigns and organizations.</p>
+              <h3 data-i18n="services.commercial.title">Commercial Production</h3>
+              <p data-i18n="services.commercial.text">Focused video pieces for brands, campaigns and organizations.</p>
             </div>
           </article>
           <article class="service-card reveal" data-reveal data-service-step>
             <span>03</span>
             <div>
-              <h3>Music Videos</h3>
-              <p>Visual pieces for musicians, releases and independent creative projects.</p>
+              <h3 data-i18n="services.music.title">Music Videos</h3>
+              <p data-i18n="services.music.text">Visual pieces for musicians, releases and independent creative projects.</p>
             </div>
           </article>
           <article class="service-card reveal" data-reveal data-service-step>
             <span>04</span>
             <div>
-              <h3>Festival Coverage</h3>
-              <p>Recaps and aftermovies that preserve the energy of live events.</p>
+              <h3 data-i18n="services.festival.title">Festival Coverage</h3>
+              <p data-i18n="services.festival.text">Recaps and aftermovies that preserve the energy of live events.</p>
             </div>
           </article>
           <article class="service-card reveal" data-reveal data-service-step>
             <span>05</span>
             <div>
-              <h3>Dance & Theatre</h3>
-              <p>Video work for stage, movement, performance and rehearsal processes.</p>
+              <h3 data-i18n="services.dance.title">Dance & Theatre</h3>
+              <p data-i18n="services.dance.text">Video work for stage, movement, performance and rehearsal processes.</p>
             </div>
           </article>
           <article class="service-card reveal" data-reveal data-service-step>
             <span>06</span>
             <div>
-              <h3>Video Editing</h3>
-              <p>Shaping raw material into rhythm, structure and story.</p>
+              <h3 data-i18n="services.editing.title">Video Editing</h3>
+              <p data-i18n="services.editing.text">Shaping raw material into rhythm, structure and story.</p>
             </div>
           </article>
         </div>
@@ -243,72 +248,72 @@
       <section class="about section" id="about" aria-labelledby="about-title">
         <div class="container about__grid">
           <div class="about__copy reveal" data-reveal>
-            <p class="eyebrow">About</p>
-            <h2 id="about-title">A compact studio for films with memory.</h2>
-            <p>
+            <p class="eyebrow" data-i18n="about.eyebrow">About</p>
+            <h2 id="about-title" data-i18n="about.title">A compact studio for films with memory.</h2>
+            <p data-i18n="about.text1">
               Founded by filmmaker Kostadin Ekzarov, EKZPERIMENTAL is an independent creative studio based in Bulgaria, producing documentary films, branded content, music videos and cultural projects for artists, organizations, festivals and independent teams in Bulgaria and worldwide.
             </p>
-            <p>
+            <p data-i18n="about.text2">
               With a background in Directing, Choreography, Visual Arts and Advertising, Kostadin combines storytelling, editing and visual design to create thoughtful films that connect with people. Alongside client work, he is the Founder of EKZPERIMENTAL Creative House and Co-Founder of JAM ON IT Festival and Flava House.
             </p>
           </div>
-          <div class="about__photos reveal" data-reveal aria-label="Studio photography">
-            <img src="assets/images/kostadin-ekzarov-01.webp" alt="Kostadin Ekzarov behind the scenes" width="800" height="800" loading="lazy" decoding="async">
-            <img src="assets/images/kostadin-ekzarov-02.webp" alt="Filmmaking moment by EKZPERIMENTAL" width="800" height="800" loading="lazy" decoding="async">
-            <img src="assets/images/kostadin-ekzarov-03.webp" alt="EKZPERIMENTAL production detail" width="800" height="800" loading="lazy" decoding="async">
-            <img src="assets/images/kostadin-ekzarov-04.webp" alt="Kostadin Ekzarov portrait" width="800" height="800" loading="lazy" decoding="async">
+          <div class="about__photos reveal" data-reveal aria-label="Studio photography" data-i18n-aria-label="about.photosAria">
+            <img src="assets/images/kostadin-ekzarov-01.webp" alt="Kostadin Ekzarov behind the scenes" width="800" height="800" loading="lazy" decoding="async" data-i18n-alt="about.photo1">
+            <img src="assets/images/kostadin-ekzarov-02.webp" alt="Filmmaking moment by EKZPERIMENTAL" width="800" height="800" loading="lazy" decoding="async" data-i18n-alt="about.photo2">
+            <img src="assets/images/kostadin-ekzarov-03.webp" alt="EKZPERIMENTAL production detail" width="800" height="800" loading="lazy" decoding="async" data-i18n-alt="about.photo3">
+            <img src="assets/images/kostadin-ekzarov-04.webp" alt="Kostadin Ekzarov portrait" width="800" height="800" loading="lazy" decoding="async" data-i18n-alt="about.photo4">
           </div>
         </div>
       </section>
 
       <section class="testimonials section" id="testimonials" aria-labelledby="testimonials-title">
         <div class="container section-heading reveal" data-reveal>
-          <p class="eyebrow">What it’s like working together</p>
-          <h2 id="testimonials-title">Words from the people we've worked with.</h2>
+          <p class="eyebrow" data-i18n="testimonials.eyebrow">What it’s like working together</p>
+          <h2 id="testimonials-title" data-i18n="testimonials.title">Words from the people we've worked with.</h2>
         </div>
         <div class="container testimonials-grid reveal" data-reveal>
           <figure class="testimonial">
             <span class="testimonial__index" aria-hidden="true">01</span>
             <img class="testimonial__portrait" src="assets/images/testimonial-delyana-angelova.webp" alt="Portrait of Delyana Angelova" width="800" height="800" loading="lazy" decoding="async">
             <blockquote>
-              <p>Working with Kostadin Ekzarov and Ezkperimental is far from an experiment - it is a privilege. From the very beginning, Kostadin brings creativity, professionalism, and an exceptional eye for visual storytelling to every project.</p>
-              <p>His attention to detail and commitment to excellence are evident in every frame. He has a remarkable ability to transform ideas into compelling visual narratives that not only capture attention but also take the viewer on an emotional journey.</p>
-              <p>What truly sets Ezkperimental apart is the dedication to achieving the highest quality while making the entire creative process smooth, collaborative, and enjoyable. He consistently exceeds expectations, delivering stunning results that elevate the final production and leave a lasting impression.</p>
-              <p>I can wholeheartedly recommend Kostadin Ekzarov and Ezkperimental to anyone looking for outstanding video production and cinematic storytelling. Having him as part of your team is not just an advantage - it is a genuine privilege.</p>
+              <p data-i18n="testimonials.delyana.text1">Working with Kostadin Ekzarov and EKZPERIMENTAL is far from an experiment - it is a privilege. From the very beginning, Kostadin brings creativity, professionalism, and an exceptional eye for visual storytelling to every project.</p>
+              <p data-i18n="testimonials.delyana.text2">His attention to detail and commitment to excellence are evident in every frame. He has a remarkable ability to transform ideas into compelling visual narratives that not only capture attention but also take the viewer on an emotional journey.</p>
+              <p data-i18n="testimonials.delyana.text3">What truly sets EKZPERIMENTAL apart is the dedication to achieving the highest quality while making the entire creative process smooth, collaborative, and enjoyable. He consistently exceeds expectations, delivering stunning results that elevate the final production and leave a lasting impression.</p>
+              <p data-i18n="testimonials.delyana.text4">I can wholeheartedly recommend Kostadin Ekzarov and EKZPERIMENTAL to anyone looking for outstanding video production and cinematic storytelling. Having him as part of your team is not just an advantage - it is a genuine privilege.</p>
             </blockquote>
             <figcaption>
               <strong>Delyana Angelova</strong>
-              <span>Visionary Foundation / Co-founder / Opportunity creator</span>
+              <span data-i18n="testimonials.delyana.role">Visionary Foundation / Co-founder / Opportunity creator</span>
             </figcaption>
           </figure>
           <figure class="testimonial">
             <span class="testimonial__index" aria-hidden="true">02</span>
             <img class="testimonial__portrait" src="assets/images/testimonial-tzvetina-matova.webp?v=20260719-01" alt="Portrait of Tzvetina Matova" width="800" height="800" loading="lazy" decoding="async">
             <blockquote>
-              <p>Kostadin demonstrated a high level of professionalism throughout every stage of our collaboration, from pre-production and filming to the post-production process. He works in an organized and reliable manner, consistently meets deadlines, and maintains clear and timely communication throughout the entire project.</p>
-              <p>One of his greatest strengths is his ability to recognize the dramatic essence of an event and translate it into a compelling visual narrative. The films and trailers he creates go beyond simple documentation-they communicate a cohesive artistic vision that reflects the identity and objectives of each project.</p>
-              <p>Kostadin is proactive, contributes thoughtful creative ideas and solutions, and at the same time works seamlessly within project requirements while responding constructively to feedback. He demonstrates exceptional attention to detail, precision in editing, and a strong sense of pacing, rhythm, and emotional impact.</p>
-              <p>During our collaboration on filming stage performances, as well as creating trailers for Dancing Play and the 2Touch dance programme, Kostadin consistently delivered work of a high professional standard. His commitment to quality and dedication to achieving the best possible result were evident throughout the entire process.</p>
-              <p>I consider Kostadin to be a reliable, responsible, and highly creative professional. I would confidently recommend Kostadin Ekzarov as a videographer and video artist for projects that require a combination of technical expertise, artistic sensitivity, and a professional approach.</p>
+              <p data-i18n="testimonials.tzvetina.text1">Kostadin demonstrated a high level of professionalism throughout every stage of our collaboration, from pre-production and filming to the post-production process. He works in an organized and reliable manner, consistently meets deadlines, and maintains clear and timely communication throughout the entire project.</p>
+              <p data-i18n="testimonials.tzvetina.text2">One of his greatest strengths is his ability to recognize the dramatic essence of an event and translate it into a compelling visual narrative. The films and trailers he creates go beyond simple documentation-they communicate a cohesive artistic vision that reflects the identity and objectives of each project.</p>
+              <p data-i18n="testimonials.tzvetina.text3">Kostadin is proactive, contributes thoughtful creative ideas and solutions, and at the same time works seamlessly within project requirements while responding constructively to feedback. He demonstrates exceptional attention to detail, precision in editing, and a strong sense of pacing, rhythm, and emotional impact.</p>
+              <p data-i18n="testimonials.tzvetina.text4">During our collaboration on filming stage performances, as well as creating trailers for Dancing Play and the 2Touch dance programme, Kostadin consistently delivered work of a high professional standard. His commitment to quality and dedication to achieving the best possible result were evident throughout the entire process.</p>
+              <p data-i18n="testimonials.tzvetina.text5">I consider Kostadin to be a reliable, responsible, and highly creative professional. I would confidently recommend Kostadin Ekzarov as a videographer and video artist for projects that require a combination of technical expertise, artistic sensitivity, and a professional approach.</p>
             </blockquote>
             <figcaption>
               <strong>Tzvetina Matova</strong>
-              <span>"Creators Association" / Choreographer, Dancer, Playback Theatre Performer and Organizer</span>
+              <span data-i18n="testimonials.tzvetina.role">"Creators Association" / Choreographer, Dancer, Playback Theatre Performer and Organizer</span>
             </figcaption>
           </figure>
           <figure class="testimonial">
             <span class="testimonial__index" aria-hidden="true">03</span>
             <img class="testimonial__portrait" src="assets/images/testimonial-sonja-yosifov.webp" alt="Portrait of Sonja Yosifov" width="800" height="800" loading="lazy" decoding="async">
             <blockquote>
-              <p>Working with Kostadin Ekzarov (Ekzarka) has been an absolute pleasure. We have collaborated on several projects, and every time he has exceeded my expectations.</p>
-              <p>Kostadin is far more than a professional videographer and editor - he is a visual storyteller. To me, his videos are genuine works of art. He has an exceptional eye for detail, movement, expressions, and emotion, and he captures the true atmosphere and energy of every event. By skillfully combining different cameras, lenses, and equipment, he creates cinematic visuals that feel both authentic and captivating.</p>
-              <p>What impresses me even more is his editing. He has a remarkable ability to make completely different shots flow together seamlessly, creating a natural rhythm that keeps the viewer engaged from beginning to end. Every transition feels intentional, and every frame serves the story.</p>
-              <p>Beyond his creative talent, Kostadin is incredibly professional. He is precise, reliable, and consistently delivers on time - often even ahead of schedule. Communication is always smooth, and you can count on him to approach every project with dedication and attention to detail.</p>
-              <p>I wholeheartedly recommend Kostadin to anyone looking for outstanding video production. Working with him is inspiring, effortless, and truly rewarding.</p>
+              <p data-i18n="testimonials.sonja.text1">Working with Kostadin Ekzarov (Ekzarka) has been an absolute pleasure. We have collaborated on several projects, and every time he has exceeded my expectations.</p>
+              <p data-i18n="testimonials.sonja.text2">Kostadin is far more than a professional videographer and editor - he is a visual storyteller. To me, his videos are genuine works of art. He has an exceptional eye for detail, movement, expressions, and emotion, and he captures the true atmosphere and energy of every event. By skillfully combining different cameras, lenses, and equipment, he creates cinematic visuals that feel both authentic and captivating.</p>
+              <p data-i18n="testimonials.sonja.text3">What impresses me even more is his editing. He has a remarkable ability to make completely different shots flow together seamlessly, creating a natural rhythm that keeps the viewer engaged from beginning to end. Every transition feels intentional, and every frame serves the story.</p>
+              <p data-i18n="testimonials.sonja.text4">Beyond his creative talent, Kostadin is incredibly professional. He is precise, reliable, and consistently delivers on time - often even ahead of schedule. Communication is always smooth, and you can count on him to approach every project with dedication and attention to detail.</p>
+              <p data-i18n="testimonials.sonja.text5">I wholeheartedly recommend Kostadin to anyone looking for outstanding video production. Working with him is inspiring, effortless, and truly rewarding.</p>
             </blockquote>
             <figcaption>
               <strong>Sonja Yosifov</strong>
-              <span>Rhodopean Drama Theatre "Nikolay Haitov" / Marketing Manager</span>
+              <span data-i18n="testimonials.sonja.role">Rhodopean Drama Theatre "Nikolay Haitov" / Marketing Manager</span>
             </figcaption>
           </figure>
         </div>
@@ -316,30 +321,30 @@
 
       <section class="partners section" id="partners" aria-labelledby="partners-title">
         <div class="container section-heading reveal" data-reveal>
-          <p class="eyebrow">Partners</p>
-          <h2 id="partners-title">Collaborations with artists, festivals, foundations and cultural teams.</h2>
-          <p>Long-running work across street art, performance, cultural programs and independent creative projects.</p>
+          <p class="eyebrow" data-i18n="partners.eyebrow">Partners</p>
+          <h2 id="partners-title" data-i18n="partners.title">Collaborations with artists, festivals, foundations and cultural teams.</h2>
+          <p data-i18n="partners.text">Long-running work across street art, performance, cultural programs and independent creative projects.</p>
         </div>
         <div class="container partners-grid reveal" data-reveal>
-          <a href="https://visionary.foundation" target="_blank" rel="noopener noreferrer" aria-label="Visit Visionary Foundation website">
+          <a href="https://visionary.foundation" target="_blank" rel="noopener noreferrer" aria-label="Visit Visionary Foundation website" data-i18n-aria-label="partners.visionaryAria">
             <img class="partners-grid__logo partners-grid__logo--visionary" src="assets/images/visionary-logo.png?v=20260715-01" alt="Visionary logo" width="185" height="185" loading="lazy" decoding="async">
           </a>
-          <a href="https://www.ycsm.eu" target="_blank" rel="noopener noreferrer" aria-label="Visit Youth Center Smolyan website">
+          <a href="https://www.ycsm.eu" target="_blank" rel="noopener noreferrer" aria-label="Visit Youth Center Smolyan website" data-i18n-aria-label="partners.ycsAria">
             <img class="partners-grid__logo partners-grid__logo--ycs" src="assets/images/ycs-logo-balanced.png" alt="YCS logo" width="395" height="247" loading="lazy" decoding="async">
           </a>
-          <a href="https://www.instagram.com/dancing.play/" target="_blank" rel="noopener noreferrer" aria-label="Visit Dancing Play Instagram">
+          <a href="https://www.instagram.com/dancing.play/" target="_blank" rel="noopener noreferrer" aria-label="Visit Dancing Play Instagram" data-i18n-aria-label="partners.dancingAria">
             <img class="partners-grid__logo partners-grid__logo--dancingplay" src="assets/images/dancingplay-logo-balanced.png" alt="Dancing Play logo" width="296" height="229" loading="lazy" decoding="async">
           </a>
-          <a href="https://www.instagram.com/jermain__art/" target="_blank" rel="noopener noreferrer" aria-label="Visit Jermain Instagram">
+          <a href="https://www.instagram.com/jermain__art/" target="_blank" rel="noopener noreferrer" aria-label="Visit Jermain Instagram" data-i18n-aria-label="partners.jermainAria">
             <img class="partners-grid__logo partners-grid__logo--jermain" src="assets/images/jermain-logo-balanced.png" alt="Jermain logo" width="194" height="224" loading="lazy" decoding="async">
           </a>
-          <a href="https://souldynamite.bandcamp.com" target="_blank" rel="noopener noreferrer" aria-label="Visit Soul Dynamite Bandcamp">
+          <a href="https://souldynamite.bandcamp.com" target="_blank" rel="noopener noreferrer" aria-label="Visit Soul Dynamite Bandcamp" data-i18n-aria-label="partners.soulAria">
             <img class="partners-grid__logo partners-grid__logo--soul-dynamite" src="assets/images/soul-dynamite-logo.png" alt="Soul Dynamite logo" width="1200" height="1200" loading="lazy" decoding="async">
           </a>
-          <a href="https://www.instagram.com/x_p_o_m_e/" target="_blank" rel="noopener noreferrer" aria-label="Visit XPOME Instagram">
+          <a href="https://www.instagram.com/x_p_o_m_e/" target="_blank" rel="noopener noreferrer" aria-label="Visit XPOME Instagram" data-i18n-aria-label="partners.xpomeAria">
             <img class="partners-grid__logo partners-grid__logo--xpome" src="assets/images/xpome-logo.png" alt="XPOME logo" width="1149" height="344" loading="lazy" decoding="async">
           </a>
-          <a href="https://wax.bg" target="_blank" rel="noopener noreferrer" aria-label="Visit WAX.BG website">
+          <a href="https://wax.bg" target="_blank" rel="noopener noreferrer" aria-label="Visit WAX.BG website" data-i18n-aria-label="partners.waxAria">
             <img class="partners-grid__logo partners-grid__logo--wax" src="assets/images/wax-logo.png" alt="WAX logo" width="944" height="950" loading="lazy" decoding="async">
           </a>
         </div>
@@ -348,20 +353,20 @@
       <section class="contact section" id="contact" aria-labelledby="contact-title">
         <div class="container contact__inner">
           <div class="contact__copy reveal" data-reveal>
-            <p class="eyebrow">Contact</p>
-            <h2 id="contact-title">Have a story<br>to tell?</h2>
-            <p>Let's make it together.</p>
-            <p>Available for documentaries, commercial productions, music videos, festivals, dance, theatre and cultural collaborations.</p>
+            <p class="eyebrow" data-i18n="contact.eyebrow">Contact</p>
+            <h2 id="contact-title" data-i18n-html="contact.title">Have a story<br>to tell?</h2>
+            <p data-i18n="contact.line">Let's make it together.</p>
+            <p data-i18n="contact.availability">Available for documentaries, commercial productions, music videos, festivals, dance, theatre and cultural collaborations.</p>
           </div>
           <div class="contact__panel">
-            <p class="reveal" data-reveal>Every project starts<br>with a conversation.</p>
+            <p class="reveal" data-reveal data-i18n-html="contact.panel">Every project starts<br>with a conversation.</p>
             <div class="contact__actions">
-              <a class="button button--primary reveal" href="#" data-reveal data-email-link data-mail="ay5la3phcm92QHN3a3oub3Jn">Let's Talk</a>
-              <div class="contact__socials reveal" aria-label="Social links" data-reveal>
+              <a class="button button--primary reveal" href="#" data-reveal data-email-link data-mail="ay5la3phcm92QHN3a3oub3Jn" data-i18n="contact.cta">Let's Talk</a>
+              <div class="contact__socials reveal" aria-label="Social links" data-reveal data-i18n-aria-label="contact.socialsAria">
                 <a href="https://vimeo.com/ekzperimental" target="_blank" rel="noopener noreferrer">Vimeo</a>
                 <a href="https://www.instagram.com/ekzarka/" target="_blank" rel="noopener noreferrer">Instagram</a>
               </div>
-              <a class="contact__portfolio-link reveal" href="https://vimeo.com/ekzperimental" target="_blank" rel="noopener noreferrer" data-reveal>Explore more work on Vimeo <span aria-hidden="true">&rarr;</span></a>
+              <a class="contact__portfolio-link reveal" href="https://vimeo.com/ekzperimental" target="_blank" rel="noopener noreferrer" data-reveal data-i18n-html="contact.portfolio">Explore more work on Vimeo <span aria-hidden="true">&rarr;</span></a>
             </div>
           </div>
         </div>
@@ -372,26 +377,26 @@
       <div class="container">
         <p>
           <span>&copy; 2026 Ekzperimental</span>
-          <span>Independent video production from Bulgaria.</span>
+          <span data-i18n="footer.note">Independent video production from Bulgaria.</span>
         </p>
       </div>
     </footer>
 
     <dialog class="video-modal" data-video-modal aria-labelledby="video-modal-title">
       <div class="video-modal__panel">
-        <button class="video-modal__close" type="button" aria-label="Close video" data-video-close></button>
-        <h2 class="sr-only" id="video-modal-title" data-video-modal-title>Video preview</h2>
+        <button class="video-modal__close" type="button" aria-label="Close video" data-video-close data-i18n-aria-label="video.closeAria"></button>
+        <h2 class="sr-only" id="video-modal-title" data-video-modal-title data-i18n="video.title">Video preview</h2>
         <div class="video-modal__frame" data-video-frame></div>
       </div>
     </dialog>
 
     <dialog class="video-modal testimonial-modal" data-testimonial-modal aria-labelledby="testimonial-modal-title">
       <div class="testimonial-modal__panel">
-        <button class="video-modal__close" type="button" aria-label="Close testimonial" data-testimonial-close></button>
+        <button class="video-modal__close" type="button" aria-label="Close testimonial" data-testimonial-close data-i18n-aria-label="testimonials.closeAria"></button>
         <article class="testimonial-modal__content">
           <img class="testimonial-modal__portrait" src="assets/images/testimonial-sonja-yosifov.webp" alt="Portrait of Sonja Yosifov" width="800" height="800" loading="lazy" decoding="async" data-testimonial-modal-portrait>
-          <p class="eyebrow">What it’s like working together</p>
-          <h2 id="testimonial-modal-title" data-testimonial-modal-name>Testimonial</h2>
+          <p class="eyebrow" data-i18n="testimonials.eyebrow">What it’s like working together</p>
+          <h2 id="testimonial-modal-title" data-testimonial-modal-name data-i18n="testimonials.modalTitle">Testimonial</h2>
           <p class="testimonial-modal__meta" data-testimonial-modal-meta></p>
           <blockquote data-testimonial-modal-quote></blockquote>
         </article>

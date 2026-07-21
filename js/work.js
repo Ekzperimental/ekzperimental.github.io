@@ -7,7 +7,7 @@ const previewByCategory = {
 
 const projects = [
   { id: "1195697921", category: "Street Art", title: "Орфей и вечността - Mural painting by Jermain", displayTitle: "Орфей и вечността", role: "Director / Videographer / Video Editor", year: "2026" },
-  { id: "1209839499", category: "Street Art", title: "True Rokin Soul 20th Anniversary", role: "Videographer / Video Editor", year: "2026", thumbnail: "https://i.vimeocdn.com/video/2179550200-065054d166eb4e43911003fe3544a678d15bd753df4f0fed37d4e91ad93de209-d_2400?region=us" },
+  { id: "1209839499", category: "Street Art", title: "True Rokin Soul 20th Anniversary", role: "Videographer / Video Editor", year: "2026", thumbnail: "https://vumbnail.com/1209839499.jpg" },
   { id: "1192226885", category: "Street Art", title: "RODOPA GLOW XPOME", role: "Video Editor", year: "2026" },
   { id: "1127819993", category: "Street Art", title: "Упование - Mural painting by Jermain", displayTitle: "Упование", role: "Director / Videographer / Video Editor", year: "2026" },
   { id: "1191806871", category: "Music & Festivals", title: "Фестивал - СМОЛЯН НА МЛАДИТЕ - Ден 1", displayTitle: "Смолян на младите", role: "Director / Videographer / Video Editor", year: "2026" },
@@ -48,10 +48,10 @@ function createProjectCard(project) {
         <img src="${thumbnail}" alt="${project.title} video preview" width="1280" height="720" loading="lazy" decoding="async" data-fallback-src="${fallbackImage}">
       </span>
       <span class="work-card__content">
-        <span class="work-card__category">${project.category} / ${project.year}</span>
+        <span class="work-card__category" data-i18n-work-category="${project.category}" data-work-year="${project.year}">${project.category} / ${project.year}</span>
         <span class="work-card__title">${displayTitle}</span>
         <span class="work-card__full-title">${project.title}</span>
-        <span class="work-card__role">${project.role}</span>
+        <span class="work-card__role" data-i18n-work-role="${project.role}">${project.role}</span>
       </span>
     </button>
   `;

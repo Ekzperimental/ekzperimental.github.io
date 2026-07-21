@@ -14,7 +14,7 @@ export function initNavbar() {
 
   const closeMenu = () => {
     toggle.setAttribute("aria-expanded", "false");
-    toggle.setAttribute("aria-label", "Open menu");
+    toggle.setAttribute("aria-label", toggle.dataset.labelOpen || "Open menu");
     header.classList.remove(OPEN_CLASS);
     menu.classList.remove(OPEN_CLASS);
     document.body.classList.remove("menu-open");
@@ -23,7 +23,7 @@ export function initNavbar() {
   const toggleMenu = () => {
     const isOpen = toggle.getAttribute("aria-expanded") === "true";
     toggle.setAttribute("aria-expanded", String(!isOpen));
-    toggle.setAttribute("aria-label", isOpen ? "Open menu" : "Close menu");
+    toggle.setAttribute("aria-label", isOpen ? (toggle.dataset.labelOpen || "Open menu") : (toggle.dataset.labelClose || "Close menu"));
     header.classList.toggle(OPEN_CLASS, !isOpen);
     menu.classList.toggle(OPEN_CLASS, !isOpen);
     document.body.classList.toggle("menu-open", !isOpen);
