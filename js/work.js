@@ -20,7 +20,7 @@ const projects = [
   { id: "1152485222", category: "Documentary", title: "DJ NOT EASY - Запис на плочи", displayTitle: "DJ Not Eazy", role: "Director / Videographer / Video Editor", year: "2025" },
   { id: "1132543450", category: "Documentary", title: "STARTERAs - BREAKIN' B.A.P.", displayTitle: "STARTERAs", role: "Director / Videographer / Video Editor", year: "2025" },
   { id: "1197611630", category: "Music & Festivals", title: "Q-TEK - СЕРИОЗНИ ИГРАЧИ", displayTitle: "Q-TEK", role: "Director / Videographer / Video Editor", year: "2026" },
-  { id: "849446296", category: "Dance & Theatre", title: "Fun", displayTitle: "FUN", role: "Director / Videographer / Video Editor", year: "2023" },
+  { id: "1219311814", category: "Street Art", title: "Visionary Mural Jam - August 2026", displayTitle: "Visionary Mural Jam", role: "Director / Videographer / Video Editor", year: "2026" },
   { id: "233682218", category: "Dance & Theatre", title: "FLAVA HOUSE - Продължавай", displayTitle: "Продължавай", role: "Director / Video Editor", year: "2017" },
 ];
 
