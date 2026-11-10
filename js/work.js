@@ -8,19 +8,19 @@ const previewByCategory = {
 
 // Optional participant credits: [{ name: "Participant name", role: "Camera" }].
 const projects = [
-  { id: "1244142189", category: "Events", title: "SNOW EXPO 2026 Official Recap", role: "Director / Video Editor / Videographer", credits: [{ name: "Georgi Georgiev", role: "Camera" }], year: "2026", thumbnail: "https://i.vimeocdn.com/video/2222841963-d9de05bfaca8eee73bfd72e9784aba2e5f1bb7591dc50317a2d8153cf7783020-d_640?region=us" },
+  { id: "1244142189", category: "Events", title: "SNOW EXPO 2026 Official Recap", displayTitle: "SNOW EXPO", subtitle: "2026 Official Recap", role: "Director / Video Editor / Videographer", credits: [{ name: "Georgi Georgiev", role: "Camera" }], year: "2026", thumbnail: "https://i.vimeocdn.com/video/2222841963-d9de05bfaca8eee73bfd72e9784aba2e5f1bb7591dc50317a2d8153cf7783020-d_640?region=us" },
   { id: "1195697921", category: "Street Art", title: "Орфей и вечността - Mural painting by Jermain", displayTitle: "Орфей и вечността", role: "Director / Videographer / Video Editor", year: "2026" },
   { id: "1192226885", category: "Street Art", title: "RODOPA GLOW XPOME", role: "Video Editor", year: "2026" },
   { id: "1127819993", category: "Street Art", title: "Упование - Mural painting by Jermain", displayTitle: "Упование", role: "Director / Videographer / Video Editor", year: "2026" },
   { id: "1191806871", category: "Music & Festivals", title: "Фестивал - СМОЛЯН НА МЛАДИТЕ - Ден 1", displayTitle: "Смолян на младите", role: "Director / Videographer / Video Editor", year: "2026" },
   { id: "1202080876", category: "Dance & Theatre", title: "Създадени от кал - танцово-театрален спектакъл", displayTitle: "Създадени от кал", role: "Videographer / Video Editor", year: "2026" },
   { id: "342951818", category: "Dance & Theatre", title: "FLAVA HOUSE - Това Не Е Спектакъл", displayTitle: "Flava House", role: "Director / Video Editor", credits: [{ name: "Georgi Georgiev", role: "Camera" }], year: "2019" },
-  { id: "1191806873", category: "Music & Festivals", title: "Фестивал - СМОЛЯН НА МЛАДИТЕ - Recap", displayTitle: "Festival Recap", role: "Director / Videographer / Video Editor", year: "2026" },
+  { id: "1191806873", category: "Music & Festivals", title: "Фестивал - СМОЛЯН НА МЛАДИТЕ - Recap", displayTitle: "Смолян на младите", subtitle: "Festival Recap", role: "Director / Videographer / Video Editor", year: "2026" },
   { id: "1178117259", category: "Dance & Theatre", title: "ПРОСТО ДЖЕМ 3", displayTitle: "Просто Джем", role: "Director / Videographer / Video Editor", year: "2026" },
   { id: "317971978", category: "Dance & Theatre", title: "Вплитане", role: "Director / Video Editor", credits: [{ name: "Georgi Georgiev", role: "Camera" }], year: "2019" },
   { id: "853021554", category: "Documentary", title: "РУСИ - С Главата Надолу С02 Е20", displayTitle: "Руси", role: "Director / Videographer / Video Editor", year: "2023" },
   { id: "1152485222", category: "Documentary", title: "DJ NOT EASY - Запис на плочи", displayTitle: "DJ Not Eazy", role: "Director / Videographer / Video Editor", year: "2025" },
-  { id: "1209839499", category: "Street Art", title: "True Rokin Soul 20th Anniversary", role: "Videographer / Video Editor", year: "2026", thumbnail: "https://vumbnail.com/1209839499.jpg" },
+  { id: "1209839499", category: "Street Art", title: "True Rokin Soul 20th Anniversary", displayTitle: "True Rokin Soul", subtitle: "20th Anniversary", role: "Videographer / Video Editor", year: "2026", thumbnail: "https://vumbnail.com/1209839499.jpg" },
   { id: "1197611630", category: "Music & Festivals", title: "Q-TEK - СЕРИОЗНИ ИГРАЧИ", displayTitle: "Q-TEK", role: "Director / Videographer / Video Editor", year: "2026" },
   { id: "1219311814", category: "Street Art", title: "Visionary Mural Jam - August 2026", displayTitle: "Visionary Mural Jam", role: "Director / Videographer / Video Editor", year: "2026" },
   { id: "233682218", category: "Dance & Theatre", title: "FLAVA HOUSE - Продължавай", displayTitle: "Продължавай", role: "Director / Video Editor", credits: [{ name: "Georgi Georgiev", role: "Camera" }], year: "2017" },
@@ -44,6 +44,7 @@ function createProjectCard(project) {
   const fallbackImage = previewByCategory[project.category];
   const thumbnail = project.thumbnail || `https://vumbnail.com/${project.id}.jpg`;
   const displayTitle = project.displayTitle || project.title;
+  const subtitle = project.subtitle ?? (displayTitle !== project.title ? project.title : "");
   const credits = (project.credits || []).map((credit) => {
     const line = document.createElement("span");
     line.className = "work-card__role";
@@ -61,7 +62,7 @@ function createProjectCard(project) {
       <span class="work-card__content">
         <span class="work-card__category" data-i18n-work-category="${project.category}" data-work-year="${project.year}">${project.category} / ${project.year}</span>
         <span class="work-card__title">${displayTitle}</span>
-        ${displayTitle !== project.title ? `<span class="work-card__full-title">${project.title}</span>` : ""}
+        ${subtitle ? `<span class="work-card__full-title">${subtitle}</span>` : ""}
         <span class="work-card__role"><span data-i18n="work.myRole">My Role</span>: <span data-i18n-work-role="${project.role}">${project.role}</span></span>${credits}
       </span>
     </button>
