@@ -1,13 +1,14 @@
 const previewByCategory = {
   "Street Art": "assets/images/work-commercial.jpg",
   Documentary: "assets/images/work-documentary.jpg",
+  Events: "assets/images/work-festivals.jpg",
   "Dance & Theatre": "assets/images/work-dance-theatre.jpg",
   "Music & Festivals": "assets/images/work-festivals.jpg",
 };
 
 const projects = [
   { id: "1195697921", category: "Street Art", title: "Орфей и вечността - Mural painting by Jermain", displayTitle: "Орфей и вечността", role: "Director / Videographer / Video Editor", year: "2026" },
-  { id: "1209839499", category: "Street Art", title: "True Rokin Soul 20th Anniversary", role: "Videographer / Video Editor", year: "2026", thumbnail: "https://vumbnail.com/1209839499.jpg" },
+  { id: "1244142189", category: "Events", title: "SNOW EXPO 2026 Official Recap", role: "Director / Video Editor", year: "2026", thumbnail: "https://i.vimeocdn.com/video/2222841963-d9de05bfaca8eee73bfd72e9784aba2e5f1bb7591dc50317a2d8153cf7783020-d_640?region=us" },
   { id: "1192226885", category: "Street Art", title: "RODOPA GLOW XPOME", role: "Video Editor", year: "2026" },
   { id: "1127819993", category: "Street Art", title: "Упование - Mural painting by Jermain", displayTitle: "Упование", role: "Director / Videographer / Video Editor", year: "2026" },
   { id: "1191806871", category: "Music & Festivals", title: "Фестивал - СМОЛЯН НА МЛАДИТЕ - Ден 1", displayTitle: "Смолян на младите", role: "Director / Videographer / Video Editor", year: "2026" },
@@ -18,7 +19,7 @@ const projects = [
   { id: "317971978", category: "Dance & Theatre", title: "Вплитане", role: "Director / Video Editor", year: "2019" },
   { id: "853021554", category: "Documentary", title: "РУСИ - С Главата Надолу С02 Е20", displayTitle: "Руси", role: "Director / Videographer / Video Editor", year: "2023" },
   { id: "1152485222", category: "Documentary", title: "DJ NOT EASY - Запис на плочи", displayTitle: "DJ Not Eazy", role: "Director / Videographer / Video Editor", year: "2025" },
-  { id: "1132543450", category: "Documentary", title: "STARTERAs - BREAKIN' B.A.P.", displayTitle: "STARTERAs", role: "Director / Videographer / Video Editor", year: "2025" },
+  { id: "1209839499", category: "Street Art", title: "True Rokin Soul 20th Anniversary", role: "Videographer / Video Editor", year: "2026", thumbnail: "https://vumbnail.com/1209839499.jpg" },
   { id: "1197611630", category: "Music & Festivals", title: "Q-TEK - СЕРИОЗНИ ИГРАЧИ", displayTitle: "Q-TEK", role: "Director / Videographer / Video Editor", year: "2026" },
   { id: "1219311814", category: "Street Art", title: "Visionary Mural Jam - August 2026", displayTitle: "Visionary Mural Jam", role: "Director / Videographer / Video Editor", year: "2026" },
   { id: "233682218", category: "Dance & Theatre", title: "FLAVA HOUSE - Продължавай", displayTitle: "Продължавай", role: "Director / Video Editor", year: "2017" },
