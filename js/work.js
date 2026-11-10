@@ -14,16 +14,16 @@ const projects = [
   { id: "1127819993", category: "Street Art", title: "Упование - Mural painting by Jermain", displayTitle: "Упование", role: "Director / Videographer / Video Editor", year: "2026" },
   { id: "1191806871", category: "Music & Festivals", title: "Фестивал - СМОЛЯН НА МЛАДИТЕ - Ден 1", displayTitle: "Смолян на младите", role: "Director / Videographer / Video Editor", year: "2026" },
   { id: "1202080876", category: "Dance & Theatre", title: "Създадени от кал - танцово-театрален спектакъл", displayTitle: "Създадени от кал", role: "Videographer / Video Editor", year: "2026" },
-  { id: "342951818", category: "Dance & Theatre", title: "FLAVA HOUSE - Това Не Е Спектакъл", displayTitle: "Flava House", role: "Director / Video Editor", year: "2019" },
+  { id: "342951818", category: "Dance & Theatre", title: "FLAVA HOUSE - Това Не Е Спектакъл", displayTitle: "Flava House", role: "Director / Video Editor", credits: [{ name: "Georgi Georgiev", role: "Camera" }], year: "2019" },
   { id: "1191806873", category: "Music & Festivals", title: "Фестивал - СМОЛЯН НА МЛАДИТЕ - Recap", displayTitle: "Festival Recap", role: "Director / Videographer / Video Editor", year: "2026" },
   { id: "1178117259", category: "Dance & Theatre", title: "ПРОСТО ДЖЕМ 3", displayTitle: "Просто Джем", role: "Director / Videographer / Video Editor", year: "2026" },
-  { id: "317971978", category: "Dance & Theatre", title: "Вплитане", role: "Director / Video Editor", year: "2019" },
+  { id: "317971978", category: "Dance & Theatre", title: "Вплитане", role: "Director / Video Editor", credits: [{ name: "Georgi Georgiev", role: "Camera" }], year: "2019" },
   { id: "853021554", category: "Documentary", title: "РУСИ - С Главата Надолу С02 Е20", displayTitle: "Руси", role: "Director / Videographer / Video Editor", year: "2023" },
   { id: "1152485222", category: "Documentary", title: "DJ NOT EASY - Запис на плочи", displayTitle: "DJ Not Eazy", role: "Director / Videographer / Video Editor", year: "2025" },
   { id: "1209839499", category: "Street Art", title: "True Rokin Soul 20th Anniversary", role: "Videographer / Video Editor", year: "2026", thumbnail: "https://vumbnail.com/1209839499.jpg" },
   { id: "1197611630", category: "Music & Festivals", title: "Q-TEK - СЕРИОЗНИ ИГРАЧИ", displayTitle: "Q-TEK", role: "Director / Videographer / Video Editor", year: "2026" },
   { id: "1219311814", category: "Street Art", title: "Visionary Mural Jam - August 2026", displayTitle: "Visionary Mural Jam", role: "Director / Videographer / Video Editor", year: "2026" },
-  { id: "233682218", category: "Dance & Theatre", title: "FLAVA HOUSE - Продължавай", displayTitle: "Продължавай", role: "Director / Video Editor", year: "2017" },
+  { id: "233682218", category: "Dance & Theatre", title: "FLAVA HOUSE - Продължавай", displayTitle: "Продължавай", role: "Director / Video Editor", credits: [{ name: "Georgi Georgiev", role: "Camera" }], year: "2017" },
 ];
 
 const desktopMasonryOrder = [0, 3, 4, 6, 9, 10, 12, 15, 1, 2, 5, 7, 8, 11, 13, 14];
