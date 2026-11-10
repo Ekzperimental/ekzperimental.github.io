@@ -7,8 +7,8 @@ const previewByCategory = {
 };
 
 const projects = [
-  { id: "1195697921", category: "Street Art", title: "Орфей и вечността - Mural painting by Jermain", displayTitle: "Орфей и вечността", role: "Director / Videographer / Video Editor", year: "2026" },
   { id: "1244142189", category: "Events", title: "SNOW EXPO 2026 Official Recap", role: "Director / Video Editor", year: "2026", thumbnail: "https://i.vimeocdn.com/video/2222841963-d9de05bfaca8eee73bfd72e9784aba2e5f1bb7591dc50317a2d8153cf7783020-d_640?region=us" },
+  { id: "1195697921", category: "Street Art", title: "Орфей и вечността - Mural painting by Jermain", displayTitle: "Орфей и вечността", role: "Director / Videographer / Video Editor", year: "2026" },
   { id: "1192226885", category: "Street Art", title: "RODOPA GLOW XPOME", role: "Video Editor", year: "2026" },
   { id: "1127819993", category: "Street Art", title: "Упование - Mural painting by Jermain", displayTitle: "Упование", role: "Director / Videographer / Video Editor", year: "2026" },
   { id: "1191806871", category: "Music & Festivals", title: "Фестивал - СМОЛЯН НА МЛАДИТЕ - Ден 1", displayTitle: "Смолян на младите", role: "Director / Videographer / Video Editor", year: "2026" },
