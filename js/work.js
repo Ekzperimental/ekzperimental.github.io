@@ -6,8 +6,9 @@ const previewByCategory = {
   "Music & Festivals": "assets/images/work-festivals.jpg",
 };
 
+// Optional participant credits: [{ name: "Participant name", role: "Camera" }].
 const projects = [
-  { id: "1244142189", category: "Events", title: "SNOW EXPO 2026 Official Recap", role: "Director / Video Editor", year: "2026", thumbnail: "https://i.vimeocdn.com/video/2222841963-d9de05bfaca8eee73bfd72e9784aba2e5f1bb7591dc50317a2d8153cf7783020-d_640?region=us" },
+  { id: "1244142189", category: "Events", title: "SNOW EXPO 2026 Official Recap", role: "Director / Video Editor / Videographer", credits: [{ name: "Georgi Georgiev", role: "Camera" }], year: "2026", thumbnail: "https://i.vimeocdn.com/video/2222841963-d9de05bfaca8eee73bfd72e9784aba2e5f1bb7591dc50317a2d8153cf7783020-d_640?region=us" },
   { id: "1195697921", category: "Street Art", title: "Орфей и вечността - Mural painting by Jermain", displayTitle: "Орфей и вечността", role: "Director / Videographer / Video Editor", year: "2026" },
   { id: "1192226885", category: "Street Art", title: "RODOPA GLOW XPOME", role: "Video Editor", year: "2026" },
   { id: "1127819993", category: "Street Art", title: "Упование - Mural painting by Jermain", displayTitle: "Упование", role: "Director / Videographer / Video Editor", year: "2026" },
@@ -43,6 +44,15 @@ function createProjectCard(project) {
   const fallbackImage = previewByCategory[project.category];
   const thumbnail = project.thumbnail || `https://vumbnail.com/${project.id}.jpg`;
   const displayTitle = project.displayTitle || project.title;
+  const credits = (project.credits || []).map((credit) => {
+    const line = document.createElement("span");
+    line.className = "work-card__role";
+    const role = document.createElement("span");
+    role.dataset.i18nWorkRole = credit.role;
+    role.textContent = credit.role;
+    line.append(role, document.createTextNode(`: ${credit.name}`));
+    return line.outerHTML;
+  }).join("");
   article.innerHTML = `
     <button class="work-card__button" type="button" data-video-open data-video-id="${project.id}" data-video-title="${project.title}">
       <span class="work-card__media">
@@ -51,8 +61,8 @@ function createProjectCard(project) {
       <span class="work-card__content">
         <span class="work-card__category" data-i18n-work-category="${project.category}" data-work-year="${project.year}">${project.category} / ${project.year}</span>
         <span class="work-card__title">${displayTitle}</span>
-        <span class="work-card__full-title">${project.title}</span>
-        <span class="work-card__role" data-i18n-work-role="${project.role}">${project.role}</span>
+        ${displayTitle !== project.title ? `<span class="work-card__full-title">${project.title}</span>` : ""}
+        <span class="work-card__role"><span data-i18n="work.myRole">My Role</span>: <span data-i18n-work-role="${project.role}">${project.role}</span></span>${credits}
       </span>
     </button>
   `;
