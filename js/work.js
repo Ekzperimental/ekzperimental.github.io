@@ -9,21 +9,21 @@ const previewByCategory = {
 // Optional participant credits: [{ name: "Participant name", role: "Camera" }].
 const projects = [
   { id: "1244142189", category: "Events", title: "SNOW EXPO 2026 Official Recap", displayTitle: "SNOW EXPO", subtitle: "2026 Official Recap", role: "Director / Video Editor / Videographer", credits: [{ name: "Georgi Georgiev", role: "Camera" }], year: "2026", thumbnail: "https://i.vimeocdn.com/video/2222841963-d9de05bfaca8eee73bfd72e9784aba2e5f1bb7591dc50317a2d8153cf7783020-d_640?region=us" },
-  { id: "1195697921", category: "Street Art", title: "Орфей и вечността - Mural painting by Jermain", displayTitle: "Орфей и вечността", role: "Director / Videographer / Video Editor", year: "2026" },
+  { id: "1195697921", category: "Street Art", title: "Орфей и вечността - Mural painting by Jermain", displayTitle: "Орфей и вечността", subtitle: "Mural painting by Jermain", role: "Director / Videographer / Video Editor", year: "2026" },
   { id: "1192226885", category: "Street Art", title: "RODOPA GLOW XPOME", role: "Video Editor", year: "2026" },
-  { id: "1127819993", category: "Street Art", title: "Упование - Mural painting by Jermain", displayTitle: "Упование", role: "Director / Videographer / Video Editor", year: "2026" },
-  { id: "1191806871", category: "Music & Festivals", title: "Фестивал - СМОЛЯН НА МЛАДИТЕ - Ден 1", displayTitle: "Смолян на младите", role: "Director / Videographer / Video Editor", year: "2026" },
-  { id: "1202080876", category: "Dance & Theatre", title: "Създадени от кал - танцово-театрален спектакъл", displayTitle: "Създадени от кал", role: "Videographer / Video Editor", year: "2026" },
-  { id: "342951818", category: "Dance & Theatre", title: "FLAVA HOUSE - Това Не Е Спектакъл", displayTitle: "Flava House", role: "Director / Video Editor", credits: [{ name: "Georgi Georgiev", role: "Camera" }], year: "2019" },
+  { id: "1127819993", category: "Street Art", title: "Упование - Mural painting by Jermain", displayTitle: "Упование", subtitle: "Mural painting by Jermain", role: "Director / Videographer / Video Editor", year: "2026" },
+  { id: "1191806871", category: "Music & Festivals", title: "Фестивал - СМОЛЯН НА МЛАДИТЕ - Ден 1", displayTitle: "Смолян на младите", subtitle: "Фестивал - Ден 1", role: "Director / Videographer / Video Editor", year: "2026" },
+  { id: "1202080876", category: "Dance & Theatre", title: "Създадени от кал - танцово-театрален спектакъл", displayTitle: "Създадени от кал", subtitle: "танцово-театрален спектакъл", role: "Videographer / Video Editor", year: "2026" },
+  { id: "342951818", category: "Dance & Theatre", title: "FLAVA HOUSE - Това Не Е Спектакъл", displayTitle: "Flava House", subtitle: "Това Не Е Спектакъл", role: "Director / Video Editor", credits: [{ name: "Georgi Georgiev", role: "Camera" }], year: "2019" },
   { id: "1222302666", category: "Documentary", title: "DJ DELIGHTFULL | HEART TO BEAT | С ГЛАВАТА НАДОЛУ | КУЛТУРА | ЕП 03", displayTitle: "DJ DELIGHTFULL", subtitle: "HEART TO BEAT | С ГЛАВАТА НАДОЛУ | КУЛТУРА | ЕП 03", role: "Director / Videographer / Video Editor", year: "2026", thumbnail: "https://i.vimeocdn.com/video/2195226265-0acd36ab82973a4c5949e30ec48563559c9d5f980bb80324f504f61f2a4c87f4-d_640?region=us" },
   { id: "1178117259", category: "Dance & Theatre", title: "ПРОСТО ДЖЕМ 3", displayTitle: "Просто Джем", role: "Director / Videographer / Video Editor", year: "2026" },
   { id: "317971978", category: "Dance & Theatre", title: "Вплитане", role: "Director / Video Editor", credits: [{ name: "Georgi Georgiev", role: "Camera" }], year: "2019" },
-  { id: "853021554", category: "Documentary", title: "РУСИ - С Главата Надолу С02 Е20", displayTitle: "Руси", role: "Director / Videographer / Video Editor", year: "2023" },
-  { id: "1152485222", category: "Documentary", title: "DJ NOT EASY - Запис на плочи", displayTitle: "DJ Not Eazy", role: "Director / Videographer / Video Editor", year: "2025" },
+  { id: "853021554", category: "Documentary", title: "РУСИ - С Главата Надолу С02 Е20", displayTitle: "Руси", subtitle: "С Главата Надолу С02 Е20", role: "Director / Videographer / Video Editor", year: "2023" },
+  { id: "1152485222", category: "Documentary", title: "DJ NOT EASY - Запис на плочи", displayTitle: "DJ Not Eazy", subtitle: "Запис на плочи", role: "Director / Videographer / Video Editor", year: "2025" },
   { id: "1209839499", category: "Street Art", title: "True Rokin Soul 20th Anniversary", displayTitle: "True Rokin Soul", subtitle: "20th Anniversary", role: "Videographer / Video Editor", year: "2026", thumbnail: "https://vumbnail.com/1209839499.jpg" },
-  { id: "1197611630", category: "Music & Festivals", title: "Q-TEK - СЕРИОЗНИ ИГРАЧИ", displayTitle: "Q-TEK", role: "Director / Videographer / Video Editor", year: "2026" },
-  { id: "1219311814", category: "Street Art", title: "Visionary Mural Jam - August 2026", displayTitle: "Visionary Mural Jam", role: "Director / Videographer / Video Editor", year: "2026" },
-  { id: "233682218", category: "Dance & Theatre", title: "FLAVA HOUSE - Продължавай", displayTitle: "Продължавай", role: "Director / Video Editor", credits: [{ name: "Georgi Georgiev", role: "Camera" }], year: "2017" },
+  { id: "1197611630", category: "Music & Festivals", title: "Q-TEK - СЕРИОЗНИ ИГРАЧИ", displayTitle: "Q-TEK", subtitle: "Сериозни Играчи", role: "Director / Videographer / Video Editor", year: "2026" },
+  { id: "1219311814", category: "Street Art", title: "Visionary Mural Jam - August 2026", displayTitle: "Visionary Mural Jam", subtitle: "", role: "Director / Videographer / Video Editor", year: "2026" },
+  { id: "233682218", category: "Dance & Theatre", title: "FLAVA HOUSE - Продължавай", displayTitle: "Продължавай", subtitle: "Flava House", role: "Director / Video Editor", credits: [{ name: "Georgi Georgiev", role: "Camera" }], year: "2017" },
 ];
 
 const desktopMasonryOrder = [0, 3, 4, 6, 9, 10, 12, 15, 1, 2, 5, 7, 8, 11, 13, 14];
