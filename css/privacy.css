@@ -1,0 +1,36 @@
+/* Privacy information reuses the existing service dialog styles. */
+.site-footer .privacy-link {
+  text-transform: none;
+  text-decoration: underline;
+  text-decoration-color: var(--color-line);
+  text-underline-offset: 0.25em;
+}
+
+.site-footer .privacy-link:hover,
+.site-footer .privacy-link:focus-visible {
+  color: var(--color-muted);
+}
+
+.privacy-modal section {
+  margin-top: var(--space-5);
+}
+
+.privacy-modal h3 {
+  color: var(--color-muted);
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.privacy-modal a {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.privacy-modal__title:focus {
+  outline: none;
+}
+
+.privacy-modal__title {
+  overflow-wrap: anywhere;
+}

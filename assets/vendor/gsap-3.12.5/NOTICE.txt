@@ -1,0 +1,14 @@
+GSAP 3.12.5 and ScrollTrigger 3.12.5
+Copyright 2024, GreenSock. All rights reserved.
+
+The original copyright/licence headers in both JavaScript files are preserved unchanged.
+GSAP is not MIT-licensed. The gsap@3.12.5 package declares:
+Standard 'no charge' license: https://gsap.com/standard-license. Club GSAP members get more: https://gsap.com/licensing/. Why GreenSock doesn't employ an MIT license: https://gsap.com/why-license/
+
+Applicable licence reference: https://gsap.com/standard-license/
+Official terms checked 23 November 2026: https://gsap.com/community/standard-license/
+The Standard No Charge GSAP License permits website use subject to its restrictions,
+including preservation of proprietary notices. No licence terms are replaced by this notice.
+
+Both JavaScript files are byte-identical to the previously loaded cdnjs 3.12.5 files
+and the official gsap@3.12.5 npm distribution. No library upgrade or modifications.

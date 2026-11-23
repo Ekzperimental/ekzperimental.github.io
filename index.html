@@ -3,38 +3,44 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Ekzperimental — Independent Video Production</title>
-    <meta name="description" content="EKZPERIMENTAL is an independent video production studio in Bulgaria creating documentaries, commercial films, music videos, dance, theatre, festival and cultural video projects.">
+    <title>EKZPERIMENTAL — Independent Film &amp; Video Production Studio</title>
+    <meta name="description" content="Independent film and video production studio based in Bulgaria. Documentary films, brand films, music videos, cultural projects and remote post-production worldwide.">
     <link rel="canonical" href="https://ekzperimental.org/">
     <meta name="theme-color" content="#050505">
     <meta name="robots" content="index, follow">
 
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Ekzperimental — Independent Video Production">
-    <meta property="og:description" content="Documentaries, commercials, music videos, dance and theatre films, festival coverage and experimental film work.">
+    <meta property="og:title" content="EKZPERIMENTAL — Independent Film &amp; Video Production Studio">
+    <meta property="og:description" content="Rooted in culture. Open to the world.">
     <meta property="og:url" content="https://ekzperimental.org/">
     <meta property="og:site_name" content="EKZPERIMENTAL">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:locale:alternate" content="bg_BG">
     <meta property="og:image" content="https://ekzperimental.org/assets/images/social-preview.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="EKZPERIMENTAL logo with the headline Stories that matter on a dark cinematic background.">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Ekzperimental — Independent Video Production">
-    <meta name="twitter:description" content="Independent video production for documentaries, music videos, cultural projects, festivals, dance, theatre and commercial work.">
+    <meta name="twitter:title" content="EKZPERIMENTAL — Independent Film &amp; Video Production Studio">
+    <meta name="twitter:description" content="Rooted in culture. Open to the world.">
     <meta name="twitter:image" content="https://ekzperimental.org/assets/images/social-preview.jpg">
+    <meta name="twitter:image:alt" content="EKZPERIMENTAL logo with the headline Stories that matter on a dark cinematic background.">
 
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@graph": [
           {
-            "@type": "ProfessionalService",
-            "@id": "https://ekzperimental.org/#studio",
+            "@type": "Organization",
+            "@id": "https://ekzperimental.org/#organization",
             "name": "EKZPERIMENTAL",
-            "url": "https://ekzperimental.org",
+            "url": "https://ekzperimental.org/",
             "image": "https://ekzperimental.org/assets/images/social-preview.jpg",
             "logo": "https://ekzperimental.org/assets/images/logo.png",
-            "description": "Independent video production studio based in Bulgaria.",
+            "description": "Independent film and video production studio based in Bulgaria. Documentary films, brand films, music videos, cultural projects and remote post-production worldwide.",
             "founder": { "@type": "Person", "name": "Kostadin Ekzarov" },
+            "location": { "@type": "Country", "name": "Bulgaria" },
+            "email": "k.ekzarov@swkz.org",
             "areaServed": ["Bulgaria", "Worldwide"],
             "sameAs": [
               "https://vimeo.com/ekzperimental",
@@ -49,27 +55,27 @@
             "description": "Recent documentary, music, festival, stage and cultural video work by EKZPERIMENTAL.",
             "thumbnailUrl": "https://vumbnail.com/1205541908.jpg",
             "embedUrl": "https://player.vimeo.com/video/1205541908",
-            "publisher": { "@id": "https://ekzperimental.org/#studio" }
+            "publisher": { "@id": "https://ekzperimental.org/#organization" }
           }
         ]
       }
     </script>
 
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="preconnect" href="https://vumbnail.com">
-    <link rel="preconnect" href="https://player.vimeo.com">
     <link rel="icon" href="assets/images/logo.png" type="image/png">
     <link rel="apple-touch-icon" href="assets/images/logo.png">
     <link rel="preload" href="assets/videos/background-loop.mp4" as="video" type="video/mp4">
     <link rel="preload" href="assets/images/logo.png" as="image">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="css/components.css?v=20260720-01">
-    <link rel="stylesheet" href="css/animations.css?v=20260716-03">
-    <link rel="stylesheet" href="css/style.css?v=20260720-03">
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script type="module" src="js/main.js?v=20261111-01"></script>
+    <link rel="stylesheet" href="css/components.css?v=20261123-21">
+    <link rel="stylesheet" href="css/animations.css?v=20261123-23">
+    <link rel="stylesheet" href="css/style.css?v=20261123-22">
+    <script defer src="assets/vendor/gsap-3.12.5/gsap.min.js"></script>
+    <script defer src="assets/vendor/gsap-3.12.5/ScrollTrigger.min.js"></script>
+    <script type="module" src="js/main.js?v=20261123-22"></script>
+    <link rel="stylesheet" href="css/services.css?v=20261123-22">
+    <link rel="stylesheet" href="css/privacy.css?v=20261123-21">
+    <script type="module" src="js/services.js?v=20261123-21"></script>
   </head>
 
   <body>
@@ -102,10 +108,11 @@
           <a href="#services" data-i18n="nav.services">Services</a>
           <a href="#about" data-i18n="nav.about">About</a>
           <a href="#contact" data-i18n="nav.contact">Contact</a>
-          <div class="language-switcher" role="group" aria-label="Language" data-language-switcher data-i18n-aria-label="language.group">
+          <div class="language-switcher" role="group" aria-label="Language" data-language-switcher data-i18n-aria-label="language.group" aria-describedby="language-storage-note" title="Your language choice is remembered on this device for up to 30 days. See Privacy &amp; Cookies for details." data-i18n-title="language.storageNotice">
             <button type="button" data-language-button="bg" aria-label="Switch to Bulgarian" aria-pressed="false" data-i18n-aria-label="language.bg">БГ</button>
             <span aria-hidden="true">|</span>
             <button type="button" data-language-button="en" aria-label="Switch to English" aria-pressed="true" data-i18n-aria-label="language.en">EN</button>
+            <span class="sr-only" id="language-storage-note" data-i18n="language.storageNotice">Your language choice is remembered on this device for up to 30 days. See Privacy &amp; Cookies for details.</span>
           </div>
         </div>
       </nav>
@@ -118,13 +125,22 @@
           <p class="eyebrow reveal" data-reveal data-i18n="hero.eyebrow">Independent video production.</p>
           <h1 class="hero__title reveal" id="hero-title" data-reveal data-i18n="hero.title">Stories that matter.</h1>
           <p class="hero__subtitle reveal" data-reveal data-i18n="hero.subtitle">
-            Independent video production for documentaries, music videos, cultural projects, festivals, dance, theatre and commercial work — crafted in Bulgaria, working worldwide.
+            An independent studio for filmmaking, video production and post-production. Rooted in culture. Open to the world.
           </p>
           <div class="hero__actions reveal" data-reveal>
             <a class="button button--primary" href="#work" data-i18n="hero.ctaWork">View Work</a>
             <a class="button button--ghost" href="#contact" data-i18n="hero.ctaContact">Start a Project</a>
           </div>
         </div>
+
+        <button class="hero__motion-control" type="button" data-hero-motion-control data-state="playing" aria-labelledby="hero-background-pause-label">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <g class="hero__motion-pause"><path d="M7 5h3v14H7zM14 5h3v14h-3z"/></g>
+            <g class="hero__motion-play"><path d="M8 5v14l11-7z"/></g>
+          </svg>
+          <span class="sr-only" id="hero-background-pause-label" data-i18n="hero.pauseBackground">Pause background video</span>
+          <span class="sr-only" id="hero-background-play-label" hidden data-i18n="hero.playBackground">Play background video</span>
+        </button>
 
         <a class="scroll-indicator" href="#approach" aria-label="Scroll to approach" data-i18n-aria-label="hero.scrollAria">
           <span class="scroll-indicator__line" aria-hidden="true"></span>
@@ -135,8 +151,8 @@
       <section class="showreel section" aria-labelledby="showreel-title">
         <div class="container showreel__inner reveal" data-reveal>
           <div class="showreel__stage">
-            <button class="showreel-card" type="button" data-video-open data-video-id="1205541908" data-video-title="EKZPERIMENTAL Showreel" aria-label="Play EKZPERIMENTAL showreel" data-i18n-aria-label="showreel.aria">
-            <img src="https://vumbnail.com/1205541908.jpg" alt="EKZPERIMENTAL showreel preview" width="1280" height="720" loading="lazy" decoding="async" data-fallback-src="assets/images/og-image.jpg" data-i18n-alt="showreel.alt">
+            <button class="showreel-card" type="button" data-video-open data-video-id="1205541908" data-video-title="EKZPERIMENTAL Showreel" aria-haspopup="dialog" aria-controls="video-modal" aria-label="Play EKZPERIMENTAL showreel" data-i18n-aria-label="showreel.aria">
+            <img src="assets/thumbnails/vimeo-1205541908.webp" alt="" width="1280" height="720" loading="lazy" decoding="async" data-fallback-src="assets/images/og-image.jpg">
               <span class="play-badge" aria-hidden="true"></span>
             </button>
             <div class="showreel__copy">
@@ -165,7 +181,7 @@
               <dd data-i18n="approach.projects">Projects</dd>
             </div>
             <div>
-              <dt>6</dt>
+              <dt>7</dt>
               <dd data-i18n="approach.services">Services</dd>
             </div>
           </dl>
@@ -196,50 +212,64 @@
       <section class="services section" id="services" aria-labelledby="services-title" data-services-reveal>
         <div class="container section-heading reveal" data-reveal>
           <p class="eyebrow" data-i18n="services.eyebrow">Services</p>
-          <h2 id="services-title" data-i18n="services.title">Production support from first idea to final cut.</h2>
-          <p data-i18n="services.text">Video work for artists, organizations, musicians, performers and independent teams.</p>
+          <h2 id="services-title" data-i18n="services.title">Different forms. One creative vision.</h2>
+          <p data-i18n="services.text">Films and video production for artists, brands, cultural organisations and production teams.</p>
         </div>
         <div class="container services-list" data-services-list>
-          <article class="service-card reveal" data-reveal data-service-step>
+          <article class="service-card reveal" data-reveal data-service-step data-documentary-service>
             <span>01</span>
             <div>
-              <h3 data-i18n="services.documentary.title">Documentary Films</h3>
-              <p data-i18n="services.documentary.text">Human stories for artists, NGOs and cultural organizations.</p>
+              <h3 id="service-documentary-title" data-i18n="services.documentary.title">Documentary Films</h3>
+              <p data-i18n="services.documentary.text">Authentic stories about people, culture and ideas.</p>
+              <button class="service-editing-trigger" type="button" data-documentary-open aria-haspopup="dialog" aria-controls="service-documentary-modal" aria-labelledby="service-documentary-title"></button>
             </div>
           </article>
-          <article class="service-card reveal" data-reveal data-service-step>
+          <article class="service-card reveal" data-reveal data-service-step data-commercial-service>
             <span>02</span>
             <div>
-              <h3 data-i18n="services.commercial.title">Commercial Production</h3>
-              <p data-i18n="services.commercial.text">Focused video pieces for brands, campaigns and organizations.</p>
+              <h3 id="service-commercial-title" data-i18n="services.commercial.title">Commercial Production</h3>
+              <p data-i18n="services.commercial.text">Creative films for brands, businesses and campaigns.</p>
+              <button class="service-editing-trigger" type="button" data-commercial-open aria-haspopup="dialog" aria-controls="service-commercial-modal" aria-labelledby="service-commercial-title"></button>
             </div>
           </article>
-          <article class="service-card reveal" data-reveal data-service-step>
+          <article class="service-card reveal" data-reveal data-service-step data-street-art-service>
             <span>03</span>
             <div>
-              <h3 data-i18n="services.music.title">Music Videos</h3>
-              <p data-i18n="services.music.text">Visual pieces for musicians, releases and independent creative projects.</p>
+              <h3 id="service-street-art-title" data-i18n="services.streetArt.title">Street Art</h3>
+              <p data-i18n="services.streetArt.text">Cinematic films about murals, graffiti and urban art.</p>
+              <button class="service-editing-trigger" type="button" data-street-art-open aria-haspopup="dialog" aria-controls="service-street-art-modal" aria-labelledby="service-street-art-title"></button>
             </div>
           </article>
-          <article class="service-card reveal" data-reveal data-service-step>
+          <article class="service-card reveal" data-reveal data-service-step data-festival-service>
             <span>04</span>
             <div>
-              <h3 data-i18n="services.festival.title">Festival Coverage</h3>
-              <p data-i18n="services.festival.text">Recaps and aftermovies that preserve the energy of live events.</p>
+              <h3 id="service-festival-title" data-i18n="services.festival.title">Festivals &amp; Events</h3>
+              <p data-i18n="services.festival.text">Dynamic recaps and aftermovies that capture the live experience.</p>
+              <button class="service-editing-trigger" type="button" data-festival-open aria-haspopup="dialog" aria-controls="service-festival-modal" aria-labelledby="service-festival-title"></button>
             </div>
           </article>
-          <article class="service-card reveal" data-reveal data-service-step>
+          <article class="service-card reveal" data-reveal data-service-step data-dance-service>
             <span>05</span>
             <div>
-              <h3 data-i18n="services.dance.title">Dance & Theatre</h3>
-              <p data-i18n="services.dance.text">Video work for stage, movement, performance and rehearsal processes.</p>
+              <h3 id="service-dance-title" data-i18n="services.dance.title">Dance &amp; Theatre</h3>
+              <p data-i18n="services.dance.text">A dialogue between cinema and the performing arts.</p>
+              <button class="service-editing-trigger" type="button" data-dance-open aria-haspopup="dialog" aria-controls="service-dance-modal" aria-labelledby="service-dance-title"></button>
             </div>
           </article>
-          <article class="service-card reveal" data-reveal data-service-step>
+          <article class="service-card reveal" data-reveal data-service-step data-music-service>
             <span>06</span>
             <div>
-              <h3 data-i18n="services.editing.title">Video Editing</h3>
-              <p data-i18n="services.editing.text">Shaping raw material into rhythm, structure and story.</p>
+              <h3 id="service-music-title" data-i18n="services.music.title">Music Videos</h3>
+              <p data-i18n="services.music.text">A visual identity for every sound.</p>
+              <button class="service-editing-trigger" type="button" data-music-open aria-haspopup="dialog" aria-controls="service-music-modal" aria-labelledby="service-music-title"></button>
+            </div>
+          </article>
+          <article class="service-card reveal" data-reveal data-service-step data-editing-service>
+            <span>07</span>
+            <div>
+              <h3 id="service-editing-title" data-i18n="services.editing.title">Video Editing &amp; Post-Production</h3>
+              <p data-i18n="services.editing.text">Creative editing and remote collaboration worldwide.</p>
+              <button class="service-editing-trigger" type="button" data-editing-open aria-haspopup="dialog" aria-controls="service-editing-modal" aria-labelledby="service-editing-title"></button>
             </div>
           </article>
         </div>
@@ -251,10 +281,10 @@
             <p class="eyebrow" data-i18n="about.eyebrow">About</p>
             <h2 id="about-title" data-i18n="about.title">A compact studio for films with memory.</h2>
             <p data-i18n="about.text1">
-              Founded by filmmaker Kostadin Ekzarov, EKZPERIMENTAL is an independent creative studio based in Bulgaria, producing documentary films, branded content, music videos and cultural projects for artists, organizations, festivals and independent teams in Bulgaria and worldwide.
+              Founded by filmmaker Kostadin Ekzarov, EKZPERIMENTAL is an independent studio based in Bulgaria, working across documentary filmmaking, commercial production, music and the performing arts.
             </p>
             <p data-i18n="about.text2">
-              With a background in Directing, Choreography, Visual Arts and Advertising, Kostadin combines storytelling, editing and visual design to create thoughtful films that connect with people. Alongside client work, he is the Founder of EKZPERIMENTAL Creative House and Co-Founder of JAM ON IT Festival and Flava House.
+              With a background in directing, choreography, visual arts and advertising, Kostadin brings together filmmaking, editing and visual design. Alongside his film work, he is the founder of EKZPERIMENTAL Creative House and co-founder of JAM ON IT Festival and Flava House.
             </p>
           </div>
           <div class="about__photos reveal" data-reveal aria-label="Studio photography" data-i18n-aria-label="about.photosAria">
@@ -276,10 +306,10 @@
             <span class="testimonial__index" aria-hidden="true">01</span>
             <img class="testimonial__portrait" src="assets/images/testimonial-delyana-angelova.webp" alt="Portrait of Delyana Angelova" width="800" height="800" loading="lazy" decoding="async">
             <blockquote>
-              <p data-i18n="testimonials.delyana.text1">Working with Kostadin Ekzarov and EKZPERIMENTAL is far from an experiment - it is a privilege. From the very beginning, Kostadin brings creativity, professionalism, and an exceptional eye for visual storytelling to every project.</p>
+              <p data-i18n="testimonials.delyana.text1">Working with Kostadin Ekzarov and EKZPERIMENTAL is far from an experiment — it is a privilege. From the very beginning, Kostadin brings creativity, professionalism, and an exceptional eye for visual storytelling to every project.</p>
               <p data-i18n="testimonials.delyana.text2">His attention to detail and commitment to excellence are evident in every frame. He has a remarkable ability to transform ideas into compelling visual narratives that not only capture attention but also take the viewer on an emotional journey.</p>
               <p data-i18n="testimonials.delyana.text3">What truly sets EKZPERIMENTAL apart is the dedication to achieving the highest quality while making the entire creative process smooth, collaborative, and enjoyable. He consistently exceeds expectations, delivering stunning results that elevate the final production and leave a lasting impression.</p>
-              <p data-i18n="testimonials.delyana.text4">I can wholeheartedly recommend Kostadin Ekzarov and EKZPERIMENTAL to anyone looking for outstanding video production and cinematic storytelling. Having him as part of your team is not just an advantage - it is a genuine privilege.</p>
+              <p data-i18n="testimonials.delyana.text4">I can wholeheartedly recommend Kostadin Ekzarov and EKZPERIMENTAL to anyone looking for outstanding video production and cinematic storytelling. Having him as part of your team is not just an advantage — it is a genuine privilege.</p>
             </blockquote>
             <figcaption>
               <strong>Delyana Angelova</strong>
@@ -291,7 +321,7 @@
             <img class="testimonial__portrait" src="assets/images/testimonial-tzvetina-matova.webp?v=20260719-01" alt="Portrait of Tzvetina Matova" width="800" height="800" loading="lazy" decoding="async">
             <blockquote>
               <p data-i18n="testimonials.tzvetina.text1">Kostadin demonstrated a high level of professionalism throughout every stage of our collaboration, from pre-production and filming to the post-production process. He works in an organized and reliable manner, consistently meets deadlines, and maintains clear and timely communication throughout the entire project.</p>
-              <p data-i18n="testimonials.tzvetina.text2">One of his greatest strengths is his ability to recognize the dramatic essence of an event and translate it into a compelling visual narrative. The films and trailers he creates go beyond simple documentation-they communicate a cohesive artistic vision that reflects the identity and objectives of each project.</p>
+              <p data-i18n="testimonials.tzvetina.text2">One of his greatest strengths is his ability to recognize the dramatic essence of an event and translate it into a compelling visual narrative. The films and trailers he creates go beyond simple documentation — they communicate a cohesive artistic vision that reflects the identity and objectives of each project.</p>
               <p data-i18n="testimonials.tzvetina.text3">Kostadin is proactive, contributes thoughtful creative ideas and solutions, and at the same time works seamlessly within project requirements while responding constructively to feedback. He demonstrates exceptional attention to detail, precision in editing, and a strong sense of pacing, rhythm, and emotional impact.</p>
               <p data-i18n="testimonials.tzvetina.text4">During our collaboration on filming stage performances, as well as creating trailers for Dancing Play and the 2Touch dance programme, Kostadin consistently delivered work of a high professional standard. His commitment to quality and dedication to achieving the best possible result were evident throughout the entire process.</p>
               <p data-i18n="testimonials.tzvetina.text5">I consider Kostadin to be a reliable, responsible, and highly creative professional. I would confidently recommend Kostadin Ekzarov as a videographer and video artist for projects that require a combination of technical expertise, artistic sensitivity, and a professional approach.</p>
@@ -306,9 +336,9 @@
             <img class="testimonial__portrait" src="assets/images/testimonial-sonja-yosifov.webp" alt="Portrait of Sonja Yosifov" width="800" height="800" loading="lazy" decoding="async">
             <blockquote>
               <p data-i18n="testimonials.sonja.text1">Working with Kostadin Ekzarov (Ekzarka) has been an absolute pleasure. We have collaborated on several projects, and every time he has exceeded my expectations.</p>
-              <p data-i18n="testimonials.sonja.text2">Kostadin is far more than a professional videographer and editor - he is a visual storyteller. To me, his videos are genuine works of art. He has an exceptional eye for detail, movement, expressions, and emotion, and he captures the true atmosphere and energy of every event. By skillfully combining different cameras, lenses, and equipment, he creates cinematic visuals that feel both authentic and captivating.</p>
+              <p data-i18n="testimonials.sonja.text2">Kostadin is far more than a professional videographer and editor — he is a visual storyteller. To me, his videos are genuine works of art. He has an exceptional eye for detail, movement, expressions, and emotion, and he captures the true atmosphere and energy of every event. By skillfully combining different cameras, lenses, and equipment, he creates cinematic visuals that feel both authentic and captivating.</p>
               <p data-i18n="testimonials.sonja.text3">What impresses me even more is his editing. He has a remarkable ability to make completely different shots flow together seamlessly, creating a natural rhythm that keeps the viewer engaged from beginning to end. Every transition feels intentional, and every frame serves the story.</p>
-              <p data-i18n="testimonials.sonja.text4">Beyond his creative talent, Kostadin is incredibly professional. He is precise, reliable, and consistently delivers on time - often even ahead of schedule. Communication is always smooth, and you can count on him to approach every project with dedication and attention to detail.</p>
+              <p data-i18n="testimonials.sonja.text4">Beyond his creative talent, Kostadin is incredibly professional. He is precise, reliable, and consistently delivers on time — often even ahead of schedule. Communication is always smooth, and you can count on him to approach every project with dedication and attention to detail.</p>
               <p data-i18n="testimonials.sonja.text5">I wholeheartedly recommend Kostadin to anyone looking for outstanding video production. Working with him is inspiring, effortless, and truly rewarding.</p>
             </blockquote>
             <figcaption>
@@ -323,7 +353,7 @@
         <div class="container section-heading reveal" data-reveal>
           <p class="eyebrow" data-i18n="partners.eyebrow">Partners</p>
           <h2 id="partners-title" data-i18n="partners.title">Collaborations with artists, festivals, foundations and cultural teams.</h2>
-          <p data-i18n="partners.text">Long-running work across street art, performance, cultural programs and independent creative projects.</p>
+          <p data-i18n="partners.text">Long-running work across street art, performance, cultural programmes and independent creative projects.</p>
         </div>
         <div class="container partners-grid reveal" data-reveal>
           <a href="https://visionary.foundation" target="_blank" rel="noopener noreferrer" aria-label="Visit Visionary Foundation website" data-i18n-aria-label="partners.visionaryAria">
@@ -356,7 +386,7 @@
             <p class="eyebrow" data-i18n="contact.eyebrow">Contact</p>
             <h2 id="contact-title" data-i18n-html="contact.title">Have a story<br>to tell?</h2>
             <p data-i18n="contact.line">Let's make it together.</p>
-            <p data-i18n="contact.availability">Available for documentaries, commercial productions, music videos, festivals, dance, theatre and cultural collaborations.</p>
+            <p data-i18n="contact.availability">Available for film production, creative collaborations and remote post-production worldwide.</p>
           </div>
           <div class="contact__panel">
             <p class="reveal" data-reveal data-i18n-html="contact.panel">Every project starts<br>with a conversation.</p>
@@ -376,13 +406,124 @@
     <footer class="site-footer">
       <div class="container">
         <p>
-          <span>&copy; 2026 Ekzperimental</span>
+          <span>&copy; 2026 EKZPERIMENTAL</span>
           <span data-i18n="footer.note">Independent video production from Bulgaria.</span>
+          <a class="privacy-link" href="#privacy-policy" data-privacy-open aria-haspopup="dialog" aria-controls="privacy-policy" data-i18n="privacy.link">Privacy &amp; Cookies</a>
         </p>
       </div>
     </footer>
 
-    <dialog class="video-modal" data-video-modal aria-labelledby="video-modal-title">
+    <dialog class="service-editing-modal privacy-modal" id="privacy-policy" data-privacy-modal aria-labelledby="privacy-policy-title">
+      <div class="service-editing-modal__content">
+        <button class="service-editing-modal__close" type="button" data-privacy-close aria-label="Close privacy information" data-i18n-aria-label="privacy.close"></button>
+        <h2 class="service-editing-modal__title privacy-modal__title" id="privacy-policy-title" tabindex="-1" data-i18n="privacy.title">Privacy &amp; Cookies</h2>
+        <p class="service-editing-modal__intro" data-i18n="privacy.draft">Draft for local review · Version 0.1 · 23 November 2026. Effective date: to be confirmed before publication.</p>
+        <section>
+          <h3 data-i18n="privacy.controller.title">Who we are</h3>
+          <p class="service-editing-modal__description" data-i18n-html="privacy.controller.text">EKZPERIMENTAL EOOD, Bulgaria. Website: <a href="https://ekzperimental.org/" target="_blank" rel="noopener noreferrer">ekzperimental.org</a>. For privacy enquiries, contact <a href="mailto:k.ekzarov@swkz.org">k.ekzarov@swkz.org</a>.</p>
+        </section>
+        <section>
+          <h3 data-i18n="privacy.hosting.title">Hosting and technical data</h3>
+          <p class="service-editing-modal__description" data-i18n="privacy.hosting.text">The website is hosted through GitHub Pages. Delivering pages and protecting the service involves technical request data, including IP addresses and browser information. The animation libraries, images and background video are served with the website’s own files.</p>
+        </section>
+        <section>
+          <h3 data-i18n="privacy.email.title">Email enquiries</h3>
+          <p class="service-editing-modal__description" data-i18n="privacy.email.text">If you email us, we receive the contact details, message and any attachments you choose to send so we can respond to your enquiry. Selecting an email link opens your email application; it does not send a message automatically.</p>
+        </section>
+        <section>
+          <h3 data-i18n="privacy.vimeo.title">Vimeo videos</h3>
+          <p class="service-editing-modal__description" data-i18n-html="privacy.vimeo.text">The Vimeo player loads when you select Play, connecting your browser to Vimeo and sharing technical request information. We use dnt=1 to limit player session data and analytics. This does not prevent all processing or necessary security cookies, and your browser may send Vimeo cookies stored previously. Read <a href="https://vimeo.com/privacy" target="_blank" rel="noopener noreferrer">Vimeo’s privacy information</a>.</p>
+        </section>
+        <section>
+          <h3 data-i18n="privacy.language.title">Remembering your language</h3>
+          <p class="service-editing-modal__description" data-i18n="privacy.language.text">When you explicitly select Bulgarian or English, we save that choice in your browser’s local storage for up to 30 days. Loading the site does not renew this period. If the setting expires or is unavailable, English is used until you choose a language. You can remove the preference by clearing the website’s stored data. It is not a tracking identifier.</p>
+        </section>
+        <section>
+          <h3 data-i18n="privacy.links.title">External links</h3>
+          <p class="service-editing-modal__description" data-i18n="privacy.links.text">Our social and partner links open other websites with their own privacy practices. These are ordinary links, rather than automatically loaded social media widgets.</p>
+        </section>
+        <section>
+          <h3 data-i18n="privacy.rights.title">Your rights and contact</h3>
+          <p class="service-editing-modal__description" data-i18n-html="privacy.rights.text">Depending on applicable law and the circumstances, you may request information, access, correction, deletion, restriction or portability of your personal data, object to processing, and withdraw consent where processing relies on consent. Contact <a href="mailto:k.ekzarov@swkz.org">k.ekzarov@swkz.org</a>. You may lodge a complaint with the <a href="https://cpdp.bg/" target="_blank" rel="noopener noreferrer">Bulgarian Commission for Personal Data Protection</a>.</p>
+        </section>
+        <section>
+          <h3 data-i18n="privacy.review.title">Before publication</h3>
+          <p class="service-editing-modal__description" data-i18n="privacy.review.text">This draft will be finalised after the required controller information, legal bases, retention criteria, international transfer arrangements and consent requirements have been confirmed. A 30-day language setting and Vimeo DNT do not by themselves establish an exemption from consent.</p>
+        </section>
+      </div>
+    </dialog>
+
+    <dialog class="service-editing-modal" id="service-dance-modal" data-dance-modal aria-labelledby="service-dance-modal-title" aria-describedby="service-dance-modal-intro">
+      <div class="service-editing-modal__content">
+        <button class="service-editing-modal__close" type="button" data-editing-close aria-label="Close service details" data-i18n-aria-label="services.editing.close"></button>
+        <h2 class="service-editing-modal__title" id="service-dance-modal-title" data-i18n="services.dance.title">Dance &amp; Theatre</h2>
+        <p class="service-editing-modal__intro" id="service-dance-modal-intro" data-i18n="services.dance.intro">When movement becomes a language.</p>
+        <p class="service-editing-modal__description" data-i18n="services.dance.description">From the first rehearsal to the stage, we explore the relationship between the body, space and emotion. Working with dancers, choreographers and theatre artists, we bring the performing arts into dialogue with cinema.</p>
+        <div class="service-video-examples" data-service-video-examples></div>
+      </div>
+    </dialog>
+
+    <dialog class="service-editing-modal" id="service-festival-modal" data-festival-modal aria-labelledby="service-festival-modal-title" aria-describedby="service-festival-modal-intro">
+      <div class="service-editing-modal__content">
+        <button class="service-editing-modal__close" type="button" data-editing-close aria-label="Close service details" data-i18n-aria-label="services.editing.close"></button>
+        <h2 class="service-editing-modal__title" id="service-festival-modal-title" data-i18n="services.festival.title">Festivals &amp; Events</h2>
+        <p class="service-editing-modal__intro" id="service-festival-modal-intro" data-i18n="services.festival.intro">Beyond the final applause.</p>
+        <p class="service-editing-modal__description" data-i18n="services.festival.description">From live performances and backstage moments to the energy of the crowd, we capture what makes each event unique. Dynamic recaps, aftermovies and promotional content that keep the experience alive and build anticipation for what's next.</p>
+        <div class="service-video-examples" data-service-video-examples></div>
+      </div>
+    </dialog>
+
+    <dialog class="service-editing-modal" id="service-street-art-modal" data-street-art-modal aria-labelledby="service-street-art-modal-title" aria-describedby="service-street-art-modal-intro">
+      <div class="service-editing-modal__content">
+        <button class="service-editing-modal__close" type="button" data-editing-close aria-label="Close service details" data-i18n-aria-label="services.editing.close"></button>
+        <h2 class="service-editing-modal__title" id="service-street-art-modal-title" data-i18n="services.streetArt.title">Street Art</h2>
+        <p class="service-editing-modal__intro" id="service-street-art-modal-intro" data-i18n="services.streetArt.intro">From the first sketch to the finished wall.</p>
+        <p class="service-editing-modal__description" data-i18n="services.streetArt.description">We create films that capture the creative process behind murals, graffiti and urban art. Through close observation and personal stories, we explore the artists, their work and the spaces they transform.</p>
+        <div class="service-video-examples" data-service-video-examples></div>
+      </div>
+    </dialog>
+
+    <dialog class="service-editing-modal" id="service-music-modal" data-music-modal aria-labelledby="service-music-modal-title" aria-describedby="service-music-modal-intro">
+      <div class="service-editing-modal__content">
+        <button class="service-editing-modal__close" type="button" data-editing-close aria-label="Close service details" data-i18n-aria-label="services.editing.close"></button>
+        <h2 class="service-editing-modal__title" id="service-music-modal-title" data-i18n="services.music.title">Music Videos</h2>
+        <p class="service-editing-modal__intro" id="service-music-modal-intro" data-i18n="services.music.intro">Every track has its own visual world.</p>
+        <p class="service-editing-modal__description" data-i18n="services.music.description">We work with artists, bands and producers to translate music into images. From concept and direction to filming and editing, each video is shaped by the rhythm, character and artistic identity of the music.</p>
+        <div class="service-video-examples" data-service-video-examples></div>
+      </div>
+    </dialog>
+
+    <dialog class="service-editing-modal" id="service-commercial-modal" data-commercial-modal aria-labelledby="service-commercial-modal-title" aria-describedby="service-commercial-modal-intro">
+      <div class="service-editing-modal__content">
+        <button class="service-editing-modal__close" type="button" data-editing-close aria-label="Close service details" data-i18n-aria-label="services.editing.close"></button>
+        <h2 class="service-editing-modal__title" id="service-commercial-modal-title" data-i18n="services.commercial.title">Commercial Production</h2>
+        <p class="service-editing-modal__intro" id="service-commercial-modal-intro" data-i18n="services.commercial.intro">Your brand. A story worth sharing.</p>
+        <p class="service-editing-modal__description" data-i18n="services.commercial.description">We create commercial films and branded content that combine cinematic imagery with thoughtful storytelling. From concept to final delivery, we focus on the identity, message and audience of each project.</p>
+        <div class="service-video-examples" data-service-video-examples></div>
+      </div>
+    </dialog>
+
+    <dialog class="service-editing-modal" id="service-documentary-modal" data-documentary-modal aria-labelledby="service-documentary-modal-title" aria-describedby="service-documentary-modal-intro">
+      <div class="service-editing-modal__content">
+        <button class="service-editing-modal__close" type="button" data-editing-close aria-label="Close service details" data-i18n-aria-label="services.editing.close"></button>
+        <h2 class="service-editing-modal__title" id="service-documentary-modal-title" data-i18n="services.documentary.title">Documentary Films</h2>
+        <p class="service-editing-modal__intro" id="service-documentary-modal-intro" data-i18n="services.documentary.intro">Real people. Stories worth telling.</p>
+        <p class="service-editing-modal__description" data-i18n="services.documentary.description">We create documentary films and portraits that explore people, culture and the world around us. From initial research to the final edit, our approach is rooted in authenticity and a strong cinematic vision.</p>
+        <div class="service-video-examples" data-service-video-examples></div>
+      </div>
+    </dialog>
+
+    <dialog class="service-editing-modal" id="service-editing-modal" data-editing-modal aria-labelledby="service-editing-modal-title" aria-describedby="service-editing-modal-intro">
+      <div class="service-editing-modal__content">
+        <button class="service-editing-modal__close" type="button" data-editing-close aria-label="Close service details" data-i18n-aria-label="services.editing.close"></button>
+        <h2 class="service-editing-modal__title" id="service-editing-modal-title" data-i18n="services.editing.title">Video Editing &amp; Post-Production</h2>
+        <p class="service-editing-modal__intro" id="service-editing-modal-intro" data-i18n="services.editing.intro">Where the story takes shape.</p>
+        <p class="service-editing-modal__description" data-i18n="services.editing.description">Editing is where structure, rhythm and emotion come together. We collaborate remotely with filmmakers, production companies and agencies, providing creative editing, colour correction, sound finishing and final delivery across a range of formats.</p>
+        <div class="service-video-examples" data-service-video-examples></div>
+      </div>
+    </dialog>
+
+    <dialog class="video-modal" id="video-modal" data-video-modal aria-labelledby="video-modal-title">
       <div class="video-modal__panel">
         <button class="video-modal__close" type="button" aria-label="Close video" data-video-close data-i18n-aria-label="video.closeAria"></button>
         <h2 class="sr-only" id="video-modal-title" data-video-modal-title data-i18n="video.title">Video preview</h2>

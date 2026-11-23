@@ -8,19 +8,19 @@ const previewByCategory = {
 
 // Optional participant credits: [{ name: "Participant name", role: "Camera" }].
 const projects = [
-  { id: "1244142189", category: "Events", title: "SNOW EXPO 2026 Official Recap", displayTitle: "SNOW EXPO", subtitle: "2026 Official Recap", role: "Director / Video Editor / Videographer", credits: [{ name: "Georgi Georgiev", role: "Camera" }], year: "2026", thumbnail: "https://i.vimeocdn.com/video/2222841963-d9de05bfaca8eee73bfd72e9784aba2e5f1bb7591dc50317a2d8153cf7783020-d_640?region=us" },
+  { id: "1244142189", category: "Events", title: "SNOW EXPO 2026 Official Recap", displayTitle: "Snow Expo", subtitle: "2026 Official Recap", role: "Director / Video Editor / Videographer", credits: [{ name: "Georgi Georgiev", role: "Camera" }], year: "2026", thumbnail: "assets/thumbnails/vimeo-1244142189.webp" },
   { id: "1195697921", category: "Street Art", title: "Орфей и вечността - Mural painting by Jermain", displayTitle: "Орфей и вечността", subtitle: "Mural painting by Jermain", role: "Director / Videographer / Video Editor", year: "2026" },
-  { id: "1192226885", category: "Street Art", title: "RODOPA GLOW XPOME", role: "Video Editor", year: "2026" },
+  { id: "1192226885", category: "Street Art", title: "RODOPA GLOW XPOME", displayTitle: "Rodopa Glow Xpome", subtitle: "", role: "Video Editor", year: "2026" },
   { id: "1127819993", category: "Street Art", title: "Упование - Mural painting by Jermain", displayTitle: "Упование", subtitle: "Mural painting by Jermain", role: "Director / Videographer / Video Editor", year: "2026" },
   { id: "1191806871", category: "Music & Festivals", title: "Фестивал - СМОЛЯН НА МЛАДИТЕ - Ден 1", displayTitle: "Смолян на младите", subtitle: "Фестивал - Ден 1", role: "Director / Videographer / Video Editor", year: "2026" },
   { id: "1202080876", category: "Dance & Theatre", title: "Създадени от кал - танцово-театрален спектакъл", displayTitle: "Създадени от кал", subtitle: "танцово-театрален спектакъл", role: "Videographer / Video Editor", year: "2026" },
   { id: "342951818", category: "Dance & Theatre", title: "FLAVA HOUSE - Това Не Е Спектакъл", displayTitle: "Flava House", subtitle: "Това Не Е Спектакъл", role: "Director / Video Editor", credits: [{ name: "Georgi Georgiev", role: "Camera" }], year: "2019" },
-  { id: "1222302666", category: "Documentary", title: "DJ DELIGHTFULL | HEART TO BEAT | С ГЛАВАТА НАДОЛУ | КУЛТУРА | ЕП 03", displayTitle: "DJ DELIGHTFULL", subtitle: "HEART TO BEAT | С ГЛАВАТА НАДОЛУ | КУЛТУРА | ЕП 03", role: "Director / Videographer / Video Editor", year: "2026", thumbnail: "https://i.vimeocdn.com/video/2195226265-0acd36ab82973a4c5949e30ec48563559c9d5f980bb80324f504f61f2a4c87f4-d_640?region=us" },
+  { id: "1222302666", category: "Documentary", title: "DJ DELIGHTFULL | HEART TO BEAT | С ГЛАВАТА НАДОЛУ | КУЛТУРА | ЕП 03", displayTitle: "DJ Delightfull", subtitle: "HEART TO BEAT | С ГЛАВАТА НАДОЛУ | КУЛТУРА | ЕП 03", role: "Director / Videographer / Video Editor", year: "2026", thumbnail: "assets/thumbnails/vimeo-1222302666.webp" },
   { id: "1178117259", category: "Dance & Theatre", title: "ПРОСТО ДЖЕМ 3", displayTitle: "Просто Джем", role: "Director / Videographer / Video Editor", year: "2026" },
   { id: "317971978", category: "Dance & Theatre", title: "Вплитане", role: "Director / Video Editor", credits: [{ name: "Georgi Georgiev", role: "Camera" }], year: "2019" },
   { id: "853021554", category: "Documentary", title: "РУСИ - С Главата Надолу С02 Е20", displayTitle: "Руси", subtitle: "С Главата Надолу С02 Е20", role: "Director / Videographer / Video Editor", year: "2023" },
   { id: "1152485222", category: "Documentary", title: "DJ NOT EASY - Запис на плочи", displayTitle: "DJ Not Eazy", subtitle: "Запис на плочи", role: "Director / Videographer / Video Editor", year: "2025" },
-  { id: "1209839499", category: "Street Art", title: "True Rokin Soul 20th Anniversary", displayTitle: "True Rokin Soul", subtitle: "20th Anniversary", role: "Videographer / Video Editor", year: "2026", thumbnail: "https://vumbnail.com/1209839499.jpg" },
+  { id: "1209839499", category: "Street Art", title: "True Rokin Soul 20th Anniversary", displayTitle: "True Rokin Soul", subtitle: "20th Anniversary", role: "Videographer / Video Editor", year: "2026", thumbnail: "assets/thumbnails/vimeo-1209839499.webp" },
   { id: "1197611630", category: "Music & Festivals", title: "Q-TEK - СЕРИОЗНИ ИГРАЧИ", displayTitle: "Q-TEK", subtitle: "Сериозни Играчи", role: "Director / Videographer / Video Editor", year: "2026" },
   { id: "1219311814", category: "Street Art", title: "Visionary Mural Jam - August 2026", displayTitle: "Visionary Mural Jam", subtitle: "", role: "Director / Videographer / Video Editor", year: "2026" },
   { id: "233682218", category: "Dance & Theatre", title: "FLAVA HOUSE - Продължавай", displayTitle: "Продължавай", subtitle: "Flava House", role: "Director / Video Editor", credits: [{ name: "Georgi Georgiev", role: "Camera" }], year: "2017" },
@@ -42,28 +42,32 @@ function createProjectCard(project) {
   article.dataset.reveal = "";
 
   const fallbackImage = previewByCategory[project.category];
-  const thumbnail = project.thumbnail || `https://vumbnail.com/${project.id}.jpg`;
+  const thumbnail = project.thumbnail || `assets/thumbnails/vimeo-${project.id}.webp`;
   const displayTitle = project.displayTitle || project.title;
   const subtitle = project.subtitle ?? (displayTitle !== project.title ? project.title : "");
-  const credits = (project.credits || []).map((credit) => {
+  const creditIds = [];
+  const credits = (project.credits || []).map((credit, index) => {
     const line = document.createElement("span");
     line.className = "work-card__role";
+    line.id = `work-credit-${project.id}-${index}`;
+    creditIds.push(line.id);
     const role = document.createElement("span");
     role.dataset.i18nWorkRole = credit.role;
     role.textContent = credit.role;
     line.append(role, document.createTextNode(`: ${credit.name}`));
     return line.outerHTML;
   }).join("");
+  const descriptionIds = [`work-category-${project.id}`, ...(subtitle ? [`work-subtitle-${project.id}`] : []), `work-role-${project.id}`, ...creditIds].join(" ");
   article.innerHTML = `
-    <button class="work-card__button" type="button" data-video-open data-video-id="${project.id}" data-video-title="${project.title}">
+    <button class="work-card__button" type="button" data-video-open data-video-id="${project.id}" data-video-title="${project.title}" aria-labelledby="work-title-${project.id}" aria-describedby="${descriptionIds}" aria-haspopup="dialog" aria-controls="video-modal">
       <span class="work-card__media">
-        <img src="${thumbnail}" alt="${project.title} video preview" width="1280" height="720" loading="lazy" decoding="async" data-fallback-src="${fallbackImage}">
+        <img src="${thumbnail}" alt="" width="1280" height="720" loading="lazy" decoding="async" data-fallback-src="${fallbackImage}">
       </span>
       <span class="work-card__content">
-        <span class="work-card__category" data-i18n-work-category="${project.category}" data-work-year="${project.year}">${project.category} / ${project.year}</span>
-        <span class="work-card__title">${displayTitle}</span>
-        ${subtitle ? `<span class="work-card__full-title">${subtitle}</span>` : ""}
-        <span class="work-card__role"><span data-i18n="work.myRole">My Role</span>: <span data-i18n-work-role="${project.role}">${project.role}</span></span>${credits}
+        <span class="work-card__category" id="work-category-${project.id}" data-i18n-work-category="${project.category}" data-work-year="${project.year}">${project.category} / ${project.year}</span>
+        <span class="work-card__title" id="work-title-${project.id}">${displayTitle}</span>
+        ${subtitle ? `<span class="work-card__full-title" id="work-subtitle-${project.id}">${subtitle}</span>` : ""}
+        <span class="work-card__role" id="work-role-${project.id}"><span data-i18n="work.myRole">My Role</span>: <span data-i18n-work-role="${project.role}">${project.role}</span></span>${credits}
       </span>
     </button>
   `;
@@ -127,7 +131,7 @@ export function initWork() {
 
   closeButton.addEventListener("click", closeModal);
   modal.addEventListener("click", (event) => {
-    if (event.target === modal) closeModal();
+    if (event.target === modal || event.target === frame.parentElement) closeModal();
   });
   modal.addEventListener("cancel", () => {
     frame.innerHTML = "";

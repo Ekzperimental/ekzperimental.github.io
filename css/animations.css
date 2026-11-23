@@ -50,16 +50,48 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .site-backdrop {
+    background: url("../assets/images/og-image.jpg") center / cover no-repeat;
+  }
+
+  .hero__video {
+    visibility: hidden;
+  }
+
   .hero__video,
   .hero__light,
   .scroll-indicator__line {
     animation: none;
   }
 
-  .reveal {
-    opacity: 1;
-    transform: none;
+  .reveal,
+  .showreel__copy,
+  .showreel-card,
+  .showreel .play-badge,
+  [data-process-step],
+  [data-service-step] {
+    /* Override GSAP inline styles when the system preference changes mid-session. */
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .about__photos img {
+    transform: none !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  .nav-menu,
+  .service-editing-modal {
     transition: none;
+  }
+
+  .service-editing-modal {
+    transform: none;
   }
 
   .services-list {
@@ -68,6 +100,17 @@
 
   .service-card {
     opacity: 1;
+    transform: none;
+  }
+
+  .testimonial__index,
+  .testimonial__portrait,
+  .testimonial blockquote p,
+  .testimonial__toggle {
+    transition: none;
+  }
+
+  .testimonial:hover .testimonial__portrait {
     transform: none;
   }
 }

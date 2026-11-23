@@ -190,7 +190,7 @@
 }
 
 .language-switcher button:not(.is-active) {
-  opacity: 0.62;
+  opacity: 0.75;
 }
 
 .button {
